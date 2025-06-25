@@ -11,7 +11,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
     <link rel="robots" type="text/plain" title="Robots" href="robots.txt">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <link rel="preload" href="https://cdn-icons-png.flaticon.com/512/763/763690.png" as="image">
@@ -21,7 +21,7 @@
     <style>
         /* Estilos generales */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
@@ -36,7 +36,7 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #ff4d4d, #ffcc00) !important;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
             color: white;
             padding: 60px 20px;
             text-align: center;
@@ -122,8 +122,8 @@
 
         button {
             background-color: white;
-            color: #ff4d4d;
-            border: 2px solid #ff4d4d;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
             padding: 12px 24px;
             font-size: 16px;
             cursor: pointer;
@@ -137,7 +137,7 @@
         }
         
         button:focus-visible {
-            outline: 3px solid #FF8C42;
+            outline: 3px solid var(--accent-color);
             outline-offset: 2px;
         }
 
@@ -157,9 +157,9 @@
         }
 
         button:hover {
-            background-color: #ff4d4d;
+            background-color: var(--primary-color);
             color: white;
-            border-color: #ff4d4d;
+            border-color: var(--primary-color);
             transform: scale(1.05);
         }
 
@@ -182,14 +182,14 @@
         }
 
         .close-btn {
-            background-color: rgba(255,100,100,0.9);
+            background-color: rgba(245,160,2,0.9);
             color: white;
-            border-color: rgba(255,100,100,0.9);
+            border-color: rgba(245,160,2,0.9);
             transition: all 0.3s ease;
         }
 
         .close-btn:hover {
-            background-color: rgba(255,70,70,0.9);
+            background-color: rgba(235,150,2,0.9);
             transform: scale(1.05);
         }
 
@@ -199,7 +199,7 @@
         .search-input { /* General input style, might need adjustments for specific contexts */
             flex: 1;
             padding: 15px;
-            border: 2px solid #ff4d4d;
+            border: 2px solid var(--primary-color);
             background: transparent;
             font-size: 16px;
             color: #333;
@@ -214,10 +214,10 @@
 
         .search-input:focus {
             outline: none;
-            box-shadow: 0 0 20px rgba(255,153,153,0.3);
+            box-shadow: 0 0 20px rgba(245,160,2,0.3);
         }
         .search-input:focus-visible {
-            outline: 3px solid #FF8C42;
+            outline: 3px solid var(--accent-color);
             outline-offset: 1px;
         }
 
@@ -1234,7 +1234,7 @@
 
 
         .premium-cloud {
-            background: linear-gradient(135deg, #ff4d4d, #ffcc00);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             border-radius: 40px;
             padding: 30px;
             margin: 40px auto;
@@ -1526,7 +1526,7 @@
 
 
         .ultimate-help-btn {
-            background: linear-gradient(135deg, #ff4d4d, #ffcc00);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             border: none;
             border-radius: 30px;
             padding: 20px 40px;
@@ -2091,7 +2091,7 @@
 
 
         .chat-header {
-            background: linear-gradient(135deg, #ff4d4d, #ffcc00);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             color: white;
             padding: 15px 20px;
             border-radius: 20px 20px 0 0;
@@ -2627,7 +2627,7 @@
 
         <!-- Desktop Cover Image Container - Only visible on desktop -->
         <div class="desktop-cover" style="width: 90%; max-width: 800px; margin: 30px auto; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4); animation: pulse 3s infinite ease-in-out;">
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #ff4d4d, #ffcc00); z-index: 1;"></div>
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); z-index: 1;"></div>
             <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: rotate(30deg); animation: shine 3s infinite linear; z-index: 2;"></div>
             <div style="position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; background: rgba(255,255,255,0.8); border-radius: 50%; animation: sparkle 2s infinite; z-index: 3;"></div>
             <div style="position: absolute; bottom: 25px; left: 25px; width: 25px; height: 25px; background: rgba(255,255,255,0.8); border-radius: 50%; animation: sparkle 2s infinite 0.3s; z-index: 3;"></div>

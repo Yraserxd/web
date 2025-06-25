@@ -1,20 +1,21 @@
 # Mega
 
-This repository contains the **Mega** theme for [Jumpseller](https://jumpseller.com). Mega is a responsive template designed for stores with large catalogs and a need for flexible page layouts. It includes a collection of reusable components and several ready‑made templates.
+Este repositorio contiene el **tema Mega** para [Jumpseller](https://jumpseller.com). Mega es una plantilla adaptable pensada para tiendas con catálogos extensos y que requieren diseños de página flexibles. Incluye un conjunto de componentes reutilizables y varias plantillas listas para usar.
 
-## Installation in a Jumpseller store
+## Instalación en una tienda Jumpseller
 
-1. Download or clone this repository.
-2. Create a ZIP archive with the theme files.
-3. In your Jumpseller admin panel open **Themes → My Themes** and select **Upload Theme**.
-4. Choose the ZIP file and wait for the upload to finish.
-5. Once uploaded, click **Publish** to make Mega the active theme.
+1. Descarga o clona este repositorio.
+2. Crea un archivo ZIP con todos los archivos del tema.
+3. En tu panel de administración de Jumpseller ve a **Themes → My Themes** y selecciona **Upload Theme**.
+4. Elige el archivo ZIP y espera a que finalice la carga.
+5. Una vez subido, haz clic en **Publish** para que Mega sea el tema activo.
 
-## Folder structure
+## Estructura de carpetas
 
-The main directories are:
+Los directorios principales son:
 
-- `assets/` – stylesheets, JavaScript files and other static assets.
-- `components/` – reusable Liquid components used across the theme.
-- `templates/` – page templates and layouts that define each storefront page.
+- `assets/` – hojas de estilo, archivos JavaScript y otros recursos estáticos.
+- `components/` – componentes Liquid reutilizables utilizados a lo largo del tema.
+- `templates/` – plantillas y layouts que definen cada página de la tienda.
 
+La página de inicio se encuentra en `templates/home.liquid`, la cual funciona como el `index.html` del sitio.
