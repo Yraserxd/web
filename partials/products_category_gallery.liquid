@@ -1,0 +1,111 @@
+{% if category.products == empty and filters == empty %}
+  <div class="container-fluid registration category-page" {{ component.attributes }}>
+    <div class="row text-center">
+      <section class="col-md-8 offset-sm-2 col-sm-8 col-sm-offset-2 mb-5">
+        <div class="card">
+          <div class="card-body">
+            <p>{% t "There aren't any products available in this category" %}.</p>
+            <p>{% t "Try searching again or keep shopping by clicking on the button below" %}</p>
+            <div class="text-center page-actions">
+              <a href="{{ store.url }}" class="btn primary" title="&larr; {% t 'Go back & Keep Shopping' %}">&larr; {% t "Go back & Keep Shopping" %}</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+{% else %}
+  <div class="container container-section category-page">
+    {% paginate category.products by component.options.limit %}
+      <div class="row">
+        <div class="col-6">
+          <span class="mt-2 d-none d-lg-flex"
+            ><strong>
+              {{- paged.total }}
+              {% t "Product(s)" -%}
+            </strong></span
+          >
+        </div>
+
+        <div class="col-6">
+          <form class="form-horizontal d-none d-lg-block">
+            <div class="form-group row align-items-center mb-0">
+              <label class="col-md-4 control-label text-right mb-0">{% t "Sort by" %}:</label>
+              <div class="col-md-8">
+                <div>
+                  <select class="form-control" onchange="window.location.href = this.value">
+                    {% for sorting_option in category.sorting_options %}
+                      <option
+                        {% if sorting_option.selected %}
+                          selected
+                        {% endif %}
+                        value="{{ sorting_option.url }}"
+                      >
+                        {{ sorting_option.text }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class="d-none d-lg-block">
+      <div class="row">
+        <!-- filter mobile -->
+        <div class="{% if component.options.show_filters %}col-6{% else %}col-12{% endif %}d-block d-lg-none">
+          <div class="row justify-content-between">
+            <div class="col-12 product-qty mt-2">
+              <strong>
+                {{- paged.total }}
+                {% t "Product(s)" -%}
+              </strong>
+            </div>
+          </div>
+        </div>
+        {% if component.options.show_filters %}
+          <div class="col-6 d-block d-lg-none text-right">
+            <button id="show_filters" type="button" class="btn btn-outline-secondary btn-filter my-0 d-lg-none">
+              <i class="fas fa-sliders-h"></i> {% t "Filters" %}
+              <span class="badge badge-light"></span>
+            </button>
+          </div>
+        {% endif %}
+        <div class="col-12 d-block d-lg-none">
+          <hr>
+        </div>
+        <!-- end filter mobile -->
+        {% if component.options.show_filters %}
+          <div class="col-lg-3 d-lg-block">
+            {% render 'category_filter' %}
+          </div>
+        {% endif %}
+        <div class="col-12{% if component.options.show_filters %} col-lg-9{% endif %}">
+          <div class="row product-list mx-md-n3 mx-n2">
+            {% for prod in paged.products %}
+              <div class="col-md-4 col-6 pb-3">
+                {% render 'product_block', prod: prod %}
+              </div>
+            {% endfor %}
+            {% if filters != empty and paged.total == 0 %}
+              <section class="col-12 text-center">
+                <div class="card">
+                  <div class="card-body">
+                    <h5>{% t "There aren't any products available with the selected filters" %}.</h5>
+                    <a href="#" class="all mt-4 btn primary" title="{% t 'Clear filters' %}" onclick="window.location = window.location.href.split('?')[0];">
+                      {% t "Clear filters" %}
+                      <i class="fas fa-eraser"></i>
+                    </a>
+                  </div>
+                </div>
+              </section>
+            {% endif %}
+
+            {% render 'pagination', paged: paged %}
+          </div>
+        </div>
+      </div>
+    {% endpaginate %}
+  </div>
+{% endif %}

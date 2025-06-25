@@ -1,0 +1,1058 @@
+{
+  "header": {
+    "type": "header",
+    "placement": "top",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "preheader_message": "",
+      "hide_category_menu": false,
+      "background_topheader": "#FFFFFF",
+      "background": "#FFFFFF",
+      "highlight_color": "#FFFFFF"
+    },
+    "children": []
+  },
+  "footer": {
+    "type": "footer",
+    "placement": "bottom",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "background": "#FFFFFF",
+      "highlight_color": "#DA370E"
+    },
+    "children": [
+      {
+        "property": "payment-methods",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "bank_transfer_payment": true,
+          "manual_payment": true,
+          "partners": [
+            "visa",
+            "mastercard",
+            "american",
+            "paypal"
+          ]
+        },
+        "children": []
+      }
+    ]
+  },
+  "featured-products": {
+    "type": "featured-products",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "title": "<strong>Productos Destacados</strong>",
+      "limit": 16,
+      "autoplay": true,
+      "autoplay_speed": 4000,
+      "enable_arrows": true,
+      "enable_dots": true,
+      "background": "#FFFFFF",
+      "highlight_color": "#9D0103"
+    },
+    "children": []
+  },
+  "latest-products": {
+    "type": "latest-products",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "title": "",
+      "limit": 16,
+      "autoplay": true,
+      "autoplay_speed": 3500,
+      "enable_arrows": true,
+      "enable_dots": true,
+      "background": "#FFFFFF",
+      "highlight_color": "#DA370E"
+    },
+    "children": []
+  },
+  "quick-links": {
+    "type": "quick-links",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "grid": 2,
+      "only_image": false,
+      "image_dimensions": "square",
+      "background": "#FFFFFF",
+      "background_overlay": "#9D0103",
+      "background_overlay_opacity": 10
+    },
+    "children": [
+      {
+        "property": "quick-links",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "DATOS PARA LA TRANSFERENCIA",
+            "path": "Picsart_24-07-23_17-37-26-372.jpg"
+          },
+          "title": "",
+          "link": "datos-para-transferencias",
+          "link_text": "DATOS DE TRANSFERENCIA"
+        },
+        "children": []
+      },
+      {
+        "property": "quick-links",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "Picsart_24-07-31_14-23-26-067.jpg"
+          },
+          "title": "",
+          "link": "ver-todo",
+          "link_text": "VER TODO"
+        },
+        "children": []
+      }
+    ]
+  },
+  "product-template": {
+    "type": "product-template",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "alignment": "center",
+      "gallery_position": "left"
+    },
+    "children": [
+      {
+        "property": "gallery",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "thumbnails": true
+        },
+        "children": []
+      },
+      {
+        "property": "heading",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "brand_enable": false,
+          "sku_enable": false,
+          "stock_enable": true
+        },
+        "children": []
+      },
+      {
+        "property": "form",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "options_display": "buttons",
+          "options_columns": "col-12",
+          "customfields_title": "Detalles del producto"
+        },
+        "children": []
+      },
+      {
+        "property": "attachments",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "title": "Archivos"
+        },
+        "children": []
+      },
+      {
+        "property": "description",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "title": "Descripción"
+        },
+        "children": []
+      },
+      {
+        "property": "share",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "title": "Compartir",
+          "share_facebook": true,
+          "share_twitter": true,
+          "share_pinterest": true,
+          "share_whatsapp": true
+        },
+        "children": []
+      }
+    ]
+  },
+  "bought-together-packs": {
+    "type": "bought-together-packs",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "title": "Comprados juntos frecuentemente",
+      "limit": 4
+    },
+    "children": []
+  },
+  "product-reviews": {
+    "type": "product-reviews",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "title": "Reseñas de Productos",
+      "limit": 5
+    },
+    "children": []
+  },
+  "related-products": {
+    "type": "related-products",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "title": "También te puede interesar",
+      "limit": 16
+    },
+    "children": []
+  },
+  "template-image": {
+    "type": "template-image",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {},
+    "children": []
+  },
+  "category-description": {
+    "type": "category-description",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "alignment": "text-left"
+    },
+    "children": []
+  },
+  "product-feed": {
+    "type": "product-feed",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "limit": 20,
+      "show_filters": true
+    },
+    "children": []
+  },
+  "page-default-template": {
+    "type": "page-default-template",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "share": true,
+      "share_title": "Comparte este artículo",
+      "facebook_button": true,
+      "twitter_button": true,
+      "pinterest_button": true,
+      "tumblr_button": true
+    },
+    "children": []
+  },
+  "page-blog-template": {
+    "type": "page-blog-template",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "limit": 9
+    },
+    "children": []
+  },
+  "page-post-template": {
+    "type": "page-post-template",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "latest_articles": true,
+      "latest_articles_title": "Últimos Artículos",
+      "latest_articles_limit": 3,
+      "back_button": true,
+      "share": true,
+      "share_title": "Comparte este artículo",
+      "facebook_button": true,
+      "twitter_button": true,
+      "pinterest_button": true,
+      "tumblr_button": true
+    },
+    "children": []
+  },
+  "contact-template": {
+    "type": "contact-template",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "title": "Déjanos un mensaje",
+      "description": "Envíanos un mensaje y te responderemos lo antes posible.",
+      "contact_title": "Información de contacto",
+      "map": true
+    },
+    "children": []
+  },
+  "logo-gallery": {
+    "type": "logo-gallery",
+    "model": true,
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "title": "Nuestras Marcas",
+      "columns_desktop": 6,
+      "autoplay": false,
+      "autoplay_speed": 4000,
+      "enable_arrows": true,
+      "enable_dots": true,
+      "background": "#FFFFFF",
+      "highlight_color": "#4770FC"
+    },
+    "children": [
+      {
+        "property": "logos",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-130x130.png"
+          },
+          "link": null,
+          "link_text": "Ver más"
+        },
+        "children": []
+      },
+      {
+        "property": "logos",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-130x130.png"
+          },
+          "link": null,
+          "link_text": "Ver más"
+        },
+        "children": []
+      },
+      {
+        "property": "logos",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-130x130.png"
+          },
+          "link": null,
+          "link_text": "Ver más"
+        },
+        "children": []
+      },
+      {
+        "property": "logos",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-130x130.png"
+          },
+          "link": null,
+          "link_text": "Ver más"
+        },
+        "children": []
+      },
+      {
+        "property": "logos",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-130x130.png"
+          },
+          "link": null,
+          "link_text": "Ver más"
+        },
+        "children": []
+      },
+      {
+        "property": "logos",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-130x130.png"
+          },
+          "link": null,
+          "link_text": "Ver más"
+        },
+        "children": []
+      }
+    ]
+  },
+  "quick-links(2)": {
+    "type": "quick-links",
+    "model": true,
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "grid": 6,
+      "only_image": false,
+      "image_dimensions": "square",
+      "background": "#FFFFFF",
+      "background_overlay": "#1E3B51",
+      "background_overlay_opacity": 50
+    },
+    "children": [
+      {
+        "property": "quick-links",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-200x200.png"
+          },
+          "title": "Agrega tus propios enlaces rápidos",
+          "link": "/",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "quick-links",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-200x200.png"
+          },
+          "title": "Agrega tus propios enlaces rápidos",
+          "link": "/",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "quick-links",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-200x200.png"
+          },
+          "title": "Agrega tus propios enlaces rápidos",
+          "link": "/",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "quick-links",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-200x200.png"
+          },
+          "title": "Agrega tus propios enlaces rápidos",
+          "link": "/",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "quick-links",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-200x200.png"
+          },
+          "title": "Agrega tus propios enlaces rápidos",
+          "link": "/",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "quick-links",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image": {
+            "alt": "",
+            "path": "placeholder-200x200.png"
+          },
+          "title": "Agrega tus propios enlaces rápidos",
+          "link": "/",
+          "link_text": "Leer más"
+        },
+        "children": []
+      }
+    ]
+  },
+  "trust-bar": {
+    "type": "trust-bar",
+    "model": true,
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "columns_desktop": 4,
+      "background": "#F7FAFE",
+      "icon_background_color": "#FFFFFF",
+      "icon_color": "#4770FC"
+    },
+    "children": [
+      {
+        "property": "trust-blocks",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "icon": "fa-solid fa-truck",
+          "title": "Envío gratis",
+          "text": "Envío gratuito para compras superiores a $50"
+        },
+        "children": []
+      },
+      {
+        "property": "trust-blocks",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "icon": "fa-solid fa-store",
+          "title": "Abierto 24 horas",
+          "text": "Nuestra tienda está abierta las 24 horas y los 7 días de la semana"
+        },
+        "children": []
+      },
+      {
+        "property": "trust-blocks",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "icon": "fa-solid fa-truck",
+          "title": "Pagos Seguros",
+          "text": "Pagos seguros y protegidos"
+        },
+        "children": []
+      },
+      {
+        "property": "trust-blocks",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "icon": "fa-solid fa-store",
+          "title": "Abierto 24 horas",
+          "text": "Nuestra tienda está abierta las 24 horas y los 7 días de la semana"
+        },
+        "children": []
+      }
+    ]
+  },
+  "banners": {
+    "type": "banners",
+    "model": true,
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "columns_desktop": 3,
+      "image_size": "resize",
+      "image_ratio": "horizontal",
+      "background": "#F8F9FA"
+    },
+    "children": [
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "placeholder-510x315.png"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": null,
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "placeholder-510x315.png"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": null,
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "placeholder-510x315.png"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": null,
+          "link_text": "Leer más"
+        },
+        "children": []
+      }
+    ]
+  },
+  "slider": {
+    "type": "slider",
+    "model": true,
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "width": "grid",
+      "height": "medium",
+      "autoplay": false,
+      "autoplay_speed": 5000,
+      "enable_arrows": true,
+      "enable_dots": true,
+      "color_controls": "#FFFFFF"
+    },
+    "children": [
+      {
+        "property": "slides",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "placeholder-1110x685.webp"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "/",
+          "title": "Título de la slide",
+          "title_color": "#FFFFFF",
+          "link_text": "Leer más",
+          "button_color": "#4770FC",
+          "no_button": true,
+          "position_x": "justify-content-start align-items-center",
+          "alignment": "text-md-left",
+          "background_color": "#000000",
+          "background_opacity": 20
+        },
+        "children": []
+      },
+      {
+        "property": "slides",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "placeholder-1110x685.webp"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "/",
+          "title": "Título de la slide",
+          "title_color": "#FFFFFF",
+          "link_text": "Leer más",
+          "button_color": "#4770FC",
+          "no_button": true,
+          "position_x": "justify-content-center align-items-center",
+          "alignment": "text-md-center",
+          "background_color": "#000000",
+          "background_opacity": 20
+        },
+        "children": []
+      },
+      {
+        "property": "slides",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "placeholder-1110x685.webp"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "/",
+          "title": "Título de la slide",
+          "title_color": "#FFFFFF",
+          "link_text": "Leer más",
+          "button_color": "#4770FC",
+          "no_button": true,
+          "position_x": "justify-content-end align-items-center",
+          "alignment": "text-md-right",
+          "background_color": "#000000",
+          "background_opacity": 20
+        },
+        "children": []
+      }
+    ]
+  },
+  "line-divider": {
+    "type": "line-divider",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "width": "container",
+      "spacing": 16,
+      "color": "#EAEBEC"
+    },
+    "children": []
+  },
+  "banners(2)": {
+    "type": "banners",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "columns_desktop": 4,
+      "image_size": "force",
+      "image_ratio": "vertical",
+      "background": "#FFFFFF"
+    },
+    "children": [
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "SIGUENOS!",
+            "path": "Picsart_24-07-25_17-58-49-682.jpg"
+          },
+          "image_mobile": {
+            "alt": "",
+            "path": "Picsart_24-07-25_18-15-32-934.jpg"
+          },
+          "link": null,
+          "link_text": "SIGUENOS"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "FACEBOOK DON BALATO CHILE",
+            "path": "Picsart_24-07-24_15-50-37-085.jpg"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "https://web.facebook.com/Ivandonbalatochile/?_rdc=1&_rdr",
+          "link_text": "FACEBOOK DON BALATO CHILE"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "TIKTOK DON BALATO",
+            "path": "Picsart_24-07-24_16-55-06-913.jpg"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "https://www.tiktok.com/@donbalatochile",
+          "link_text": "TIKTOK DON BALATO CHILE"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "WHATSAPP SOPORTE",
+            "path": "Picsart_24-07-24_16-03-38-053.jpg"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "https://api.whatsapp.com/send?phone=56962080942&text=Hola%20Don%20Balato%20Mayorista",
+          "link_text": "WHATSAPP SOPORTE"
+        },
+        "children": []
+      }
+    ]
+  },
+  "banners(3)": {
+    "type": "banners",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "columns_desktop": 3,
+      "image_size": "resize",
+      "image_ratio": "horizontal",
+      "background": "#F8F9FA"
+    },
+    "children": [
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "Picsart_25-01-08_11-46-18-069.jpg"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "offione-articulos-de-oficina",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "WhatsApp Image 2024-11-29 at 11.11.31 AM.jpeg"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "electronicos",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "Picsart_24-11-29_11-15-42-954.png"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "juguetes",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "WhatsApp Image 2024-11-29 at 11.27.50 AM.jpeg"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "hogar",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "Please.png"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "sio-aseo-limpieza",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "WhatsApp Image 2025-02-12 at 6.01.57 PM.jpeg"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "liquidacion-de-productos",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "Captura de pantalla 2025-02-14 135849.png"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "cosmeticos",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "WhatsApp Image 2025-02-14 at 2.08.01 PM.jpeg"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "abarrotes-alimentos-y-bebidas",
+          "link_text": "Leer más"
+        },
+        "children": []
+      },
+      {
+        "property": "banners",
+        "identifier": "",
+        "visibility": true,
+        "options": {
+          "image_desktop": {
+            "alt": "",
+            "path": "Captura de pantalla 2025-02-14 140451.png"
+          },
+          "image_mobile": {
+            "url": "",
+            "alt": ""
+          },
+          "link": "estanterias-muebles-y-mas",
+          "link_text": "Leer más"
+        },
+        "children": []
+      }
+    ]
+  },
+  "custom-code": {
+    "type": "custom-code",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "custom_code": "",
+      "width": "Container"
+    },
+    "children": []
+  },
+  "custom-code(2)": {
+    "type": "custom-code",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "custom_code": "<div style=\"text-align: center; padding: 45px; background: #fff; border-radius: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); font-family: 'Arial', sans-serif; max-width: 600px; margin: 20px auto;\">   <h2 style=\"color: #2c3e50; font-size: 2.5em; font-weight: 700; margin-bottom: 20px;\">¡Visita Don Balato!</h2>   <div style=\"width: 100%; height: 300px; margin-bottom: 30px; border-radius: 12px; overflow: hidden;\">     <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.994919293387!2d-70.65414972573654!3d-33.45010197324977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1d0x9662c58c4521911b%3A0x8199191928d3920!2sAbate%20Molina%20253%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1701291718815!5m2!1ses!2scl\" width=\"100%\" height=\"100%\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>   </div>   <p style=\"color: #95a5a6; margin-bottom: 40px;\">Descubre una amplia variedad de productos y las mejores ofertas.</p>   <a href=\"https://www.google.com/maps/place/Abate+Molina+253,+Santiago,+Regi%C3%B3n+Metropolitana\" style=\"display: inline-block;\" target=\"_blank\">     <button style=\"background-color: #e74c3c; color: #fff; padding: 18px 40px; border: none; border-radius: 12px; font-size: 1.3em; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 2px 2px 8px rgba(0,0,0,0.15);\">¡Ubícanos aquí!</button>   </a> </div>",
+      "width": "Container"
+    },
+    "children": []
+  },
+  "custom-code(3)": {
+    "type": "custom-code",
+    "placement": "middle",
+    "identifier": "",
+    "visibility": true,
+    "options": {
+      "custom_code": "<div style=\"text-align: center;\">\n  <a href=\"https://donbalatomayorista.cl/ver-todo\">\n    <button style=\"padding: 18px 35px;\n                   font-size: 20px;\n                   background: linear-gradient(to right, #ff0000, #ff8c00, #ffffff);\n                   color: white;\n                   border: none;\n                   border-radius: 10px;\n                   cursor: pointer;\n                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);\n                   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;\n                   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);\">\n      VER TODOS LOS PRODUCTOS\n    </button>\n  </a>\n</div>\n\n<style>\n  button:hover {\n    transform: translateY(-5px);\n    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);\n    background: linear-gradient(to right, #e60000, #e67300, #f0f0f0);\n  }\n</style>",
+      "width": "Container"
+    },
+    "children": []
+  }
+}

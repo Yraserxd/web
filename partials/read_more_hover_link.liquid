@@ -1,0 +1,4 @@
+{% if link != blank %}
+  {% capture link_default %}{% t "Read more" %}{% endcapture %}
+  <a href="{{ link }}" class="hover-link" title="{{ text | default: link_default | escape }}"></a>
+{% endif %}

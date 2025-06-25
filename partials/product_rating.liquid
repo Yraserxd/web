@@ -1,0 +1,23 @@
+<div class="stars p-0">
+  {% assign rating_floor = prod.reviews.rating | floor %}
+  {% assign rating_remainder = 5 | minus: rating_floor | minus: 1 %}
+  {% assign rating_decimal = prod.reviews.rating | minus: rating_floor %}
+
+  {% if rating_decimal != 0 %}
+    {% assign rating_decimal_percentage = 100 | times: rating_decimal %}
+  {% else %}
+    {% assign rating_decimal_percentage = 0 %}
+  {% endif %}
+
+  {% for _ in (1..rating_floor) %}
+    <span class="fa fa-star checked"></span>
+  {% endfor %}
+
+  {% unless rating_floor == 5 %}
+    <span class="fa fa-star partial-checked" style="--star-partial-width: {{ rating_decimal_percentage }}%"></span>
+  {% endunless %}
+
+  {% for _ in (1..rating_remainder) %}
+    <span class="fa fa-star"></span>
+  {% endfor %}
+</div>

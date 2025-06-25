@@ -1,0 +1,237 @@
+<div class="content-cart">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        {{ checkout_form }}
+        {% if store.currencies_codes.size > 1 %}
+          <p style="text-align: center; font-size: smaller; font-style: italic;">
+            {% t "Payment will be processed in %{store_currency} at the current exchange rate", store_currency: store.currency_code %}
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="col-lg-4">
+        <div class="cart-summary checkout">
+          <div class="cart-summary__inside">
+            <div class="cart-totals">
+              <div class="cart-summary__products cart-summary_block">
+                <h2 class="summary-title">{% t "Order review" %}</h2>
+                {% for ordered_product in order.products %}
+                  <div class="cart-summary__products-item">
+                    <a
+                      href="{{ ordered_product.url }}"
+                      class="cart-summary__products-link"
+                      title="{{ ordered_product.name }}"
+                    >
+                      <img
+                        src="{{ ordered_product.image | resize: '50x50' | default: '//assets.jumpseller.com/public/placeholder/themes/mega/no-image-cart.png' }}"
+                        alt="{{ ordered_product.name }}"
+                        width="50"
+                        height="50"
+                        loading="eager"
+                      >
+                    </a>
+                    <div class="cart-summary__products-info">
+                      <h3>{{ ordered_product.name }}</h3>
+                      {% for option in ordered_product.options %}
+                        <span>{{ option.name }}: {{ option.value }}</span>
+                      {% endfor %}
+
+                      {% if ordered_product.discount > 0 %}
+                        <span class="order-product-subtotal">
+                          {{- ordered_product.qty }} x
+                          <div class="new">{{ ordered_product.price | minus: ordered_product.discount | price }}</div>
+                          <div class="old">{{ ordered_product.price | price }}</div>
+                        </span>
+                      {% else %}
+                        <span class="order-product-subtotal">
+                          {{- ordered_product.qty }} x
+                          <div class="new">{{ ordered_product.price | price }}</div>
+                        </span>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+                <table class="table review">
+                  {% if order.subtotal != order.total %}
+                    <tr class="totals">
+                      <td colspan="1" class="text-left">{% t "Subtotal" %}</td>
+                      <td colspan="1" class="text-right">{{ order.subtotal | price }}</td>
+                    </tr>
+                  {% endif %}
+
+                  {% if order.shipping_required %}
+                    <tr class="totals">
+                      <td colspan="1" class="text-left">{% t "Shipping" %}</td>
+                      <td colspan="1" class="text-right">{{ order.shipping | price }}</td>
+                    </tr>
+                  {% endif %}
+
+                  {% if order.discount > 0 %}
+                  <tr class="totals">
+                    <td colspan="1" class="text-left">{% t "Discounts" %}</td>
+                    <td colspan="1" class="text-right">{{ order.discount | price }}</td>
+                  </tr>
+                  {% endif %}
+
+                  {% if order.applied_tax > 0 %}
+                  <tr class="totals">
+                    <td colspan="1" class="text-left">{% t "Tax" %}</td>
+                    <td colspan="1" class="text-right">{{ order.applied_tax | price }}</td>
+                  </tr>
+                  {% endif %}
+
+                  <tr class="totals key">
+                    <td colspan="1" class="text-left">
+                      <strong>{% t "Total" %}</strong>
+                    </td>
+                    <td colspan="1" class="text-right">{{ order.total | price }}</td>
+                  </tr>
+                  {% if order.remaining_for_free_shipping_message != blank %}
+                  <tr class="totals">
+                    <td colspan="2" class="alert alert-success p-2">
+                      <i class="fa fa-truck"></i> {{ order.remaining_for_free_shipping_message }}
+                    </td>
+                  </tr>
+                  {% endif %}
+                </table>
+                <div class="cart-actions text-center">
+                  <input
+                    type="submit"
+                    value="{% t 'Review order' %}"
+                    class="btn btn-block primary"
+                    id="submit_review_order_2"
+                  >
+                  <a href="{{ store.url }}/cart" class="continue" title="{% t 'Edit order' %}">{% t "Edit order" %}</a> |
+                  <a href="{{ store.url }}" class="continue" title="{% t 'Continue Shopping' %}">
+                    {%- t "Continue Shopping" -%}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  {% if order.shipping_required %}
+  // Estimate shipping values on the checkout page
+ function cleanEstimates() {
+    // remove all prices and errors
+    $('#shipping_options li').each(function () {
+      $(this).children().last().detach();
+    });
+
+    // add empty messages - placeholders
+    $('#shipping_options li').each(function () {
+      $(this).append('<span></span>')
+    });
+  }
+
+  function shippingEstimates() {
+    cleanEstimates();
+    if ($('#order_shipping_address_country').val() != "" && $('#order_shipping_address_region').val() != "") {
+      $.ajax({
+        method: "POST",
+        url: "/checkout/shipping_estimate",
+        data: {
+          estimate: {
+            country: $('#order_shipping_address_country').val(),
+            region: $('#order_shipping_address_region').val(),
+            municipality: $('#order_shipping_address_municipality').val(),
+            postal: $('#order_shipping_address_postal').val(),
+            city: $('#order_shipping_address_city').val(),
+            address: $('#order_shipping_address_address').val(),
+          }
+        }
+      }).done(function (data) {
+        for (var i = 0; i < data.length; i++) {
+          let shipping_method = $('#shipping_options #order_shipping_method_' + data[i].table.id);
+
+          // remove any previous messages & placeholders
+          shipping_method.parent().children().last().detach();
+
+          if (data[i].table.error) {
+            // disable options with errors
+            shipping_method.attr('disabled', 'disabled');
+            shipping_method.prop('checked', false);
+
+            // add error messages
+            shipping_method.parent().append("<p class='shipping_information'><i>" + data[i].table.error_message + "</i></p>")
+          } else {
+            // enable options
+            shipping_method.attr('disabled', false);
+            if ($("#shipping_options").find("input[type='radio']:checked").not("[disabled]").length == 0) {
+              shipping_method.prop('checked', true);
+            }
+
+            let finalPrice = data[i].table.price;
+            let priceMessage = data[i].table.shipping_method_type == "cash_on_delivery" ? data[i].table.message : finalPrice;
+
+            // add formatted shipping prices
+            shipping_method.parent().append("<p class='shipping_information'>" + priceMessage + "</p>")
+          }
+        }
+        // Disable Review Order Button if Invalid Shipping Method
+        function CheckShippingMethods() {
+          if ($("#shipping_options").find("input[type='radio']:checked").not("[disabled]").length > 0) {
+            $("#submit_review_order_2").prop("disabled", false);
+          } else {
+            $("#submit_review_order_2").prop("disabled", true);
+          }
+        }
+        $(document).ready(CheckShippingMethods);
+        $("#shipping_options input[type='radio']").on('change', CheckShippingMethods);
+      });
+    } else {
+      // no Country or Region filled, clear shipping estimate info
+      cleanEstimates();
+    }
+  }
+
+  /* LISTENERS */
+  var debounceTimer = null; // so it does only a single request instead of lots of them.
+
+  $('#order_shipping_address_country, #order_shipping_address_region, #order_shipping_address_municipality, #order_shipping_address_city, #order_shipping_address_postal, #order_shipping_address_address').change(function () {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(function () {
+      shippingEstimates();
+    }, 300);
+  });
+
+  // END OF LISTENERS
+
+  $(document).ready(function () {
+    // add empty messages - placeholders
+    $('#shipping_options li').each(function () {
+      $(this).append('<span></span>')
+    });
+    shippingEstimates();
+  }) {% else %}
+  $(document).ready(function () {
+    $('#payments').removeClass("col-md-6").addClass("col-12");
+  })
+  {% endif %}
+</script>
+
+<script>
+  // Fixed sidebar
+  $(document).ready(function () {
+    var top = $('.cart-summary__inside .cart-actions').offset().top;
+    $(window).scroll(function (event) {
+      var y = $(this).scrollTop();
+      if (y >= top)
+        $('.cart-summary__inside .cart-actions').addClass('fixed');
+      else
+        $('.cart-summary__inside .cart-actions').removeClass('fixed');
+      $('.cart-summary__inside .cart-actions').width($('.cart-summary__inside .cart-actions').parent().width());
+    });
+  });
+
+  document.getElementById("submit_review_order_2").addEventListener("click", function () {
+    document.getElementById("submit_review_order").click();
+  });
+</script>

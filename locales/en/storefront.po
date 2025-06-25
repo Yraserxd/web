@@ -1,0 +1,257 @@
+msgid "¡Obtén tus productos despachados completamente GRATIS al comprar sobre $50!"
+msgstr "Get your products delivered completely FREE when purchasing over $50!"
+
+msgid "¿Tienes 21 años o más?"
+msgstr "Are you 21 or older?"
+
+msgid "¿Tienes preguntas?"
+msgstr "Have Questions?"
+
+msgid "Abierto 24 horas"
+msgstr "Open 24 Hours"
+
+msgid "Agotado"
+msgstr "Out of stock"
+
+msgid "Agrega tus banners"
+msgstr "Add your banners"
+
+msgid "Agrega tus propios enlaces rápidos"
+msgstr "Add your own quick links"
+
+msgid "Al registrarte en nuestra tienda, podrás disfrutar de un proceso de pago más rápido, así como de la comodidad de incorporar varias direcciones de envío, hacer un seguimiento de tus pedidos y mucho más."
+msgstr "By registering at our shop, you can enjoy a faster checkout process, as well as the convenience of adding multiple shipping addresses, tracking your orders, and more."
+
+msgid "Al registrarte, podrás agilizar tu proceso de compra. Edita tus datos, añade varias direcciones, revisa y realiza un seguimiento de tus pedidos, y mucho más."
+msgstr "By registering you can make your process shopping faster. Edit your details, add multiple addresses, review and track your orders, and more."
+
+msgid "Aquí puede agregar su información de contacto. Agréguelo en su Panel de administración > Temas > Opciones de Tema > Información de la Tienda > Información de Contacto."
+msgstr "Here you can add your Contact information. Add it at your Admin Panel > Themes > Theme Option > Store Info > Contact Information."
+
+msgid "Aquí puedes agregar el testimonio que cada cliente entregó sobre tu tienda para aumentar el reconocimiento de tu marca."
+msgstr "Here you can add the testimony that each customer has given about your store to increase your brand awareness."
+
+msgid "Aquí puedes encontrar todos los canales disponibles mediante los cuales nos puedes contactar."
+msgstr "Here you can find all the available channels in which you can reach at us."
+
+msgid "Aquí se muestra el texto, descripción o contenido para cada ítem de acordeón que agregues."
+msgstr "Here goes the text, description or content for each one of the accordion items that you add."
+
+msgid "Archivos"
+msgstr "Attachments"
+
+msgid "Calidad de productos garantizada"
+msgstr "Guaranteed quality products"
+
+msgid "Categorías"
+msgstr "Categories"
+
+msgid "Comparte este artículo"
+msgstr "Share this article"
+
+msgid "Compartir"
+msgstr "Share"
+
+msgid "Compartir este producto"
+msgstr "Share this product"
+
+msgid "Comprados juntos frecuentemente"
+msgstr "Frequently Bought Together"
+
+msgid "Contáctanos"
+msgstr "Contact us"
+
+msgid "Contamos con un equipo especializado que te atenderá ante cualquier duda o ayuda que necesites."
+msgstr "We have a specialized team that will assist you with any doubt or help you might need."
+
+msgid "Cupcakes es entretenido y agradable a la vista. ¡Evocando una sensación de alegría a los clientes de la tienda!"
+msgstr "Cupcakes is entertaining and pleasing on the eye template. Evoking a sense of joy to the store's customers!"
+
+msgid "Debes ser mayor de edad para ver nuestro sitio web. Debido a requisitos legales debes verificar tu edad."
+msgstr "You must be of legal age to view our website. Due to legal requirements you must verify your age."
+
+msgid "Déjanos un mensaje"
+msgstr "Leave us a message"
+
+msgid "Descripción"
+msgstr "Description"
+
+msgid "Detalles"
+msgstr "Details"
+
+msgid "Detalles del producto"
+msgstr "Product details"
+
+msgid "Encuentra tu tienda preferida"
+msgstr "Find your preferred store"
+
+msgid "Envíanos un mensaje de WhatsApp"
+msgstr "Send us a WhatsApp message"
+
+msgid "Envíanos un mensaje y te responderemos lo antes posible."
+msgstr "Send us a message and we will reply as soon as possible."
+
+msgid "Envío gratis"
+msgstr "Free Shipping"
+
+msgid "Envío gratuito para compras superiores a $50"
+msgstr "Free shipping for orders above $50"
+
+msgid "Este es el texto del slide"
+msgstr "This is the slide text"
+
+msgid "Este producto está agotado. Puedes enviarnos una solicitud al respecto."
+msgstr "This product has run out of stock. You may send us an inquiry about it."
+
+msgid "Este producto no está disponible. Puedes consultarnos al respecto."
+msgstr "This product is currently unavailable. You may send us an inquiry about it."
+
+msgid "Hola, quiero mas información"
+msgstr "Hello, I want more information"
+
+msgid "Información"
+msgstr "Information"
+
+msgid "Información de contacto"
+msgstr "Contact information"
+
+msgid "Ir a"
+msgstr "Go to"
+
+msgid "Leer más"
+msgstr "Read more"
+
+msgid "Lista de favoritos"
+msgstr "Wishlist"
+
+msgid "Llena todos los campos y envía tu mensaje. Te responderemos a la brevedad posible."
+msgstr "Fill all the fields and send your message. We will reply as soon as possible."
+
+msgid "Los costos de envío serán calculados al momento de pagar."
+msgstr "Shipping costs will be calculated at Checkout."
+
+msgid "Mándanos un mensaje"
+msgstr "Send us a message"
+
+msgid "Me gustaría saber más sobre este producto."
+msgstr "I would like to know more about this product"
+
+msgid "Mostrar stock de ubicaciones"
+msgstr "Show stock from locations"
+
+msgid "No disponible"
+msgstr "Not available"
+
+msgid "No es posible comprar productos en este momento. Si necesitas más información por favor contáctanos a través de nuestros distintos canales."
+msgstr "It's not possible to purchase products at the moment. If you need more information please contact us through our different channels."
+
+msgid "No está disponible por el momento"
+msgstr "Not available at the moment"
+
+msgid "Nombre del autor"
+msgstr "Author name"
+
+msgid "Nuestra tienda está abierta las 24 horas y los 7 días de la semana"
+msgstr "Our store is open 24 hours and 7 days a week"
+
+msgid "Nuestras marcas"
+msgstr "Our brands"
+
+msgid "Nuestras Marcas"
+msgstr "Our Brands"
+
+msgid "Nuevo"
+msgstr "New"
+
+msgid "Otros clientes compraron estos productos en conjunto"
+msgstr "Other clients bought these products together"
+
+msgid "Paga mediante pasarelas certificadas y encriptadas con tarjeta de crédito y transferencia bancaria."
+msgstr "Pay through certified and encrypted gateways with credit card and bank transfer."
+
+msgid "Pagos Seguros"
+msgstr "Secure Payments"
+
+msgid "Pagos seguros y protegidos"
+msgstr "Safe and secure payments"
+
+msgid "Pedidos"
+msgstr "Orders"
+
+msgid "Productos Destacados"
+msgstr "Featured Products"
+
+msgid "Puedes agregar un texto o una descripción para proporcionar más contexto sobre lo que trata esta sección."
+msgstr "You can add a text or description to provide more context on what this section is about."
+
+msgid "Recién Llegados"
+msgstr "New Arrivals"
+
+msgid "Reseñas de Productos"
+msgstr "Product Reviews"
+
+msgid "Si tienes preguntas sobre él o necesitas ayuda, envíanos un correo:"
+msgstr "If you have any question about it or need help, send us an email:"
+
+msgid "Soy mayor de 21 años"
+msgstr "I am over 21"
+
+msgid "También podría interesarte uno de estos"
+msgstr "You might also be interested in one of these"
+
+msgid "También te puede interesar"
+msgstr "You might also be interested in"
+
+msgid "Tengo menos de 21 años"
+msgstr "I am under 21"
+
+msgid "Testimonios"
+msgstr "Testimonials"
+
+msgid "Título de ejemplo de ítem de acordeón"
+msgstr "Example accordion item title"
+
+msgid "Título de la Sección"
+msgstr "Section title"
+
+msgid "Título de la slide"
+msgstr "Slide Title"
+
+msgid "Título del Slide"
+msgstr "Slide title"
+
+msgid "Título del Slide 1"
+msgstr "Slide 1 title"
+
+msgid "Título del Slide 2"
+msgstr "Slide 2 title"
+
+msgid "Título del Slide 3"
+msgstr "Slide 3 title"
+
+msgid "Todos nuestros productos han sido testeados y certificados con altos estándares de calidad."
+msgstr "All of our products have been tested and certified with high quality standards."
+
+msgid "Tus productos"
+msgstr "Your products"
+
+msgid "Últimos Artículos"
+msgstr "Latest Articles"
+
+msgid "Ver más"
+msgstr "See more"
+
+msgid "Ver más productos"
+msgstr "See more products"
+
+msgid "Ver más testimonios"
+msgstr "See more testimonies"
+
+msgid "Visítanos"
+msgstr "Visit us"
+
+msgid "Vista rápida"
+msgstr "Quick view"
+
+msgid "Volver arriba"
+msgstr "Back to top"

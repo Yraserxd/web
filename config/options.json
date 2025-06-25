@@ -1,0 +1,759 @@
+{
+  "groups": {
+    "general": {
+      "name": "General",
+      "icon": "cog",
+      "options": {
+        "disable_shopping_cart": {
+          "name": "Disable shopping features",
+          "type": "checkbox",
+          "help": "If enabled, all Shopping features will hide, like the 'Add to Cart' buttons, the 'Header Cart icon', etc.",
+          "default": false
+        },
+        "disable_prices": {
+          "name": "Disable product prices",
+          "type": "checkbox",
+          "help": "If enabled, all product prices will be hidden. Customers won't be able to see them.",
+          "default": false
+        },
+        "success_page_product_table": {
+          "name": "Product table at success page",
+          "type": "checkbox",
+          "default": false
+        },
+        "featured_on_search": {
+          "name": "Show products for empty searches",
+          "type": "checkbox",
+          "default": true
+        },
+        "cross_selling_limit": {
+          "name": "Suggested products in the cart page",
+          "type": "slider",
+          "help": "How many cross-selling products will be displayed on the cart page.",
+          "default": 9,
+          "min": 3,
+          "max": 21,
+          "step": 3,
+          "unit": ""
+        },
+        "pp_reviews": {
+          "name": "Display product reviews",
+          "type": "checkbox",
+          "default": true
+        }
+      }
+    },
+    "store-info": {
+      "name": "Store info",
+      "icon": "store",
+      "options": {
+        "display_address": {
+          "name": "Display main address",
+          "type": "checkbox",
+          "default": false
+        },
+        "display_contact_email": {
+          "name": "Display main contact email",
+          "type": "checkbox",
+          "default": false
+        },
+        "working_hours": {
+          "name": "Main store working hours",
+          "type": "input",
+          "default": ""
+        },
+        "display_phone": {
+          "name": "Display main phone",
+          "type": "checkbox",
+          "default": true
+        },
+        "store_2_name": {
+          "name": "Store 2 name",
+          "type": "input",
+          "default": ""
+        },
+        "store_2_address": {
+          "name": "Store 2 address",
+          "type": "input",
+          "default": ""
+        },
+        "store_2_phone": {
+          "name": "Store 2 phone",
+          "type": "input",
+          "default": ""
+        },
+        "store_2_hours": {
+          "name": "Store 2 working hours",
+          "type": "input",
+          "default": ""
+        },
+        "store_3_name": {
+          "name": "Store 3 name",
+          "type": "input",
+          "default": ""
+        },
+        "store_3_address": {
+          "name": "Store 3 address",
+          "type": "input",
+          "default": ""
+        },
+        "store_3_phone": {
+          "name": "Store 3 phone",
+          "type": "input",
+          "default": ""
+        },
+        "store_3_hours": {
+          "name": "Store 3 working hours",
+          "type": "input",
+          "default": ""
+        },
+        "store_4_name": {
+          "name": "Store 4 name",
+          "type": "input",
+          "default": ""
+        },
+        "store_4_address": {
+          "name": "Store 4 address",
+          "type": "input",
+          "default": ""
+        },
+        "store_4_phone": {
+          "name": "Store 4 phone",
+          "type": "input",
+          "default": ""
+        },
+        "store_4_hours": {
+          "name": "Store 4 working hours",
+          "type": "input",
+          "default": ""
+        }
+      }
+    },
+    "template-heading": {
+      "name": "Template heading",
+      "icon": "h1",
+      "options": {
+        "template_heading_spacing": {
+          "name": "Spacing",
+          "type": "slider",
+          "help": "Allows to define the amount of separating space that the section will have.",
+          "default": 32,
+          "min": 0,
+          "max": 80,
+          "step": 8,
+          "unit": "px"
+        },
+        "template_heading_breadcrumbs": {
+          "name": "Display breadcrumbs",
+          "type": "checkbox",
+          "default": true
+        },
+        "template_heading_title_alignment": {
+          "name": "Alignment",
+          "type": "select",
+          "default": "text-left",
+          "options": [
+            {
+              "label": "Left",
+              "value": "text-left"
+            },
+            {
+              "label": "Center",
+              "value": "text-center"
+            },
+            {
+              "label": "Right",
+              "value": "text-right"
+            }
+          ]
+        },
+        "page_date": {
+          "name": "Display page creation date",
+          "type": "checkbox",
+          "default": true
+        },
+        "page_date_format": {
+          "name": "Format of the creation date",
+          "type": "select",
+          "default": "%d-%m-%Y",
+          "options": [
+            {
+              "label": "dd-mm-yyyy",
+              "value": "%d-%m-%Y"
+            },
+            {
+              "label": "mm-dd-yyyy",
+              "value": "%m-%d-%Y"
+            },
+            {
+              "label": "yyyy-mm-dd",
+              "value": "%Y-%m-%d"
+            }
+          ]
+        }
+      }
+    },
+    "product-block": {
+      "name": "Product block",
+      "icon": "box",
+      "options": {
+        "pb_background_color": {
+          "name": "Product block background color",
+          "type": "color",
+          "default": "#FFFFFF"
+        },
+        "pb_alignment": {
+          "name": "Caption alignment",
+          "type": "select",
+          "default": "text-start",
+          "options": [
+            {
+              "label": "Left",
+              "value": "text-start"
+            },
+            {
+              "label": "Center",
+              "value": "text-center"
+            },
+            {
+              "label": "Right",
+              "value": "text-end"
+            }
+          ]
+        },
+        "pb_padding": {
+          "name": "Product block padding",
+          "type": "slider",
+          "default": 3,
+          "min": 0,
+          "max": 12,
+          "step": 3,
+          "unit": "px"
+        },
+        "pb_font_size_scale": {
+          "name": "Font size scale",
+          "type": "slider",
+          "default": 100,
+          "min": 80,
+          "max": 120,
+          "step": 1,
+          "unit": "%"
+        },
+        "pb_border_radius": {
+          "name": "Corner radius",
+          "type": "slider",
+          "default": 0,
+          "min": 0,
+          "max": 25,
+          "step": 1,
+          "unit": "px"
+        },
+        "pb_border_width": {
+          "name": "Border width",
+          "type": "slider",
+          "default": 0,
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "unit": "px"
+        },
+        "pb_border_color": {
+          "name": "Product block border color",
+          "type": "color",
+          "default": "#DDDDDD"
+        },
+        "pb_image_display": {
+          "name": "Product image display",
+          "type": "select",
+          "help": "How the product image will be displayed. 1) Resize: adjusts the image dimensions based on the field 'Product Image Dimension'; 2) Thumbnail: fills the image available space with the majority of the product's original image content.",
+          "default": "resize",
+          "options": [
+            {
+              "label": "Resize",
+              "value": "resize"
+            },
+            {
+              "label": "Thumbnail",
+              "value": "thumb"
+            }
+          ]
+        },
+        "pb_show_brand": {
+          "name": "Show product brand",
+          "type": "checkbox",
+          "default": false
+        },
+        "pb_show_sku": {
+          "name": "Show product SKU",
+          "type": "checkbox",
+          "default": false
+        },
+        "pb_show_buttons": {
+          "name": "Show add to cart button",
+          "type": "checkbox",
+          "help": "Display a direct 'Add to Cart' button. If the product have product options (e.g. size, color), a 'View options' button will be displayed instead.",
+          "default": false
+        },
+        "pb_show_color_options": {
+          "name": "Show color options",
+          "type": "checkbox",
+          "help": "If enabled, when products have a color option, customers can preview the color and the image associated with it.",
+          "default": false
+        },
+        "pb_show_ratings": {
+          "name": "Show product ratings",
+          "type": "checkbox",
+          "default": false
+        },
+        "pb_show_from_prices": {
+          "name": "Show 'from' if price can vary",
+          "type": "checkbox",
+          "default": true
+        },
+        "pb_hover_image_scale": {
+          "name": "Scale image on hover",
+          "type": "checkbox",
+          "default": true
+        },
+        "pb_badge_alignment": {
+          "name": "Badge alignment",
+          "type": "select",
+          "help": "Position where badges will be stacked and displayed.",
+          "default": "top-left",
+          "options": [
+            {
+              "label": "Top Left",
+              "value": "top-left"
+            },
+            {
+              "label": "Top Right",
+              "value": "top-right"
+            }
+          ]
+        },
+        "pb_sale_tag_text": {
+          "name": "Promotions text",
+          "type": "input",
+          "default": ""
+        },
+        "pb_new_tag_age": {
+          "name": "New product age",
+          "type": "slider",
+          "help": "Number of days since the product was created to display the new product tag.",
+          "default": 10,
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "unit": ""
+        }
+      }
+    },
+    "colors": {
+      "name": "Colors",
+      "icon": "tint",
+      "options": {
+        "general_text_color": {
+          "name": "General text color",
+          "type": "color",
+          "default": "#333333"
+        },
+        "general_links_color": {
+          "name": "General links color",
+          "type": "color",
+          "default": "#333333"
+        },
+        "primary_color": {
+          "name": "Primary color",
+          "type": "color",
+          "default": "#3145CB"
+        },
+        "secondary_color": {
+          "name": "Secondary color",
+          "type": "color",
+          "default": "#2849CF"
+        },
+        "store_background": {
+          "name": "Store background",
+          "type": "color",
+          "default": "#FFFFFF"
+        },
+        "discount_color": {
+          "name": "Promotions tag color",
+          "type": "color",
+          "default": "#F03040"
+        },
+        "unavailable_color": {
+          "name": "Unavailable tag color",
+          "type": "color",
+          "default": "#475569"
+        },
+        "new_color": {
+          "name": "New product tag color",
+          "type": "color",
+          "default": "#30C50D"
+        }
+      }
+    },
+    "fonts": {
+      "name": "Fonts",
+      "icon": "font",
+      "options": {
+        "general_font": {
+          "name": "General",
+          "type": "google_font",
+          "default": "Inter",
+          "options": [
+            {
+              "label": "Gentium Basic",
+              "value": "Gentium Basic"
+            },
+            {
+              "label": "Lato",
+              "value": "Lato"
+            },
+            {
+              "label": "Noto Sans",
+              "value": "Noto Sans"
+            },
+            {
+              "label": "Open Sans",
+              "value": "Open Sans"
+            },
+            {
+              "label": "Playfair Display",
+              "value": "Playfair Display"
+            },
+            {
+              "label": "Quicksand",
+              "value": "Quicksand"
+            },
+            {
+              "label": "Inter",
+              "value": "Inter"
+            },
+            {
+              "label": "Prompt",
+              "value": "Prompt"
+            },
+            {
+              "label": "Raleway",
+              "value": "Raleway"
+            },
+            {
+              "label": "Roboto",
+              "value": "Roboto"
+            },
+            {
+              "label": "Roboto Slab",
+              "value": "Roboto Slab"
+            }
+          ]
+        },
+        "titles_font": {
+          "name": "Titles",
+          "type": "google_font",
+          "default": "Prompt",
+          "options": [
+            {
+              "label": "Abril Fatface",
+              "value": "Abril Fatface"
+            },
+            {
+              "label": "Architects Daughter",
+              "value": "Architects Daughter"
+            },
+            {
+              "label": "Fredericka the Great",
+              "value": "Fredericka the Great"
+            },
+            {
+              "label": "Glegoo",
+              "value": "Glegoo"
+            },
+            {
+              "label": "Handlee",
+              "value": "Handlee"
+            },
+            {
+              "label": "Josefin Slab",
+              "value": "Josefin Slab"
+            },
+            {
+              "label": "Julius Sans One",
+              "value": "Julius Sans One"
+            },
+            {
+              "label": "Lato",
+              "value": "Lato"
+            },
+            {
+              "label": "Libre Baskerville",
+              "value": "Libre Baskerville"
+            },
+            {
+              "label": "Montserrat",
+              "value": "Montserrat"
+            },
+            {
+              "label": "Open Sans ",
+              "value": "Open Sans"
+            },
+            {
+              "label": "Inter",
+              "value": "Inter"
+            },
+            {
+              "label": "Poppins",
+              "value": "Poppis"
+            },
+            {
+              "label": "Prompt",
+              "value": "Prompt"
+            },
+            {
+              "label": "Philosopher",
+              "value": "Philosopher"
+            },
+            {
+              "label": "Poiret One",
+              "value": "Poiret One"
+            },
+            {
+              "label": "Roboto",
+              "value": "Roboto"
+            },
+            {
+              "label": "Special Elite",
+              "value": "Special Elite"
+            }
+          ]
+        },
+        "store_name_font": {
+          "name": "Store name",
+          "type": "google_font",
+          "default": "Prompt",
+          "options": [
+            {
+              "label": "Abril Fatface",
+              "value": "Abril Fatface"
+            },
+            {
+              "label": "Architects Daughter",
+              "value": "Architects Daughter"
+            },
+            {
+              "label": "Fredericka the Great",
+              "value": "Fredericka the Great"
+            },
+            {
+              "label": "Libre Baskerville",
+              "value": "Libre Baskerville"
+            },
+            {
+              "label": "Open Sans",
+              "value": "Open Sans"
+            },
+            {
+              "label": "Inter",
+              "value": "Inter"
+            },
+            {
+              "label": "Poppins",
+              "value": "Poppis"
+            },
+            {
+              "label": "Prompt",
+              "value": "Prompt"
+            },
+            {
+              "label": "Playfair Display",
+              "value": "Playfair Display"
+            },
+            {
+              "label": "Poiret One",
+              "value": "Poiret One"
+            },
+            {
+              "label": "Raleway",
+              "value": "Raleway"
+            },
+            {
+              "label": "Roboto",
+              "value": "Roboto"
+            },
+            {
+              "label": "Old Standard TT",
+              "value": "Old Standard TT"
+            },
+            {
+              "label": "Yatra One",
+              "value": "Yatra One"
+            }
+          ]
+        },
+        "general_font_size": {
+          "name": "General font size",
+          "type": "slider",
+          "default": 14,
+          "min": 10,
+          "max": 18,
+          "step": 1,
+          "unit": "px"
+        },
+        "block_title_font_size": {
+          "name": "Block title font size",
+          "type": "slider",
+          "default": 18,
+          "min": 12,
+          "max": 30,
+          "step": 1,
+          "unit": "px"
+        },
+        "store_name_font_size": {
+          "name": "Store name font size",
+          "type": "slider",
+          "default": 28,
+          "min": 14,
+          "max": 40,
+          "step": 1,
+          "unit": "px"
+        },
+        "menu_font_size": {
+          "name": "Menu font size",
+          "type": "slider",
+          "default": 14,
+          "min": 10,
+          "max": 20,
+          "step": 1,
+          "unit": "px"
+        }
+      }
+    },
+    "store-whatsapp": {
+      "name": "Store WhatsApp",
+      "icon": "comment",
+      "options": {
+        "store_whatsapp": {
+          "name": "Enable WhatsApp button",
+          "type": "checkbox",
+          "help": "Enables a button for WhatsApp, it follows the visitors as they scroll through the website. We recommend not enabling this feature if you are gonna use a plugin or integration that will also display a button.",
+          "default": true
+        },
+        "store_whatsapp_position": {
+          "name": "Button position",
+          "type": "select",
+          "help": "Select the position of the WhatsApp button, which will always be in one of the corners of the store.",
+          "default": "bottom-right",
+          "options": [
+            {
+              "label": "Top Right",
+              "value": "top-right"
+            },
+            {
+              "label": "Top Left",
+              "value": "top-left"
+            },
+            {
+              "label": "Bottom Right",
+              "value": "bottom-right"
+            },
+            {
+              "label": "Bottom Left",
+              "value": "bottom-left"
+            }
+          ]
+        },
+        "store_whatsapp_message": {
+          "name": "Call to action message",
+          "type": "text",
+          "help": "Display a small message to invite your customers to write to you.",
+          "default": "Send us a WhatsApp message"
+        },
+        "store_whatsapp_message_background": {
+          "name": "Call to action message - Background",
+          "type": "color",
+          "default": "#FFFFFF"
+        },
+        "store_whatsapp_message_hide": {
+          "name": "Hide message after close it",
+          "type": "slider",
+          "help": "Number of days to re-display the message box after customers close it.",
+          "default": 0,
+          "min": 0,
+          "max": 7,
+          "step": 1,
+          "unit": ""
+        },
+        "store_whatsapp_color_background": {
+          "name": "Button - Background color",
+          "type": "color",
+          "default": "#25D366"
+        },
+        "store_whatsapp_color_background_hover": {
+          "name": "Button - Background color (hover)",
+          "type": "color",
+          "default": "#128C7E"
+        },
+        "store_whatsapp_color_text": {
+          "name": "Button - Icon color",
+          "type": "color",
+          "default": "#FFFFFF"
+        }
+      }
+    },
+    "add-to-cart-notification": {
+      "name": "Add to cart notification",
+      "icon": "cart-arrow-down",
+      "options": {
+        "display_cart_notification": {
+          "name": "Add to cart notification",
+          "type": "checkbox",
+          "help": "Display a message on the page notifying customers that the product was added to the cart. Overrides redirection options in your checkout preferences.",
+          "default": true
+        },
+        "cart_notification_color": {
+          "name": "Notification color",
+          "type": "color",
+          "default": "#079C25"
+        },
+        "cart_notification_position": {
+          "name": "Notification position",
+          "type": "select",
+          "help": "Allows selecting if the notification will be displayed at the 'top' or 'bottom' of the browser, on the right side.",
+          "default": "toast-top-right",
+          "options": [
+            {
+              "label": "Top Right",
+              "value": "toast-top-right"
+            },
+            {
+              "label": "Bottom Right",
+              "value": "toast-bottom-right"
+            }
+          ]
+        }
+      }
+    },
+    "other-options": {
+      "name": "Other options",
+      "icon": "cogs",
+      "options": {
+        "new_customer_message": {
+          "name": "New customer message",
+          "type": "text",
+          "default": "By registering at our shop, you can enjoy a faster checkout process, as well as the convenience of adding multiple shipping addresses, tracking your orders, and more."
+        },
+        "head_code": {
+          "name": "Embed code on the end of <head>",
+          "type": "text",
+          "default": ""
+        },
+        "body_code": {
+          "name": "Embed code on the end of <body>",
+          "type": "text",
+          "default": ""
+        }
+      }
+    }
+  }
+}

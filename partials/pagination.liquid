@@ -1,0 +1,32 @@
+<div class="col-12">
+  {% if paged.total_pages > 1 %}
+    <!-- Pagination -->
+    <div class="category-pager">
+      {% if paged.current_page == 1 %}
+        <a class="square-button disabled"><i class="fas fa-angle-left"></i></a>
+        <div class="count">
+          <span>{{ paged.current_page }}</span>
+          <span>{% t "of" %}</span>
+          <span>{{ paged.total_pages }}</span>
+        </div>
+        <a href="{{ paged.next_url }}" class="square-button"><i class="fas fa-angle-right"></i></a>
+      {% elsif paged.current_page == paged.total_pages %}
+        <a href="{{ paged.previous_url }}" class="square-button"><i class="fas fa-angle-left"></i></a>
+        <div class="count">
+          <span>{{ paged.current_page }}</span>
+          <span>{% t "of" %}</span>
+          <span>{{ paged.total_pages }}</span>
+        </div>
+        <a class="square-button disabled"><i class="fas fa-angle-right"></i></a>
+      {% else %}
+        <a href="{{ paged.previous_url }}" class="square-button"><i class="fas fa-angle-left"></i></a>
+        <div class="count">
+          <span>{{ paged.current_page }}</span>
+          <span>{% t "of" %}</span>
+          <span>{{ paged.total_pages }}</span>
+        </div>
+        <a href="{{ paged.next_url }}" class="square-button"><i class="fas fa-angle-right"></i></a>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

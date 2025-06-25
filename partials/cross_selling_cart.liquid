@@ -1,0 +1,89 @@
+{% unless cross_selling.products_count == 0 %}
+<div class="cross-selling col-12 mb-3">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="block-header">{% t "You might also be interested in" %}</h2>
+    </div>
+  </div>
+  <swiper-slider
+    class="col-12 swiper position-relative pb-5"
+    sw-layout="cross-selling"
+    sw-root=".store-section__content"
+  >
+    <div class="swiper-wrapper">
+
+      {% for cs_prod in cross_selling.products limit: options.cross_selling_limit %}
+    <div class="swiper-slide">
+      <div class="product-block product-block-cross-selling trsn h-100">
+        {% unless cs_prod.discount == 0 or options.disable_prices %}
+        <span class="product-badge product-badge-sale">-{{ cs_prod.discount | divided_by: cs_prod.price | times: 100 | round: 0 }}&percnt;</span>
+        {% endunless %}
+        <a href="{{ cs_prod.url }}" {% if cs_prod.status != 'available' or cs_prod.stock == 0 and cs_prod.stock_unlimited == false %}class="not-available"{% endif %}>
+
+          {% if options.pb_show_buttons != true or options.disable_shopping_cart %}
+          {% if cs_prod.stock == 0 and cs_prod.stock_unlimited == false %}
+          <span class="badge badge-secondary status-tag">{% t "Sold out" %}</span>
+          {% elsif cs_prod.status == 'not-available' %}
+          <span class="badge badge-secondary status-tag">{% t "Not Available" %}</span>
+          {% endif %}
+          {% endif %}
+
+          {% if cs_prod.variant.image != blank %}
+           <img src="{{ cs_prod.variant.image | resize: '260x260' }}" srcset="{{ cs_prod.variant.image | resize: '260x260' }} 1x,{{ cs_prod.variant.image | resize: '520x520' }} 2x" alt="{{ cs_prod.name | escape }}" class="trsn mb-2" width="260" height="260" loading="lazy">
+          {% elsif cs_prod.images != blank %}
+          <img src="{{ cs_prod.images.first | resize: '260x260' }}" srcset="{{ cs_prod.images.first | resize: '260x260' }} 1x,{{ cs_prod.images.first | resize: '520x520' }} 2x" alt="{{ cs_prod.name | escape }}" class="trsn mb-2" width="260" height="260" loading="lazy">
+          {% else %}
+          <img src="//assets.jumpseller.com/public/placeholder/themes/mega/no-image.jpg" alt="{{ cs_prod.name | escape }}" class="mb-2" width="260" height="260" loading="lazy">
+          {% endif %}
+        </a>
+        <div class="caption">
+          <div class="brand-name trsn">
+            <small class="brand">{{ cs_prod.brand }}</small>
+            <h3><a href="{{ cs_prod.url }}" class="d-block">{{ cs_prod.name | truncate: 50 }}</a></h3>
+            {% if cs_prod.variant != blank %}
+            {% for variant_value in cs_prod.variant.values %}
+            <small class="d-block text-muted">
+              {{ variant_value.option.name }}: {{ variant_value.name }}
+            </small>
+            {% endfor %}
+            {% endif %}
+          </div>
+          {% unless options.disable_prices %}
+            <div class="price">
+              {% if cs_prod.discount > 0 and cs_prod.variant != blank %}
+              <span class="block-price">{{ cs_prod.variant.price | minus: cs_prod.discount | price }}</span>
+              <span class="product-block-discount block-price-discount">{{ cs_prod.variant.price | price }}</span>
+              {% elsif cs_prod.discount > 0 %}
+              <span class="block-price">{{ cs_prod.price | minus: cs_prod.discount | price }}</span>
+              <span class="product-block-discount block-price-discount">{{ cs_prod.price | price }}</span>
+              {% elsif cs_prod.variant != blank %}
+              <span class="block-price">{{ cs_prod.variant.price | price }}</span>
+              {% else %}
+              <span class="block-price d-block">{{ cs_prod.price | price }}</span>
+              {% endif %}
+            </div>
+          {% endunless %}
+        </div>
+        {% unless options.disable_shopping_cart %}
+        <div>
+          {% if cs_prod.status == 'not-available' %}
+            <a class="btn gray btn-block" href="{{ cs_prod.url }}">{% t "Not Available" %}</a>
+          {% else %}
+            <form id="product-form-{{ cs_prod.id }}" action="{% if cs_prod.variant != blank %}{{ cs_prod.variant.add_to_cart_url }}{% else %}{{ cs_prod.add_to_cart_url }}{% endif %}" method="post" enctype="multipart/form-data" name="buy">
+              <div class="adc-form">
+                <button type="submit" class="adc btn primary w-100" value="{% t 'Add to Cart' %}"><i class="fas fa-cart-plus"></i></button>
+              </div>
+            </form>
+          {% endif %}
+        </div>
+        {% endunless %}
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+    <div class="swiper-button-prev trsn"></div>
+    <div class="swiper-button-next trsn"></div>
+    <div class="swiper-pagination"></div>
+  </swiper-slider>
+</div>
+{% endunless %}

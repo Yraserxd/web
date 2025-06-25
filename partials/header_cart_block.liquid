@@ -1,0 +1,52 @@
+<div id="header-cart-wrapper">
+  <div class="header-cart__content">
+    <div class="header-cart_message {% if order.products != empty %}hidden{% endif %}">{% t "Your cart is empty." %}</div>
+    {% for ordered_product in order.products %}
+      <div class="header-cart-product" data-cartid="{{ ordered_product.id }}">
+        <a href="{{ ordered_product.url }}" class="header-cart-product__link" title="{% t 'Go to' %} {{ ordered_product.name }}">
+          <img src="{{ ordered_product.image | thumb: '100x100' | default: '//assets.jumpseller.com/public/placeholder/themes/mega/no-image-cart.png' }}" class="header-cart-product__image" alt="{{ ordered_product.name }}" width="100" height="100" loading="lazy">
+        </a>
+
+        <div class="header-cart-product__info">
+          <div class="header-cart-product__wrapper">
+            <span class="header-cart-product__name">{{ ordered_product.name }}</span>
+            <div class="header-cart-product__options">
+              {% for option in ordered_product.options %}
+                <span class="header-cart-product__option">{{ option.name }}: {{ option.value }}</span>
+              {% endfor %}
+            </div>
+            <div class="header-cart-product__pricing {% if ordered_product.discount > 0 %}header-cart-product__pricing--discounted{% endif %}">
+              <span class="header-cart-product__qty">{{ ordered_product.qty }}</span>
+              <span class="header-cart-product__times"> &times; </span>
+              <span class="header-cart-product__price">{{ ordered_product.price | minus: ordered_product.discount | price }}</span
+              <span class="header-cart-product__price  header-cart-product__price--old">{{ ordered_product.price | price }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="header-cart-summary">
+    <div class="header-cart-summary__total {% if order.subtotal == order.total %}hidden{% endif %}">
+      <span class="header-cart-summary__string header-cart-summary__string--title">Subtotal</span>
+      <span class="header-cart-summary__string header-cart-summary__string--number header-cart-summary__string--subtotal">{{ order.subtotal | price }}</span>
+    </div>
+    <div class="header-cart-summary__total {% if order.discount == 0 %}hidden{% endif %}">
+      <span class="header-cart-summary__string header-cart-summary__string--title">{% t 'Seguro de Envio' %}</span>
+      <span class="header-cart-summary__string header-cart-summary__string--number header-cart-summary__string--discount">{{ order.discount | price }}</span>
+    </div>
+    <div class="header-cart-summary__total {% if order.tax == 0 %}hidden{% endif %}">
+      <span class="header-cart-summary__string header-cart-summary__string--title">{% t 'Seguro de Envio' %}</span>
+      <span class="header-cart-summary__string header-cart-summary__string--number header-cart-summary__string--tax">{{ order.tax | price }}</span>
+    </div>
+    <div class="header-cart-summary__total">
+      <span class="header-cart-summary__string header-cart-summary__string--title">Total</span>
+      <span class="header-cart-summary__string header-cart-summary__string--number header-cart-summary__string--total">{{ order.total | price }}</span>
+    </div>
+    <div class="header-cart-summary__actions">
+      <a id="cart-link" href="{{ cart.url }}" class="btn btn-sm primary mb-2" title="{% t 'See your bag' %}">{% t 'See your bag' %}</a>
+      <a href="{{ order.checkout_url }}" class="btn btn-sm primary" title="{% t 'Checkout' %}">{% t 'Checkout' %} </a>
+    </div>
+  </div>
+</div>

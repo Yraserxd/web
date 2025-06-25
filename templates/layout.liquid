@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ languages.first.locale }}" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ meta_description }}">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="robots" content="follow, all">
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://images.jumpseller.com">
+    <link rel="preconnect" href="https://cdnx.jumpseller.com">
+    <link rel="preconnect" href="https://assets.jumpseller.com">
+    <link rel="preconnect" href="https://files.jumpseller.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    {% render 'og_meta_tags' %}
+
+    {% if languages.size > 1 %}
+    {% for language in languages %}
+    <link rel="alternate" hreflang="{{ language.locale }}" href="{{ language.url }}">
+    {% endfor %}
+    {% endif %}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+    {{ 'jquery/3.3.1/jquery.min.js' | public_asset_tag }}
+    {% render 'schema' %}
+    {{ favicon }}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{ 'fontawesome/6.4.2/all.min.css' | public_asset_tag }}
+    <link rel="stylesheet" href="//assets.jumpseller.com/public/linearicons/linear-icon.css">
+    {% unless template == 'success' %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    {% endunless %}
+    <link rel="stylesheet" href="{{ 'color_pickers.css' | asset }}">
+    <link rel="stylesheet" href="{{ 'app.css' | asset }}">
+
+    <!-- Autocomplete search -->
+    {% if store.autocomplete_access %}
+    {{ 'autocomplete/1.16.0/index.production.min.js' | public_asset_tag }}
+    <script src="//assets.jumpseller.com/public/autocomplete/jumpseller-autocomplete@1.0.0.min.js" data-suggest-categories="false" defer></script>
+    {% endif %}
+
+    {% render 'product_block_scripts' %}
+
+    {{ options.head_code }}
+  </head>
+  <body class="{% if template == 'cart' or template == 'checkout' or template == 'revieworder' or template == 'success' %}cart{% endif %}">
+
+    {% unless options.disable_shopping_cart %}
+    {% if template == 'cart' or template == 'checkout' or template == 'revieworder' or template == 'success' %}
+    {% render 'header_cart' %}
+    {% endif %}
+    {% endunless %}
+    <!-- Page Content -->
+    {{ content }}
+
+    <!-- /.container -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha256-WHwIASWxNdKakx7TceUP/BqWQYMcEIfeLNdFMoFfRWA=" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha256-63ld7aiYP6UxBifJWEzz87ldJyVnETUABZAYs5Qcsmc=" crossorigin="anonymous"></script>
+    {% if template == 'product' %}
+    <script src="//cdn.jsdelivr.net/bootstrap.filestyle/1.1.0/js/bootstrap-filestyle.min.js" integrity="sha256-iKHE0eu0gUetTeiNYPYcZB+Ho39/1MYph+rhPazLhGQ=" crossorigin="anonymous"></script>
+    {% endif %}
+
+    <script src="{{ 'main.js' | asset }}"></script>
+    <script src="{{ 'common.js' | asset }}"></script>
+    {% render 'custom_js' %}
+
+    {% render 'currency_options' %}
+
+    {% if options.display_cart_notification and options.disable_shopping_cart == false %}
+    {% render 'addtocart' %}
+    {% endif %}
+
+    {% render 'store_whatsapp' %}
+
+    {{ options.body_code }}
+  </body>
+</html>

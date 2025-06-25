@@ -1,0 +1,26 @@
+{{ index_for_top_components }}
+
+{% render 'template_heading' %}
+
+<div class="registration login">
+  <div class="container">
+    <!-- Page Heading -->
+    <div class="row">
+      <div class="col-12">
+        <h1 class="page-title text-center">{% t "Client Address" %}</h1>
+      </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-8 offset-md-2 col-12">
+        <div class="card">
+          <div class="card-body">
+            {{ customer_address_form }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ index_for_bottom_components }}

@@ -1,0 +1,34 @@
+<script>
+  $(document).ready(function(){
+    // Trigger Category menu
+    $('.category-menu-trigger').click(function(){
+      $('#category-menu').toggle();
+      $('.category-menu-trigger .nav-icon').toggleClass('open');
+    });
+    $('.header nav#category-menu li.has-children').mouseover(function(){
+      $(this).addClass('active');
+    });
+
+    // Trigger Navigation menu
+    $('.mobile-menu-trigger').click(function(){
+      $('#mobile-menu').toggle();
+      $('.mobile-menu-trigger .nav-icon').toggleClass('open');
+    });
+
+    //Format text
+    $('.container-section table').addClass('table table-bordered');
+
+    // Responsive iframes
+    $('figure iframe')
+      .parent('figure')
+      .addClass('video-wrapper');
+
+    // Lazy load features home
+    $('#home-features div:nth-child(1)').delay(200).fadeTo( "slow", 1 );
+    $('#home-features div:nth-child(2)').delay(300).fadeTo( "slow", 1 );
+    $('#home-features div:nth-child(3)').delay(400).fadeTo( "slow", 1 );
+    $('#home-features div:nth-child(4)').delay(500).fadeTo( "slow", 1 );
+    $('#home-features div:nth-child(4)').delay(500).fadeTo( "slow", 1 );
+
+  });
+</script>

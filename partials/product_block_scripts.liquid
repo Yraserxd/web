@@ -1,0 +1,70 @@
+{% comment %} General helper functions for product blocks {% endcomment %}
+<script>
+  // Listener for swatch clicks when product block swatches are enabled
+  function updateCarouselFromSwatch(target) {
+    const value = $(target).val();
+    const block = $(target).closest('.product-block');
+    const carousel = block.find('.product-block__slider');
+    const variant = carousel.find(`.product-block__slide[data-color-option-value="${value}"]`);
+    const swiper = carousel.get(0)?.swiper;
+
+    if (swiper == null) return;
+
+    // When we click on the same swatch option, do nothing.
+    // When there is no principal image, show the fallback product image.
+    if (variant.length == 0) {
+      carousel.get(0).swiper.slideTo(0);
+    } else {
+      carousel.get(0).swiper.slideTo(variant.first().index());
+    }
+  }
+
+  // Listener for add-to-cart quantity updates, if they are shown
+  function verifyAddToCartQuantity(target) {
+    const block = $(target).closest('.product-block');
+    const quantityInput = block.find('form .product-qty input');
+    const maxAmount = quantityInput.attr('max');
+    if (parseInt(quantityInput.val()) > parseInt(maxAmount)) {
+      quantityInput.addClass('maxStockQty');
+      quantityInput.val(maxAmount);
+    } else {
+      quantityInput.removeClass('maxStockQty');
+      if (quantityInput.val() < 0 || quantityInput.val() == "") quantityInput.val(1);
+    }
+  }
+
+  function decrementCartFromProductBlock(target) {
+    const block = $(target).closest('.product-block');
+    const input = block.find('form .product-qty input');
+    if (block.length !== 1 || input.length !== 1) return;
+
+    const value = +input.val();
+    const minimum = input.is('[min]') ? +input.attr('min') : 1;
+    const maximum = input.is('[max]') ? +input.attr('max') : Infinity;
+    input.val(Math.max(minimum, Math.min(value - 1, maximum)));
+    input.toggleClass('maxStockQty', value - 1 > maximum);
+  }
+
+  function incrementCartFromProductBlock(target) {
+    const block = $(target).closest('.product-block');
+    const input = block.find('form .product-qty input');
+    if (block.length !== 1 || input.length !== 1) return;
+
+    const value = +input.val();
+    const minimum = input.is('[min]') ? +input.attr('min') : 1;
+    const maximum = input.is('[max]') ? +input.attr('max') : Infinity;
+    input.val(Math.max(minimum, Math.min(value + 1, maximum)));
+    input.toggleClass('maxStockQty', value + 1 > maximum);
+  }
+
+  function addToCartFromProductBlock(target) {
+    const block = $(target).closest('.product-block');
+    const input = block.find('form .product-qty input');
+    if (block.length !== 1 || input.length !== 1) return;
+
+    const id = +block.attr('data-productid');
+    const name = block.find('.product-block-name').text();
+    const qty = +input.val() || 1; // this is usually hidden, so it should be undefined or 0/1 in initial markup
+    addToCart(id, name, qty, {});
+  }
+</script>

@@ -1,0 +1,230 @@
+<script>
+    verifyQuantity();
+
+    function verifyQuantity(){
+      var $qty = $('#input-qty');
+      var $adc = $('#add-to-cart');
+      if(parseInt($qty.val()) > parseInt($qty.attr('max'))){
+        $('#input-qty').addClass('maxStockQty');
+        $('.disclaimer').fadeIn();
+        $(".disclaimer strong" ).text( $qty.attr('max') );
+        $('#input-qty').val($qty.attr('max'));
+      } else {
+        $('#input-qty').removeClass('maxStockQty');
+        $('#add-to-cart').prop('disabled', false);
+        $('.disclaimer').fadeOut();
+      }
+    }
+
+    $(document).on('keyup','#input-qty',function(){
+      verifyQuantity();
+    });
+
+    $(document).on('click','.quantity-up',function(){
+      verifyQuantity();
+    })
+
+    $(document).on('click','.quantity-down',function(){
+      verifyQuantity();
+    })
+
+    var callbackFunction = function(event, productInfo){
+      // if productInfo is not emtpy or null
+      if(!$.isEmptyObject(productInfo)){
+
+        {% if sku_enable %}
+        if(productInfo.sku != ''){
+          $(".sku_elem").html(productInfo.sku);
+          $('#product-sku').css({'visibility':'visible','height':'auto','padding-bottom':'15px','margin-bottom':'15px'});
+          $('#product-sku').css('display','block');
+          }
+          else{
+            $('#product-sku').css('display','none');
+          }
+        {% endif %}
+
+        // Build back_in_stock url including variant_id
+        let href = $("#back-in-stock").attr("href");
+        if(href){
+          if (!href.startsWith("http://") && !href.startsWith("https://")) {
+            href = new URL(href, window.location.origin).href;
+          }
+          const url = new URL(href);
+          url.searchParams.set("variant_id", productInfo.id);
+          $("#back-in-stock").attr("href", url.toString());
+        }
+
+        //update stock
+        if((productInfo.stock == 0 && productInfo.stock_unlimited == false) || productInfo.status == 'not-available') {
+          $('.product-out-stock').removeClass('hidden');
+          $('.product-available').addClass('hidden');
+          $('.product-unavailable').addClass('hidden');
+          $('#stock').html('');
+          $('#stock').hide();
+        } else {
+          $('.product-available').removeClass('hidden');
+          $('.product-out-stock').addClass('hidden');
+          $('.product-unavailable').addClass('hidden');
+
+          if (productInfo.stock_unlimited == false && productInfo.stock > 0) {
+            $('#stock').html(' <label>{% t "Stock" %}: </label><span class="product-form-stock">' + productInfo.stock +'</span>');
+            $('#stock').show();
+          } else {
+            $('#stock').html('');
+            $('#stock').hide();
+          }
+          verifyQuantity();
+        }
+
+        if (productInfo.discount == 0) {
+          // update price - desktop & mobile
+          $('.product-form_price').text(productInfo.price_formatted);
+          $('.product-form_discount').hide()
+          $('.product-badge-sale').hide();
+        } else {
+          // update price with discount - desktop & mobile
+          $('.product-form_price').text(productInfo.price_discount_formatted);
+
+          // update price badge
+          $('.product-badge-sale').text(`-${Math.round((productInfo.discount / productInfo.price) * 100)}%`);
+          $('.product-badge-sale').show();
+
+          // update price
+          $('.product-form_discount').text('(' + productInfo.price_formatted + ')');
+          $('.product-form_discount').show();
+
+        }
+
+        // Update variant image
+        const gallery = document.querySelector("swiper-slider.product-gallery__slider--main");
+        if (gallery) {
+          const index = $(`.swiper-slide img[src*="image/${productInfo['image_id']}"]`, gallery).first().closest(".swiper-slide").index();
+          gallery.swiper.slideTo(index >= 0 ? index : 0);
+        }
+
+        checkCustomFields(productInfo.custom_fields);
+        checkOutOfStock(productInfo);
+
+        $('#product-tabs_content .tab-pane:not(:first).active').removeClass('active');
+        $('.product-description_custom_fields .nav-item a').first().click();
+      }
+    };
+
+    $(document).ready(function () {
+      Jumpseller.productVariantListener(".variants select.prod-options, .variants fieldset.prod-options", { product: '{{ product | json }}', callback: callbackFunction });
+      selectInitialStock();
+      checkUploads();
+    });
+
+    function checkUploads() {
+         var file_inputs = Array.from(document.getElementsByClassName("product_option_value_file_upload"));
+         var total_size = 0;
+         var inputs_sizes;
+         (inputs_sizes = []).length = file_inputs.length;
+         inputs_sizes.fill(0);
+    		 for(let file of file_inputs) {
+          file.onchange = function() {
+            var index = file_inputs.indexOf(file);
+            inputs_sizes[index] = this.files[0].size;
+            total_size = inputs_sizes.reduce((a, b) => a + b, 0)
+            var input_filename = document.getElementById(this.id + "_filename");
+            if(total_size > 10485760){
+             alert("{% t 'The sum of the size of the selected files must be lower than 10MB.' %}");
+             inputs_sizes[index] = 0;
+             this.value = "";
+             input_filename.value = "";
+        		} else {
+              input_filename.value = this.files[0].name;
+            }
+         }
+        }
+      }
+
+    function setSelectedVariant(values) {
+      for (const { value } of values) {
+        const { id, option } = value;
+        $(`.variants *[id="${option}"] *[value="${id}"]`).each(function () {
+          $(this).is("input") ? $(this).prop('checked', true).trigger('change') : $(this).prop('selected', true).trigger('change')
+        });
+      }
+    }
+
+    function selectInitialStock() {
+      const productInfo = {{ product | json }};
+      const preferred = +'{{ product.selected_variant.id }}';
+      if (preferred > 0) return setSelectedVariant(productInfo.find((product) => product.variant.id == preferred).values);
+
+      for (const item of productInfo) {
+        const variant = item.variant;
+        if (variant.stock_unlimited || variant.stock != 0) {
+          return setSelectedVariant(item.values);
+        }
+      }
+    }
+
+      function checkOutOfStock(productInfo) {
+        if (!{{ stock_enable }}) return;
+
+        const outOfStock = " - {% t 'Out of Stock' %}";
+        $('.variants option, .variants .colors input, .variants .select-options input').each(function () { $(this).removeClass('disabled') });
+        $('.variants option').each(function () { $(this).html($(this).html().replace(outOfStock, '')) });
+        const product = {{ product | json }};
+        const entry = product.find((entry) => entry.variant.id == productInfo.id);
+        const values = entry.values.map((v) => v.value.id);
+        const variants = product.filter((entry) => entry.variant.stock == 0 && !entry.variant.stock_unlimited && entry.values.filter((val) => values.includes(val.value.id)).length == values.length - 1)
+
+        if (productInfo.stock == 0 && !productInfo.stock_unlimited) variants.push(product.find((entry) => entry.variant.id == productInfo.id))
+
+        variants.forEach((variant) => {
+          const ids = variant.values.map((v) => v.value.id).filter((id) => !values.includes(id))
+
+          if (variant.variant.id == productInfo.id) ids.push(...variant.values.map((v) => v.value.id))
+
+          ids.forEach((id) => {
+            $('.variants option[value="' + id + '"]')?.html($('.variants option[value="' + id + '"]')?.html()?.replace(outOfStock, ''));
+            $('.variants option[value="' + id + '"], .variants input[value="' + id + '"]').addClass('disabled');
+            $('.variants option[value="' + id + '"]').html($('.variants option[value="' + id + '"]').html() + outOfStock);
+          })
+        })
+      }
+
+      function checkCustomFields(custom_fields) {
+        // Show/Hide custom fields per variant
+        if (Object.keys(custom_fields).length != 0) {
+          // Show all types of custom_fields display modes when variant has no custom fields
+          $('.product-custom_fields, .product-custom_field').show();
+          // Hide all custom fields values
+          $('.product-custom_field_values').children().hide();
+          // Remove class of showned custom fields
+          $('.product-custom_field_value').removeClass('visible_custom_field_value');
+          $('.product-custom_field').removeClass('visible-custom_field');
+          $('.product-custom_field').removeClass('unique');
+
+          // Show custom fields of the selected variant
+          Object.values(custom_fields).map((custom_field) => {
+            $('.product-custom_field_value').filter(function() {
+              return $(this).attr('id') === `product-custom_field_value_${custom_field.id}`;
+            }).show().addClass('visible_custom_field_value');
+          });
+
+          // Show separators of custom fields
+          $('.product-custom_field').each(function () {
+            const custom_field_values = $(this).find('.product-custom_field_value.visible_custom_field_value').length;
+            if (custom_field_values > 1) {
+              $(this).find('.product-custom_field_value.visible_custom_field_value').each(function (index) {
+                if((index + 1) == custom_field_values) return false;
+                $(this).next('.product-custom_field_separator').show();
+              })
+            }
+          });
+
+          $('.product-custom_field:not(:has(.visible_custom_field_value))').hide();
+          $('.product-custom_field:has(.visible_custom_field_value)').addClass('visible-custom_field');
+          if($('.product-custom_field.visible-custom_field').length == 1) $('.product-custom_field.visible-custom_field').addClass('unique');
+
+        } else {
+          // Hide all types of custom_fields display modes when variant has no custom fields
+          $('.product-custom_fields, .product-custom_field').hide();
+        }
+		  }
+</script>

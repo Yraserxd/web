@@ -1,0 +1,1772 @@
+msgid "1 column"
+msgstr "1 columna"
+
+msgid "2 columns"
+msgstr "2 columnas"
+
+msgid "2nd store address on Google Maps"
+msgstr "Dirección de la segunda tienda en Google Maps"
+
+msgid "3rd store address on Google Maps"
+msgstr "Dirección de la tercera tienda en Google Maps"
+
+msgid "4th store address on Google Maps"
+msgstr "Dirección de la cuarta tienda en Google Maps"
+
+msgid "Accordion"
+msgstr "Acordeón"
+
+msgid "Accordion item"
+msgstr "Elemento de acordeón"
+
+msgid "Accordion item content description."
+msgstr "Descripción del contenido del elemento acordeón."
+
+msgid "Accordion item title"
+msgstr "Título del elemento del acordeón"
+
+msgid "Add"
+msgstr "Agregar"
+
+msgid "Add them to cart"
+msgstr "Agrégalos al carrito"
+
+msgid "Add to Cart"
+msgstr "Agregar al Carro"
+
+msgid "Add to cart notification"
+msgstr "Notificación de Agregar al Carro"
+
+msgid "Add your own Sliders"
+msgstr "Agrega tus propios Sliders"
+
+msgid "Add your own Slides"
+msgstr "Agrega tus propios Slides"
+
+msgid "Add your own banners"
+msgstr "Agrega tus propios banners"
+
+msgid "Add your own quick links"
+msgstr "Agrega tus propios enlaces rápidos"
+
+msgid "Add your products"
+msgstr "Agrega tus productos"
+
+msgid "Add your slides"
+msgstr "Añade tus slides"
+
+msgid "Address"
+msgstr "Dirección"
+
+msgid "After the content"
+msgstr "Después del contenido"
+
+msgid "Alignment"
+msgstr "Alineamiento"
+
+msgid "Alignment for the content of the 'Slide'. For mobile devices, the content will align to the center by default."
+msgstr "l 'Slider'. Para dispositivos móviles, el contenido se alineará en el centro de forma predeterminada."
+
+msgid "All Rights Reserved."
+msgstr "Todos los derechos reservados."
+
+msgid "Allow to change the display of the product options between a selector with all options or a button for each option."
+msgstr "Permite cambiar la visualización de las opciones del producto entre un selector con todas las opciones o un botón para cada opción."
+
+msgid "Allow to choose if product options will be displayed in 1 or 2 columns."
+msgstr "Permite elegir si las opciones del producto se mostrarán en 1 o 2 columnas."
+
+msgid "Allows selecting if the notification will be displayed at the 'top' or 'bottom' of the browser, on the right side."
+msgstr "Permite seleccionar si la notificación se mostrará en la parte superior o inferior del navegador, en el lado derecho."
+
+msgid "Allows to add an Accordion element to any page of the store, with collapsible items. If no 'Title' or 'Description' are defined, it will only display the Accordion."
+msgstr "Permite agregar un elemento Acordeón a cualquier página de la tienda, con artículos plegables. Si no se define ningún 'Título' o 'Descripción', solo mostrará el Acordeón."
+
+msgid "Allows to add an image to the accordion item."
+msgstr "Permite agregar una imagen al elemento acordeón."
+
+msgid "Allows to change the image size"
+msgstr "Permite cambiar el tamaño de la imagen."
+
+msgid "Allows to choose how many 'packs' will be displayed. 'Packs' are sets or groups of frequently bought together products, including the product being visited."
+msgstr "Permite elegir cuántos 'paquetes' se mostrarán. Los 'paquetes' son conjuntos o grupos de productos que se compran con frecuencia, incluido el producto que se visita."
+
+msgid "Allows to define the amount of separating space that the section will have."
+msgstr "Permite definir la cantidad de espacio de separación que tendrá la sección."
+
+msgid "Allows to define the width that the section will have."
+msgstr "Permite definir el ancho que tendrá la sección."
+
+msgid "Allows to define where the image will display: 1) Before the content; 2) After the content."
+msgstr "Permite definir dónde se mostrará la imagen: 1) Before the content; 2) After the content."
+
+msgid "Allows to modify the color of the divisory line."
+msgstr "Permite modificar el color de la línea divisoria."
+
+msgid "An email with your order summary has been sent to"
+msgstr "Hemos enviado un correo electrónico con el resumen de tu pedido a"
+
+msgid "Are you new at"
+msgstr "Eres nuevo en"
+
+msgid "Arrows and dots color"
+msgstr "Color de flechas y puntos."
+
+msgid "Attachments"
+msgstr "Archivos"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Autoplay speed"
+msgstr "Velocidad de reproducción automática"
+
+msgid "Back"
+msgstr "Volver"
+
+msgid "Back to blog"
+msgstr "Volver al Blog"
+
+msgid "Background"
+msgstr "Fondo"
+
+msgid "Background color"
+msgstr "Color de fondo"
+
+msgid "Background icon color"
+msgstr "Color de fondo del icono"
+
+msgid "Background top bar color"
+msgstr "Color de la barra superior de fondo"
+
+msgid "Badge alignment"
+msgstr "Alineación de insignias"
+
+msgid "Banner"
+msgstr "Banner"
+
+msgid "Banners"
+msgstr "Banners"
+
+msgid "Before the content"
+msgstr "Antes del contenido"
+
+msgid "Best ratings"
+msgstr "Mejores Valoraciones"
+
+msgid "Big banner"
+msgstr "Banner Grande"
+
+msgid "Billing Address"
+msgstr "Dirección de Facturación"
+
+msgid "Billing Information"
+msgstr "Información de Facturación"
+
+msgid "Block Title"
+msgstr "Título del bloque"
+
+msgid "Block title font size"
+msgstr "Tamaño de Letra de Bloques de Título"
+
+msgid "Blog category"
+msgstr "Categoría del Blog"
+
+msgid "Blog posts per page"
+msgstr "Publicaciones de Blog por Página"
+
+msgid "Border width"
+msgstr "Ancho del borde"
+
+msgid "Bottom Left"
+msgstr "Abajo a la izquierda"
+
+msgid "Bottom Right"
+msgstr "Abajo a la derecha"
+
+msgid "Bottom center"
+msgstr "Parte inferior central"
+
+msgid "Bottom left"
+msgstr "Abajo a la izquierda"
+
+msgid "Bottom right"
+msgstr "Abajo a la derecha"
+
+msgid "Browser Width"
+msgstr "Ancho del navegador"
+
+msgid "Button - Background color"
+msgstr "Botón - Color de fondo"
+
+msgid "Button - Background color (hover)"
+msgstr "Botón: color de fondo (al desplazar el cursor)"
+
+msgid "Button - Icon color"
+msgstr "Botón - Color del icono"
+
+msgid "Button color"
+msgstr "Color del botón"
+
+msgid "Button link"
+msgstr "Link del botón"
+
+msgid "Button position"
+msgstr "Posición del botón"
+
+msgid "Button text"
+msgstr "Texto del Botón"
+
+msgid "Buttons"
+msgstr "Botones"
+
+msgid "Buy these items for"
+msgstr "Compra estos artículos por"
+
+msgid "By registering at our shop, you can enjoy a faster checkout process, as well as the convenience of adding multiple shipping addresses, tracking your orders, and more."
+msgstr "Al registrarte en nuestra tienda, podrás disfrutar de un proceso de pago más rápido, así como de la comodidad de incorporar varias direcciones de envío, hacer un seguimiento de tus pedidos y mucho más."
+
+msgid "Call to action message"
+msgstr "Mensaje de llamado a la acción"
+
+msgid "Call to action message - Background"
+msgstr "Mensaje de llamada a la acción: fondo"
+
+msgid "Caption alignment"
+msgstr "Alineación de los subtítulos"
+
+msgid "Carousel"
+msgstr "Carrusel"
+
+msgid "Cart"
+msgstr "Carro"
+
+msgid "Categories"
+msgstr "Categorías"
+
+msgid "Category Description"
+msgstr "Descripción de categoría"
+
+msgid "Center"
+msgstr "Centro"
+
+msgid "Check this Post"
+msgstr "Revisa esta publicación"
+
+msgid "Check this product"
+msgstr "Revisa este producto"
+
+msgid "Checkout"
+msgstr "Proceso de Pago"
+
+msgid "Choose 3 image aspects: Horizontal, Vertical and Square"
+msgstr "Elija 3 aspectos de la imagen: Horizontal, Vertical y Cuadrado"
+
+msgid "Choose File"
+msgstr "Elegir Archivo"
+
+msgid "Choose how many banners will be displayed by row on desktop version."
+msgstr "Escoge cuantos banners se mostrarán por fila en la versión de escritorio"
+
+msgid "Choose how many blocks will be displayed by row on desktop version."
+msgstr "Elige cuántos bloques se mostrarán por fila en la versión de escritorio."
+
+msgid "Choose how many logos will be displayed by row on desktop version."
+msgstr "Escoge cuantos logos se mostrarán por fila en la versión de escritorio"
+
+msgid "Choose how many quotes will be displayed by row on desktop version."
+msgstr "Escoge cuantas citas se mostrarán por fila en la versión de escritorio"
+
+msgid "City"
+msgstr "Ciudad"
+
+msgid "Clear filters"
+msgstr "Limpiar filtros"
+
+msgid "Client Address"
+msgstr "Dirección del cliente"
+
+msgid "Client Details"
+msgstr "Detalles del cliente"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Color for the arrows and dots."
+msgstr "Color para las flechas y los puntos."
+
+msgid "Colors"
+msgstr "Colores"
+
+msgid "Contact"
+msgstr "Contacto"
+
+msgid "Contact Information"
+msgstr "Información de contacto"
+
+msgid "Contact Us"
+msgstr "Contáctanos"
+
+msgid "Contact information"
+msgstr "Información de contacto"
+
+msgid "Contact template"
+msgstr "Plantilla de contacto"
+
+msgid "Contact title"
+msgstr "Título del contacto"
+
+msgid "Container"
+msgstr "Contenedor"
+
+msgid "Content"
+msgstr "Contenido"
+
+msgid "Content alignment"
+msgstr "Alineación de contenido"
+
+msgid "Continue Shopping"
+msgstr "Seguir comprando"
+
+msgid "Copy and paste iframe from YouTube, Vimeo or another platform."
+msgstr "Copia y pega el iframe de Youtube, Vimeo u otra plataforma."
+
+msgid "Corner radius"
+msgstr "Ángulo de la esquina"
+
+msgid "Country"
+msgstr "País"
+
+msgid "Create Password"
+msgstr "Crear contraseña"
+
+msgid "Create your Customer Account"
+msgstr "Crea tu Cuenta de Cliente"
+
+msgid "Custom code"
+msgstr "Código Personalizado"
+
+msgid "Custom fields Title"
+msgstr "Título de los campos personalizados"
+
+msgid "Custom fields title"
+msgstr "Título de los campos personalizados"
+
+msgid "Customer Service"
+msgstr "Servicio al Cliente"
+
+msgid "Customer's name"
+msgstr "Nombre del cliente"
+
+msgid "Customers will be able to share products on Facebook."
+msgstr "Los clientes podrán compartir productos en Facebook."
+
+msgid "Customers will be able to share products on Pinterest."
+msgstr "Los clientes podrán compartir productos en Pinterest."
+
+msgid "Customers will be able to share products on WhatsApp."
+msgstr "Los clientes podrán compartir productos en WhatsApp."
+
+msgid "Customers will be able to share products on 𝕏."
+msgstr "Los clientes podrán compartir productos en 𝕏."
+
+msgid "Delete"
+msgstr "Borrar"
+
+msgid "Delivery Status"
+msgstr "Estado de entrega"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Description title"
+msgstr "Título de la descripción"
+
+msgid "Desktop width"
+msgstr "Ancho del escritorio"
+
+msgid "Details"
+msgstr "Detalles"
+
+msgid "Digital Product:"
+msgstr "Producto digital:"
+
+msgid "Disable product prices"
+msgstr "Deshabilitar precios de productos"
+
+msgid "Disable shopping features"
+msgstr "Deshabilitar funciones de Compra"
+
+msgid "Discount"
+msgstr "Descuento"
+
+msgid "Discount code"
+msgstr "Código de descuento"
+
+msgid "Discounts"
+msgstr "Descuentos"
+
+msgid "Display Facebook share link"
+msgstr "Mostrar enlace para compartir en Facebook"
+
+msgid "Display Filters"
+msgstr "Mostrar filtros"
+
+msgid "Display Pinterest share link"
+msgstr "Mostrar enlace para compartir en Pinterest"
+
+msgid "Display Tumblr share link"
+msgstr "Mostrar enlace para compartir en Tumblr"
+
+msgid "Display a direct 'Add to Cart' button. If the product have product options (e.g. size, color), a 'View options' button will be displayed instead."
+msgstr "Muestra un botón para 'Agregar al carro' directamente. Si el producto tiene opciones de producto (por ejemplo, tamaño, color), en su lugar se mostrará un botón 'Ver opciones'."
+
+msgid "Display a message on the page notifying customers that the product was added to the cart. Overrides redirection options in your checkout preferences."
+msgstr "Mostrar un mensaje en la página notificando a los clientes que el producto se agregó al carrito. Anula las opciones de redirección en tus Preferencias del Checkout"
+
+msgid "Display a small message to invite your customers to write to you."
+msgstr "Muestra un pequeño mensaje para invitar a tus clientes a escribirte."
+
+msgid "Display breadcrumbs"
+msgstr "Mostrar rutas de navegación"
+
+msgid "Display creation date"
+msgstr "Mostrar fecha de creación"
+
+msgid "Display gallery thumbnails"
+msgstr "Mostrar miniaturas de la galería"
+
+msgid "Display latest articles"
+msgstr "Mostrar los últimos artículos"
+
+msgid "Display main address"
+msgstr "Mostrar dirección principal"
+
+msgid "Display main contact email"
+msgstr "Mostrar Email de Contacto Principal"
+
+msgid "Display main phone"
+msgstr "Mostrar teléfono principal"
+
+msgid "Display map"
+msgstr "Mostrar mapa"
+
+msgid "Display page creation date"
+msgstr "Mostrar fecha de creación de la página"
+
+msgid "Display product image"
+msgstr "Mostrar imagen del producto"
+
+msgid "Display product reviews"
+msgstr "Mostrar reseñas de productos"
+
+msgid "Display 𝕏 share link"
+msgstr "Mostrar enlace para compartir en 𝕏"
+
+msgid "Displays 'next' and 'previous' arrows for customers to navigate."
+msgstr "Mostrar las flechas \"siguiente\" y \"anterior\" para que los clientes naveguen."
+
+msgid "Displays navigational dots (points) for customers to navigate."
+msgstr "Mostrar puntos de navegación para que los clientes naveguen."
+
+msgid "Do you have a promotional code?"
+msgstr "¿Tienes un código promocional?"
+
+msgid "Dynamic content"
+msgstr "Contenido dinámico"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Edit information"
+msgstr "Editar Información"
+
+msgid "Edit order"
+msgstr "Editar pedido"
+
+msgid "Email"
+msgstr "Correo electrónico"
+
+msgid "Embed code on the end of <body>"
+msgstr "Insertar código al final de <body>"
+
+msgid "Embed code on the end of <head>"
+msgstr "Insertar código al final de <head>"
+
+msgid "Embed video code"
+msgstr "Código del video"
+
+msgid "Enable Facebook"
+msgstr "Habilitar Facebook"
+
+msgid "Enable Pinterest"
+msgstr "Habilitar Pinterest"
+
+msgid "Enable WhatsApp"
+msgstr "Habilitar WhatsApp"
+
+msgid "Enable WhatsApp button"
+msgstr "Activar Botón de WhatsApp"
+
+msgid "Enable arrows"
+msgstr "Habilitar flechas"
+
+msgid "Enable autoplay"
+msgstr "Habilitar reproducción automática"
+
+msgid "Enable dots"
+msgstr "Habilitar puntos de navegación"
+
+msgid "Enable 𝕏"
+msgstr "Habilitar 𝕏"
+
+msgid "Enables a button for WhatsApp, it follows the visitors as they scroll through the website. We recommend not enabling this feature if you are gonna use a plugin or integration that will also display a button."
+msgstr "Habilita un botón de WhatsApp que sigue (se desplaza con el contenido) a los clientes en la tienda. Recomendamos no habilitar esta función si va a utilizar un complemento o una integración que también muestre un botón."
+
+msgid "Estimated shipping cost"
+msgstr "Costo estimado de envío"
+
+msgid "Featured Categories"
+msgstr "Categorías Destacadas"
+
+msgid "Featured Products"
+msgstr "Productos Destacados"
+
+msgid "Featured Reviews"
+msgstr "Reseñas destacadas"
+
+msgid "Featured category"
+msgstr "Categoría Destacada"
+
+msgid "Featured category banner title"
+msgstr "Título de Categoría Destacada"
+
+msgid "Featured category button text"
+msgstr "Texto del botón de Categoría Destacada"
+
+msgid "Featured products"
+msgstr "Productos destacados"
+
+msgid "Featured reviews"
+msgstr "Reseñas destacadas"
+
+msgid "Filter"
+msgstr "Filtro"
+
+msgid "Filter by"
+msgstr "Filtrar por"
+
+msgid "Filters"
+msgstr "Filtros"
+
+msgid "Final price"
+msgstr "Precio Final"
+
+msgid "Find Us"
+msgstr "Encuéntranos"
+
+msgid "Fit to image"
+msgstr "Ajustar a la imagen"
+
+msgid "Follow Us"
+msgstr "Síguenos"
+
+msgid "Font size scale"
+msgstr "Ajuste del tamaño de fuente"
+
+msgid "Fonts"
+msgstr "Tipos de Letra"
+
+msgid "Footer"
+msgstr "Pie de Página"
+
+msgid "Force"
+msgstr "Forzar"
+
+msgid "Form title"
+msgstr "Título del Formulario"
+
+msgid "Format of the creation date"
+msgstr "Formato de la fecha de creación"
+
+msgid "Free shipping for purchases over $100"
+msgstr "Envío gratis para compras superiores a $100"
+
+msgid "Frequently Bought Together"
+msgstr "Comprados juntos frecuentemente"
+
+msgid "Frequently bought together"
+msgstr "Frecuentemente comprados juntos"
+
+msgid "From"
+msgstr "Desde"
+
+msgid "Full Size"
+msgstr "Tamaño completo"
+
+msgid "Full size"
+msgstr "Tamaño completo"
+
+msgid "Gallery images position"
+msgstr "Posición de las imágenes en la galería"
+
+msgid "General"
+msgstr "General"
+
+msgid "General font size"
+msgstr "Tamaño de fuente general"
+
+msgid "General links color"
+msgstr "Color General de los Enlaces"
+
+msgid "General text color"
+msgstr "Color General del Texto"
+
+msgid "Go back & Keep Shopping"
+msgstr "Volver atrás y seguir comprando"
+
+msgid "Go back to"
+msgstr "Volver a"
+
+msgid "Go to"
+msgstr "Ir a"
+
+msgid "Go to %{category}"
+msgstr "Ir a %{category}"
+
+msgid "Go to Blog"
+msgstr "Ir al Blog"
+
+msgid "Go to Shopping Cart."
+msgstr "Ir al carrito."
+
+msgid "Go to contact page"
+msgstr "Ir a la página de contacto"
+
+msgid "Grid"
+msgstr "Cuadrícula"
+
+msgid "Grid Width"
+msgstr "Ancho de cuadrícula"
+
+msgid "Head Store"
+msgstr "Tienda principal"
+
+msgid "Header"
+msgstr "Cabecera"
+
+msgid "Height"
+msgstr "Altura"
+
+msgid "Hello"
+msgstr "Hola"
+
+msgid "Hello I want more information"
+msgstr "Hola necesito más información"
+
+msgid "Here is displayed the testimony, feedback or comments that a client gives you. This is helpful to build trust in your brand, and for example give first time customers more information regarding your products or any other information you think is necessary."
+msgstr "Aquí se muestra el testimonio, la opinión o los comentarios que te da un cliente. Esto es útil para generar confianza en tu marca y, por ejemplo, dar a los clientes primerizos más información sobre tus productos o cualquier otra información que consideres necesaria."
+
+msgid "Here the featured review of your products will be displayed."
+msgstr "Aquí se mostrará la reseña destacada de tus productos."
+
+msgid "Here you must define the 'Page Category' that will group all 'Posts', which you can find in 'Pages > All Pages > Categories'. By default 'Post' will be used."
+msgstr "Aquí debes definir la 'Categoría de página' que agrupará todas las 'Publicaciones', las cuales puedes encontrar en 'Páginas > Todas las páginas > Categorías'. Por defecto se utilizará 'Publicar'."
+
+msgid "Hide Order Details"
+msgstr "Ocultar Detalles del Pedido"
+
+msgid "Hide button on mobile version"
+msgstr "Ocultar botón en la versión móvil"
+
+msgid "Hide category menu"
+msgstr "Ocultar Menú de Categorías"
+
+msgid "Hide message after close it"
+msgstr "Ocultar mensaje después de cerrarlo"
+
+msgid "Highlight color"
+msgstr "Color para destacar"
+
+msgid "Horizontal"
+msgstr "Horizontal"
+
+msgid "Horizontal content position"
+msgstr "Posición horizontal del contenido"
+
+msgid "How many cross-selling products will be displayed on the cart page."
+msgstr "Cantidad de productos cross-selling que serán mostrados en la página del Carro."
+
+msgid "How the product image will be displayed. 1) Resize: adjusts the image dimensions based on the field 'Product Image Dimension'; 2) Thumbnail: fills the image available space with the majority of the product's original image content."
+msgstr "Cómo se mostrará la imagen del producto. 1) Resize: ajusta las dimensiones de la imagen en función del campo 'Dimensiones de imagen del producto'; 2) Thumbnail: llena el espacio disponible de la imagen con la mayoría del contenido de la imagen original del producto."
+
+msgid "I would like to know more about this product"
+msgstr "Me gustaría saber más sobre este producto."
+
+msgid "Icon"
+msgstr "Icono"
+
+msgid "Icon color"
+msgstr "Color del ícono"
+
+msgid "If enabled, all Shopping features will hide, like the 'Add to Cart' buttons, the 'Header Cart icon', etc."
+msgstr "Si está habilitado, todas las funciones de Compra se ocultarán, como los botones 'Agregar al carrito', el 'Ícono del encabezado del carrito', etc."
+
+msgid "If enabled, all product prices will be hidden. Customers won't be able to see them."
+msgstr "Si está habilitado, todos los precios de los productos estarán ocultos. Los clientes no podrán verlos."
+
+msgid "If enabled, the product 'Brand' will display on top of the product name."
+msgstr "Si se activa, la 'Marca' del producto se mostrará en la parte superior del nombre del producto."
+
+msgid "If enabled, the product 'SKU' will be displayed below the product name."
+msgstr "Si se activa, el 'SKU' del producto se mostrará debajo del nombre del producto."
+
+msgid "If enabled, the product 'Stock' will be displayed below the product name (and after the SKU if enabled)."
+msgstr "Si se activa, el 'Stock' del producto se mostrará debajo del nombre del producto (y después del SKU si está habilitado)."
+
+msgid "If enabled, the product image gallery will display thumbnails along with the carousel images, if product images size is greater than one (1)."
+msgstr "Si se activa, la galería de imágenes del producto mostrará miniaturas junto al carrusel de imágenes, si el tamaño de las imágenes del producto es mayor que uno (1)."
+
+msgid "If enabled, when products have a color option, customers can preview the color and the image associated with it."
+msgstr "Si se activa, cuando los productos tienen una opción de color, los clientes pueden previsualizar el color y la imagen asociada a él."
+
+msgid "If it is enabled, the title will be hidden."
+msgstr "Si está activado, el título se ocultará."
+
+msgid "If you are using an external app who display something in the screen"
+msgstr "Si estás usando una aplicación externa que muestra algo en la pantalla"
+
+msgid "If you have any question or special requirement about reimbursements or shipping please contact us:"
+msgstr "Si tienes alguna pregunta o requisito especial sobre reembolsos o envíos por favor contáctanos:"
+
+msgid "Image"
+msgstr "Imagen"
+
+msgid "Image (desktop)"
+msgstr "Imagen (escritorio)"
+
+msgid "Image (mobile)"
+msgstr "Imagen (móvil)"
+
+msgid "Image alignment"
+msgstr "Alineación de Imagen"
+
+msgid "Image alternative text"
+msgstr "Texto alternativo de la imagen"
+
+msgid "Image aspect ratio"
+msgstr "Formato de la imagen"
+
+msgid "Image dimensions"
+msgstr "Dimensiones de la imagen"
+
+msgid "Image position"
+msgstr "Posición de la imagen"
+
+msgid "Image size"
+msgstr "Tamaño de la imagen"
+
+msgid "Images size"
+msgstr "Tamaño de imagen"
+
+msgid "Information for Payment"
+msgstr "Información para el Pago"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Invoice"
+msgstr "Factura"
+
+msgid "Invoices"
+msgstr "Facturas"
+
+msgid "Large"
+msgstr "Grande"
+
+msgid "Latest"
+msgstr "Más Reciente"
+
+msgid "Latest Articles"
+msgstr "Últimos Artículos"
+
+msgid "Latest Posts"
+msgstr "Últimas Publicaciones"
+
+msgid "Latest blog posts"
+msgstr "Últimas Publicaciones del Blog"
+
+msgid "Latest products"
+msgstr "Últimos productos"
+
+msgid "Layout"
+msgstr "Disposición de los elementos"
+
+msgid "Leave us a message"
+msgstr "Déjanos un mensaje"
+
+msgid "Left"
+msgstr "Izquierda"
+
+msgid "Line color"
+msgstr "Color de linea"
+
+msgid "Line divider"
+msgstr "Línea divisoria"
+
+msgid "Link"
+msgstr "Enlace"
+
+msgid "Link text"
+msgstr "Texto del enlace"
+
+msgid "Login here"
+msgstr "Entra aquí"
+
+msgid "Login to"
+msgstr "Iniciar sesión en"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Logo gallery"
+msgstr "Galería de logotipos"
+
+msgid "Lowest ratings"
+msgstr "Peores Valoraciones"
+
+msgid "Main store address on Google Maps"
+msgstr "Dirección de la tienda principal en Google Maps"
+
+msgid "Main store working hours"
+msgstr "Horarios de Trabajo de Tienda Principal"
+
+msgid "Make Primary"
+msgstr "Hacer principal"
+
+msgid "Mandatory. Content (or description) of the accordion item."
+msgstr "Obligatorio. Contenido (o descripción) del artículo de acordeón."
+
+msgid "Mandatory. Title/name of the accordion item"
+msgstr "Obligatorio. Título/Nombre del artículo de acordeón"
+
+msgid "Manual Payment"
+msgstr "Pago Manual"
+
+msgid "Medium"
+msgstr "Medio"
+
+msgid "Menu font size"
+msgstr "Tamaño de fuente del menú"
+
+msgid "Middle center"
+msgstr "Centro medio"
+
+msgid "Middle left"
+msgstr "Medio izquierdo"
+
+msgid "Middle right"
+msgstr "Medio derecho"
+
+msgid "Minimum recommended size for width is 1110px"
+msgstr "El tamaño mínimo recomendado para el ancho es 1110 px."
+
+msgid "Minimum recommended size for width is 1110px. If you use 'Full size' the minimum recommended width is 1980px."
+msgstr "El tamaño mínimo recomendado para el ancho es 1110px. Si utilizas 'Tamaño completo', el ancho mínimo recomendado es 1980 px."
+
+msgid "Minimum recommended size for width is 540px"
+msgstr "El tamaño mínimo recomendado para el ancho es 540 px."
+
+msgid "Minimum recommended size for width is 575px"
+msgstr "El tamaño mínimo recomendado para el ancho es 575 px."
+
+msgid "Municipality"
+msgstr "Comuna"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Name/Surname"
+msgstr "nombre/Apellido"
+
+msgid "New"
+msgstr "Nuevo"
+
+msgid "New Arrivals"
+msgstr "Recién Llegados"
+
+msgid "New customer message"
+msgstr "Mensaje de Nuevo Cliente"
+
+msgid "New product age"
+msgstr "Antigüedad del producto"
+
+msgid "New product tag color"
+msgstr "Color de etiqueta de nuevo producto"
+
+msgid "Newsletter"
+msgstr "Newsletter"
+
+msgid "Not Available"
+msgstr "No disponible"
+
+msgid "Notification color"
+msgstr "Color de la Notificación"
+
+msgid "Notification position"
+msgstr "Posición de notificación"
+
+msgid "Notify me"
+msgstr "Notificarme"
+
+msgid "Number of Instagram posts"
+msgstr "Número de publicaciones en Instagram"
+
+msgid "Number of columns on desktop"
+msgstr "Número de columnas en el escritorio"
+
+msgid "Number of days since the product was created to display the new product tag."
+msgstr "Número de días desde que se creó el producto para mostrar la nueva etiqueta del producto."
+
+msgid "Number of days to re-display the message box after customers close it."
+msgstr "Número de días para volver a mostrar el cuadro de mensaje después de que los clientes lo cierren."
+
+msgid "Oldest"
+msgstr "Más Antiguo"
+
+msgid "On this component you can display a collection of featured reviews from the products on your store. You need to have enabled the emails to request product reviews to your customers. After receiving reviews you have to publish and feature them, those featured reviews will be displayed in this component. You can check the documentation for Product Reviews on [this article](/admin/landing?url=/support/product-reviews/)"
+msgstr "En este componente puedes mostrar una colección de opiniones destacadas de los productos de tu tienda. Necesitas haber habilitado los correos electrónicos para solicitar opiniones de productos a tus clientes. Después de recibir las opiniones, tienes que publicarlas y destacarlas, esas opiniones destacadas se mostrarán en este componente. Puedes consultar la documentación de Reseñas de productos en [este artículo](/admin/landing?url=/support/product-reviews/)"
+
+msgid "On this component you can use images or a video to describe content from your store based on a title, description text and a button link."
+msgstr "En este componente puedes utilizar imágenes o un vídeo para describir el contenido de tu tienda basándote en un título, un texto descriptivo y un enlace de botón."
+
+msgid "Only"
+msgstr "Solo quedan"
+
+msgid "Opacity"
+msgstr "Opacidad"
+
+msgid "Optional. Allows to add a title that will display before the accordion."
+msgstr "Opcional. Permite agregar un título que se mostrará antes del acordeón."
+
+msgid "Order"
+msgstr "Pedido"
+
+msgid "Order Completed"
+msgstr "Pedido Finalizado"
+
+msgid "Order Date"
+msgstr "Fecha del pedido"
+
+msgid "Order Summary"
+msgstr "Resumen del Pedido"
+
+msgid "Order Total"
+msgstr "Total del pedido"
+
+msgid "Order review"
+msgstr "Revisión del pedido"
+
+msgid "Order will be Shipped to"
+msgstr "El pedido será enviado a"
+
+msgid "Original"
+msgstr "Original"
+
+msgid "Original: The image will be displayed with the dimension it was originally uploaded. Resize: adjust the width and height of the image according to the available space. Force: crop the width and height of the image according to the available space."
+msgstr "Original: La imagen se mostrará con la dimensión con la que se subió originalmente. Redimensionar: ajusta el ancho y el alto de la imagen según el espacio disponible. Forzar: recorta el ancho y el alto de la imagen según el espacio disponible."
+
+msgid "Other options"
+msgstr "Otras Opciones"
+
+msgid "Our Brands"
+msgstr "Nuestras Marcas"
+
+msgid "Our Stores"
+msgstr "Nuestras Tiendas"
+
+msgid "Out of Stock"
+msgstr "Agotado"
+
+msgid "Out of stock"
+msgstr "Agotado"
+
+msgid "Overlay color"
+msgstr "Color superpuesto"
+
+msgid "Overlay opacity"
+msgstr "Opacidad de la capa"
+
+msgid "Packs to show"
+msgstr "Packs para mostrar"
+
+msgid "Page Blog template"
+msgstr "Plantilla de página de Blog"
+
+msgid "Page Default template"
+msgstr "Plantilla de página Default"
+
+msgid "Page Post template"
+msgstr "Plantilla de página Post"
+
+msgid "Payment method"
+msgstr "Método de pago"
+
+msgid "Payment methods"
+msgstr "Métodos de pago"
+
+msgid "Payment methods list"
+msgstr "Lista de métodos de pago"
+
+msgid "Payment will be processed in %{store_currency} at the current exchange rate"
+msgstr "El pago será procesado en %{store_currency} con el tipo de cambio actual"
+
+msgid "Phone"
+msgstr "Teléfono"
+
+msgid "Place Order"
+msgstr "Realizar pedido"
+
+msgid "Please choose a category in the component settings."
+msgstr "Elige una categoría en la configuración del componente."
+
+msgid "Position for the content of the 'Slide'. For mobile devices content will stretch to the whole space of Slider by default."
+msgstr "Posición para el contenido del 'slide'. Para dispositivos móviles, el contenido se extenderá a todo el espacio de Slider de forma predeterminada."
+
+msgid "Position where badges will be stacked and displayed."
+msgstr "Posición donde se apilarán y mostrarán las insignias."
+
+msgid "Post quantity"
+msgstr "Cantidad de Publicaciones"
+
+msgid "Postal Code"
+msgstr "Código Postal"
+
+msgid "Previous Sales"
+msgstr "Ventas anteriores"
+
+msgid "Price"
+msgstr "Precio"
+
+msgid "Primary color"
+msgstr "Color Primario"
+
+msgid "Proceed to Checkout"
+msgstr "Proceder al Pago"
+
+msgid "Product"
+msgstr "Producto"
+
+msgid "Product Details"
+msgstr "Detalles del producto"
+
+msgid "Product Name"
+msgstr "Nombre del Producto"
+
+msgid "Product Reviews"
+msgstr "Reseñas de Productos"
+
+msgid "Product block"
+msgstr "Bloque de Producto"
+
+msgid "Product block background color"
+msgstr "Color de fondo del bloque de producto"
+
+msgid "Product block border color"
+msgstr "Color del borde del bloque de producto"
+
+msgid "Product block padding"
+msgstr "Relleno del bloque de producto"
+
+msgid "Product details"
+msgstr "Detalles del producto"
+
+msgid "Product feed"
+msgstr "Feed de productos"
+
+msgid "Product form"
+msgstr "Formulario de producto"
+
+msgid "Product form content aligment"
+msgstr "Alineación del contenido del formulario del producto"
+
+msgid "Product gallery"
+msgstr "Galería del producto"
+
+msgid "Product heading"
+msgstr "Cabecera del producto"
+
+msgid "Product image display"
+msgstr "Visualización de imagen del producto"
+
+msgid "Product options display"
+msgstr "Visualización de opciones de productos"
+
+msgid "Product options size"
+msgstr "Tamaño de opciones de producto"
+
+msgid "Product reviews"
+msgstr "Reseñas de Productos"
+
+msgid "Product share"
+msgstr "Compartir producto"
+
+msgid "Product table at success page"
+msgstr "Tabla de Productos en la Página de Éxito"
+
+msgid "Product tabs"
+msgstr "Pestañas de producto"
+
+msgid "Product template"
+msgstr "Plantilla de producto"
+
+msgid "Product(s)"
+msgstr "Producto(s)"
+
+msgid "Products per Page"
+msgstr "Productos por página"
+
+msgid "Promotion valid from %{begins_date} to %{expires_date}"
+msgstr "Promoción válida desde %{begins_date} al %{expires_date}"
+
+msgid "Promotions tag color"
+msgstr "Color de la etiqueta de promociones"
+
+msgid "Promotions text"
+msgstr "Texto de Promociones"
+
+msgid "Qty"
+msgstr "cant."
+
+msgid "Quantity"
+msgstr "Cantidad"
+
+msgid "Quantity of articles to display"
+msgstr "Cantidad de artículos a mostrar"
+
+msgid "Quantity of blocks per row"
+msgstr "Cantidad de bloques por fila"
+
+msgid "Quantity of items to display"
+msgstr "Cantidad de artículos a mostrar"
+
+msgid "Quick Links"
+msgstr "Enlaces Rápidos"
+
+msgid "Quick link"
+msgstr "Enlace Rápido"
+
+msgid "Quick links"
+msgstr "Enlaces rápidos"
+
+msgid "Quote"
+msgstr "Cita"
+
+msgid "Quote's Background"
+msgstr "Fondo de las Citas"
+
+msgid "Read more"
+msgstr "Leer más"
+
+msgid "Recommended size  510x370px"
+msgstr "Tamaño recomendado 510x370px"
+
+msgid "Recommended size 50x50px"
+msgstr "Tamaño recomendado 50x50px"
+
+msgid "Recommended size 510x510px"
+msgstr "Tamaño recomendado 510x510px"
+
+msgid "Recommended size 540x540px"
+msgstr "Tamaño recomendado 540x540px"
+
+msgid "Recommended size 575x700px"
+msgstr "Tamaño recomendado 575x700px"
+
+msgid "Region"
+msgstr "Región"
+
+msgid "Register as Customer"
+msgstr "Registrarse como Cliente"
+
+msgid "Related products"
+msgstr "Productos relacionados"
+
+msgid "Remove"
+msgstr "Eliminar"
+
+msgid "Remove Product"
+msgstr "Quitar Producto"
+
+msgid "Reorder"
+msgstr "Reordenar"
+
+msgid "Replace this text with your testimony."
+msgstr "Reemplace este texto con su testimonio."
+
+msgid "Resize"
+msgstr "Redimensionar"
+
+msgid "Review"
+msgstr "Reseña"
+
+msgid "Review order"
+msgstr "Revisar Compra"
+
+msgid "Reviews"
+msgstr "Reseñas"
+
+msgid "Reviews alignment"
+msgstr "Alineación de reseñas"
+
+msgid "Reviews number"
+msgstr "Número de reseñas"
+
+msgid "Right"
+msgstr "Derecha"
+
+msgid "SKU"
+msgstr "SKU"
+
+msgid "Scale image on hover"
+msgstr "Ampliar la imagen al pasar el ratón por encima"
+
+msgid "Search Results"
+msgstr "Resultados de la búsqueda"
+
+msgid "Search for products"
+msgstr "Buscar productos"
+
+msgid "Secondary color"
+msgstr "Color secundario"
+
+msgid "Section Title"
+msgstr "título de sección"
+
+msgid "Section background"
+msgstr "Fondo de la Sección"
+
+msgid "See more"
+msgstr "Ver más"
+
+msgid "See more products"
+msgstr "Ver más productos"
+
+msgid "See your bag"
+msgstr "Ver tu bolsa"
+
+msgid "Select"
+msgstr "Seleccionar"
+
+msgid "Select a Category"
+msgstr "Selecciona una categoría"
+
+msgid "Select the position of the WhatsApp button, which will always be in one of the corners of the store."
+msgstr "Selecciona la posición en la que se mostrará el botón WhatsApp. Siempre estará en uno de los rincones de la tienda."
+
+msgid "Send us a WhatsApp message"
+msgstr "Envíanos un mensaje de WhatsApp"
+
+msgid "Send us a message and we will reply as soon as possible."
+msgstr "Envíanos un mensaje y te responderemos lo antes posible."
+
+msgid "Set the number of reviews to show initially with each product."
+msgstr "Establezca el número de reseñas que se mostrarán inicialmente con cada producto."
+
+msgid "Share"
+msgstr "Compartir"
+
+msgid "Share links title"
+msgstr "Compartir título de enlaces"
+
+msgid "Share on Facebook"
+msgstr "Compartir en Facebook"
+
+msgid "Share on Pinterest"
+msgstr "Compartir en Pinterest"
+
+msgid "Share on Tumblr"
+msgstr "Compartir en Tumblr"
+
+msgid "Share on 𝕏"
+msgstr "Compartir en 𝕏"
+
+msgid "Share this article"
+msgstr "Comparte este artículo"
+
+msgid "Shipping"
+msgstr "Envío"
+
+msgid "Shipping Address"
+msgstr "Dirección de Envío"
+
+msgid "Shipping Information"
+msgstr "Información de Envío"
+
+msgid "Shipping method"
+msgstr "Método de envío"
+
+msgid "Shopping Cart"
+msgstr "Carrito de compras"
+
+msgid "Show 'back to blog' button"
+msgstr "Mostrar el botón \"volver al blog\""
+
+msgid "Show 'from' if price can vary"
+msgstr "Mostrar 'desde' si el precio varía"
+
+msgid "Show Less"
+msgstr "Muestra menos"
+
+msgid "Show More"
+msgstr "Muestra Más"
+
+msgid "Show Product Brand"
+msgstr "Mostrar marca del producto"
+
+msgid "Show Product SKU"
+msgstr "Mostrar SKU del producto"
+
+msgid "Show Product Stock"
+msgstr "Mostrar Stock del Producto"
+
+msgid "Show add to cart button"
+msgstr "Mostrar Botón de Agregar al Carro"
+
+msgid "Show bank transfer badge"
+msgstr "Mostrar identificador de transferencia bancaria"
+
+msgid "Show color options"
+msgstr "Mostrar Opciones de Color"
+
+msgid "Show manual payment badge"
+msgstr "Mostrar credencial de pago manual"
+
+msgid "Show only image"
+msgstr "Mostrar solo la imagen"
+
+msgid "Show product SKU"
+msgstr "Mostrar SKU del producto"
+
+msgid "Show product brand"
+msgstr "Mostrar marca del producto"
+
+msgid "Show product ratings"
+msgstr "Mostrar valoraciones de productos"
+
+msgid "Show products for empty searches"
+msgstr "Mostrar productos en caso de búsquedas vacías"
+
+msgid "Show share links"
+msgstr "Mostrar enlaces para compartir"
+
+msgid "Sign Up"
+msgstr "Inscríbete"
+
+msgid "Slide"
+msgstr "Slide"
+
+msgid "Slide Title"
+msgstr "Título de la slide"
+
+msgid "Slider"
+msgstr "Slider"
+
+msgid "Slider background opacity color"
+msgstr "Color de la Opacidad del Fondo del Slider"
+
+msgid "Small"
+msgstr "Pequeño"
+
+msgid "Sold out"
+msgstr "Agotado"
+
+msgid "Sort by"
+msgstr "Ordenar por"
+
+msgid "Sort by:"
+msgstr "Ordenar por:"
+
+msgid "Spacing"
+msgstr "Espaciado"
+
+msgid "Square"
+msgstr "Cuadrado"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Stock"
+msgstr "Stock"
+
+msgid "Store 2 address"
+msgstr "Dirección de Tienda 2"
+
+msgid "Store 2 name"
+msgstr "Nombre de Tienda 2"
+
+msgid "Store 2 phone"
+msgstr "Teléfono de Tienda 2"
+
+msgid "Store 2 working hours"
+msgstr "Horarios de Trabajo de Tienda 2"
+
+msgid "Store 3 address"
+msgstr "Dirección de Tienda 3"
+
+msgid "Store 3 name"
+msgstr "Nombre de Tienda 3"
+
+msgid "Store 3 phone"
+msgstr "Teléfono de Tienda 3"
+
+msgid "Store 3 working hours"
+msgstr "Horarios de Trabajo de Tienda 3"
+
+msgid "Store 4 address"
+msgstr "Dirección de Tienda 4"
+
+msgid "Store 4 name"
+msgstr "Nombre de Tienda 4"
+
+msgid "Store 4 phone"
+msgstr "Teléfono de Tienda 4"
+
+msgid "Store 4 working hours"
+msgstr "Horarios de Trabajo de Tienda 4"
+
+msgid "Store WhatsApp"
+msgstr "WhatsApp de la tienda"
+
+msgid "Store background"
+msgstr "Fondo de la Tienda"
+
+msgid "Store info"
+msgstr "Información de la Tienda"
+
+msgid "Store name"
+msgstr "Nombre de la tienda"
+
+msgid "Store name font size"
+msgstr "Tamaño de Letra en Nombre de la Tienda"
+
+msgid "Subscribe"
+msgstr "Suscríbete"
+
+msgid "Subscribe to our email list to receive news and offers first."
+msgstr "Suscríbete a nuestra lista de correo electrónico para recibir noticias y Ofertas primero."
+
+msgid "Subtotal"
+msgstr "Subtotal"
+
+msgid "Success"
+msgstr "Éxito"
+
+msgid "Suggested products in the cart page"
+msgstr "Productos sugeridos en la página del carrito"
+
+msgid "Talk about whatever you want"
+msgstr "Habla de lo que quieras"
+
+msgid "Tax"
+msgstr "Impuesto"
+
+msgid "Tax ID"
+msgstr "Identificación tributaria"
+
+msgid "Template heading"
+msgstr "Encabezado de la plantilla"
+
+msgid "Template image"
+msgstr "Imagen de la plantilla"
+
+msgid "Testimonials"
+msgstr "Testimonios"
+
+msgid "Testimony"
+msgstr "Testimonio"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Text block"
+msgstr "Bloque de Texto"
+
+msgid "Text that appears when the user hovers the mouse over the logo."
+msgstr "Texto que aparece cuando el usuario pasa el cursor sobre el logo."
+
+msgid "Text that displays when hovering over the banner."
+msgstr "Texto que se muestra al pasar el cursor sobre el banner."
+
+msgid "Text that displays when the user hovers on the link."
+msgstr "Texto que se muestra cuando el usuario pasa el cursor sobre el enlace."
+
+msgid "Text that displays when the user hovers over the banner."
+msgstr "Texto que se muestra cuando el usuario pasa el cursor sobre el banner."
+
+msgid "The maximum price cannot be lower than the minimum price"
+msgstr "El precio máximo no puede ser inferior al precio mínimo"
+
+msgid "The minimum amount to proceed with your purchase is %{minimum}. To continue please add at least %{at_least}"
+msgstr "El monto mínimo para proceder con su compra es %{minimum}. Para continuar por favor agregue al menos %{at_least}"
+
+msgid "The minimum quantity of products to proceed with the purchase is %{minimum}. To continue please add at least %{at_least} product(s)"
+msgstr "La cantidad mínima de productos para proceder con la compra es %{minimum}. Para continuar, agregue al menos %{at_least} producto(s)"
+
+msgid "The order"
+msgstr "El pedido"
+
+msgid "The shopping cart is currently empty. You can go back and start adding products."
+msgstr "El carrito de compras está actualmente vacío. Puede regresar y comenzar a agregar productos."
+
+msgid "The sum of the size of the selected files must be lower than 10MB."
+msgstr "La suma del tamaño de los archivos seleccionados debe ser inferior a 10MB."
+
+msgid "There are no featured products"
+msgstr "No hay productos destacados"
+
+msgid "There aren't any articles available in our blog"
+msgstr "No hay artículos disponibles en nuestro blog."
+
+msgid "There aren't any products available in this category"
+msgstr "No hay productos disponibles en esta categoría"
+
+msgid "There aren't any products available with the selected filters"
+msgstr "No hay productos disponibles con los filtros seleccionados"
+
+msgid "There aren't any products that matches your search. Try searching again"
+msgstr "No hay productos que coincidan con tu búsqueda. Intenta buscar nuevamente"
+
+msgid "There's no product image available"
+msgstr "No hay imagen del producto disponible"
+
+msgid "This color is for the button and the highlighted line color."
+msgstr "Este color es para el botón y el color de la línea resaltada."
+
+msgid "This color is for the button and the highlighted line."
+msgstr "Este color es para el botón y la línea resaltada."
+
+msgid "This color is for the button, the highlighted line and the overlay color."
+msgstr "Este color es para el botón, la línea resaltada y el color de superposición."
+
+msgid "This color is for the button."
+msgstr "Este color es para el botón."
+
+msgid "This color is for the highlighted line and quotation mark."
+msgstr "Este color es para la línea resaltada y las comillas."
+
+msgid "This color is for the highlighted line."
+msgstr "Este color es para la línea resaltada."
+
+msgid "This component allows you to display a gallery of images, they can be logos from brands that you sell on your store, companies partnership, featured products or whatever you want to communicate with images."
+msgstr "Este componente te permite mostrar una galería de imágenes, pueden ser logotipos de marcas que vendas en tu tienda, empresas colaboradoras, productos destacados o lo que quieras comunicar con imágenes."
+
+msgid "This component allows you to display products that have been marked as 'Featured'. You can manage your featured products inside each Product configuration."
+msgstr "Este componente te permite mostrar productos que han sido marcados como \"Destacados\". Puedes gestionar tus productos destacados dentro de la configuración de cada Producto."
+
+msgid "This component allows you to display the latest products that have been created and/or added to your store. The order in which products display is automatic and will be based on the order you created them on your administration panel."
+msgstr "Este componente te permite mostrar los últimos productos que se han creado y/o incorporado a tu tienda. El orden en que se muestran los productos es automático y se basará en el orden en que los creaste en tu panel de administración."
+
+msgid "This component allows you to subscribe customer’s emails into your database. All the emails sent on this component will be a new customer created in your customers section."
+msgstr "Este componente te permite suscribir correos electrónicos de clientes en tu base de datos. Todos los correos enviados en este componente serán un nuevo cliente creado en tu sección de clientes."
+
+msgid "This component helps to display a group of products from a specific category of your store. You can decide how many products you want to show on the settings."
+msgstr "Este componente ayuda a mostrar un grupo de productos de una categoría específica de tu tienda. Puedes decidir cuántos productos quieres mostrar en la configuración."
+
+msgid "This component helps you to add a line divider to separate and add extra spacing between components."
+msgstr "Este componente te ayuda a agregar un separador de líneas para dividir y añadir espaciado adicional entre los componentes."
+
+msgid "This component is dedicated to promote certain features about your store, for example promotions, features products, categories among others using images and links."
+msgstr "Este componente está dedicado a dar a conocer determinadas funcionalidades de tu tienda, como por ejemplo promociones, productos destacados, categorías, etc. mediante imágenes y enlaces."
+
+msgid "This is a component integrated with your Instagram account. To use it you have to be logged in into your account on your administration panel, inside the section General > Preferences > General Preferences. Take in consideration that your account shouldn't be private."
+msgstr "Este es un componente integrado con tu cuenta de Instagram. Para usarlo tienes que estar logueado a tu cuenta en tu panel de administración, dentro de la sección General > Preferencias > Configuración General. Ten en cuenta que tu cuenta no debe ser privada."
+
+msgid "This is an example accordion item"
+msgstr "Este es un ejemplo de elemento de acordeón"
+
+msgid "This is your order number"
+msgstr "Este es el número de tu orden"
+
+msgid "This product is currently out of stock. Click the button below to be notified when it's available again"
+msgstr "Este producto está actualmente agotado. Haz clic en el botón de abajo para que te avisemos cuando vuelva a estar disponible"
+
+msgid "This product is currently unavailable. You may send us an inquiry about it"
+msgstr "Este producto no está disponible actualmente. Puedes enviarnos una consulta al respecto"
+
+msgid "This product is not available"
+msgstr "Este producto no está disponible"
+
+msgid "This will show a map with your main location configured on your checkout settings."
+msgstr "Esto mostrará un mapa con tu ubicación principal configurada en la configuración Checkout de tu panel de administración."
+
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+msgid "Time that takes to pass from one 'Block' to the next, in seconds."
+msgstr "Tiempo que tarda en pasar de un 'Bloque' al siguiente, en segundos."
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Title Accordion component"
+msgstr "Título del componente de acordeón"
+
+msgid "Title color"
+msgstr "Color del título"
+
+msgid "Titles"
+msgstr "Títulos"
+
+msgid "To"
+msgstr "Hasta"
+
+msgid "To display the category or page image."
+msgstr "Para mostrar la imagen de la categoría o de la página."
+
+msgid "Top Left"
+msgstr "Arriba a la izquierda"
+
+msgid "Top Right"
+msgstr "Parte superior derecha"
+
+msgid "Top center"
+msgstr "Centro Superior"
+
+msgid "Top left"
+msgstr "Arriba a la izquierda"
+
+msgid "Top promotional message"
+msgstr "Mensaje promocional"
+
+msgid "Top right"
+msgstr "Parte superior derecha"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Tracking company"
+msgstr "Empresa de envío"
+
+msgid "Tracking number"
+msgstr "Número de seguimiento"
+
+msgid "Trust bar"
+msgstr "Barra de Confianza"
+
+msgid "Trust bar block description"
+msgstr "Descripción del bloque de la Trust bar"
+
+msgid "Trust block"
+msgstr "Bloque de confianza"
+
+msgid "Try searching again or keep shopping by clicking on the button below"
+msgstr "Intente buscar nuevamente o sigue comprando haciendo clic en el botón a continuación"
+
+msgid "Unavailable tag color"
+msgstr "Color de etiqueta no disponible"
+
+msgid "Unit Price"
+msgstr "Precio Unitario"
+
+msgid "Use this for external apps or your custom design"
+msgstr "Úsalo para aplicaciones externas o código personalizado"
+
+msgid "Use this for external apps or your custom design, here you can include code, tools, plugins, app, etc. you need to display in the component."
+msgstr "Utilízalo para aplicaciones externas o tu diseño personalizado, aquí puedes incluir código, herramientas, plugins, aplicación, etc. que necesites mostrar en el componente."
+
+msgid "Vertical"
+msgstr "Vertical"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "View Options"
+msgstr "Ver Opciones"
+
+msgid "View Order Details"
+msgstr "Ver detalles de la orden"
+
+msgid "Width"
+msgstr "Ancho"
+
+msgid "Wire Transfer"
+msgstr "Transferencia Bancaria"
+
+msgid "Working hours"
+msgstr "Horas de trabajo"
+
+msgid "You can add information about your brand, shipping methods, promotions, company description, or even describe a product."
+msgstr "Puedes agregar información sobre tu marca, métodos de envío, promociones, descripción de la empresa o incluso describir un producto."
+
+msgid "You can display a big image to promote for example a new product, some product features, campaigns or whatever you need in a highlighted big image."
+msgstr "Puedes mostrar una imagen de gran tamaño para promocionar, por ejemplo: un nuevo producto, algunas funcionalidades de un producto, campañas o lo que necesites en una gran imagen resaltada."
+
+msgid "You can include HTML tags to improve the content of the accordion item, like for example: <b>bold</b>, <i>italic</i>, <a href='url'>link</a>."
+msgstr "Puedes incluir etiquetas HTML para mejorar el contenido del elemento acordeón, como por ejemplo: <b>negrita</b>, <i>cursiva</i>, <a href='url'>enlace</a>."
+
+msgid "You can use this section to describe a store feature, an article or a product."
+msgstr "Puedes utilizar esta sección para describir una característica de la tienda, un artículo o un producto."
+
+msgid "You do not see what you are looking for?"
+msgstr "¿No ves lo que estás buscando?"
+
+msgid "You have not made any purchases."
+msgstr "No has realizado ninguna compra."
+
+msgid "You might also be interested in"
+msgstr "También te puede interesar"
+
+msgid "You might also like"
+msgstr "También podría gustarte"
+
+msgid "You need to login in your Instagram account"
+msgstr "Necesitas iniciar sesión en tu cuenta de Instagram"
+
+msgid "You've searched for"
+msgstr "Has buscado por"
+
+msgid "Your Shopping Cart"
+msgstr "Tu Carro de Compras"
+
+msgid "Your cart is empty."
+msgstr "Tu carrito esta vacío."
+
+msgid "Your order has been paid successfully."
+msgstr "Tu orden fue pagada con éxito."
+
+msgid "Your order is pending payment."
+msgstr "Tu orden está pendiente de pago"
+
+msgid "at"
+msgstr "en"
+
+msgid "contains the following items"
+msgstr "contiene los siguientes items"
+
+msgid "dd-mm-yyyy"
+msgstr "dd-mm-aaaa"
+
+msgid "has been added to the shopping cart."
+msgstr "ha sido añadido al carrito de compra."
+
+msgid "have been added to the shopping cart."
+msgstr "han sido añadidos al carro de compra."
+
+msgid "mm-dd-yyyy"
+msgstr "mm-dd-aaaa"
+
+msgid "of"
+msgstr "de"
+
+msgid "or Continue Shopping"
+msgstr "o Continuar comprando"
+
+msgid "units of this product remain"
+msgstr "unidades de este producto"
+
+msgid "yyyy-mm-dd"
+msgstr "aaaa-mm-dd"

@@ -1,0 +1,160 @@
+<link href="https://fonts.googleapis.com/css?family=Anaheim" rel="stylesheet">
+<div class="success_page">
+  <div class="success_container">
+    <div class="success_block">
+      <h2 class="top_title">
+        {% t "This is your order number" %}: <strong>#{{ order.id }}</strong>
+      </h2>
+      {% if order.status_id == 'Pending Payment' %}
+        <div class="alert alert-warning mb-0">
+          {% t "Your order is pending payment." %}
+        </div>
+      {% elsif order.status_id == 'Paid' %}
+        <div class="alert alert-success mb-0">
+          {% t "Your order has been paid successfully." %}
+        </div>
+      {% endif %}
+    </div>
+    <hr>
+    <div class="success_block">
+      <p>
+        {% t "An email with your order summary has been sent to" %}: <strong>{{ order.email }}</strong>
+      </p>
+    </div>
+    {% if order.shipping_required %}
+      <hr>
+      <div class="success_block">
+        <h2 class="top_title">
+          <strong>{% t "Order will be Shipped to" %}:</strong>
+        </h2>
+        <p>{{ order.shipping_address.formatted }}</p>
+      </div>
+    {% endif %}
+    <hr>
+    {% if order.payment_information != empty %}
+      <div class="success_block">
+        <h2 class="top_title">
+          <strong>{% t "Information for Payment" %}:</strong>
+        </h2>
+        <p>
+          {{ order.payment_method -}}
+          <br>
+          {{ order.payment_information }}
+        </p>
+      </div>
+    {% endif %}
+    <span class="dashed"></span>
+    <div id="send-to-messenger" class="fb-send-to-messenger" data-ref="{{ order.id }}"></div>
+    {% if options.success_page_product_table %}
+      <div class="success_block">
+        <div class="row no-gutters success_block_head">
+          <div class="col-8">{% t "Product" %}</div>
+          <div class="col-4 text-right">{% t "Subtotal" %}</div>
+        </div>
+
+        {% for ordered_product in order.products %}
+          <div class="row no-gutters success_block_body">
+            <div class="col-8">
+              {% if ordered_product.options != empty %}
+                {{ ordered_product.name -}}
+                <br>
+                {% for option in ordered_product.options %}
+                  <small>{{ option.name }}: {{ option.value }}</small><br>
+                {% endfor %}
+              {% else %}
+                {{ ordered_product.name }}
+              {% endif %}
+            </div>
+            <div class="col-4 text-right">
+              {% if ordered_product.discount > 0 %}
+                <span>
+                  {{ ordered_product.qty }} x
+                  <div class="order-product-price">{{ ordered_product.price | minus: ordered_product.discount | price }}</div>
+                  <br>
+                  <small style="text-decoration:line-through;">
+                    <div class="order-product-price">({{ ordered_product.price | price }})</div>
+                  </small>
+                </span>
+              {% else %}
+                <span>
+                  {{- ordered_product.qty }} x
+                  <div class="order-product-price">{{ ordered_product.price | price }}</div>
+                </span>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div id="review-cart-totals" class="cart-totals success_block">
+        {% if order.subtotal != order.total %}
+          <div class="row no-gutters">
+            <div class="col-8">{% t "Subtotal" %}</div>
+            <div class="col-4 text-right order-product-subtotal">{{ order.subtotal | price }}</div>
+          </div>
+        {% endif %}
+
+        {% if order.shipping_required %}
+          <div class="row no-gutters">
+            <div class="col-8">{% t "Shipping" %}</div>
+            <div class="col-4 text-right order-product-subtotal">{{ order.shipping | price }}</div>
+          </div>
+        {% endif %}
+
+        {% if order.discount > 0 %}
+          <div class="row no-gutters totals">
+            <div class="col-8">{% t "Discount" %}</div>
+            <div class="col-4 text-right order-product-subtotal">-{{ order.discount | price }}</div>
+          </div>
+        {% endif %}
+
+        {% if order.applied_tax > 0 %}
+          <div class="row no-gutters totals">
+            <div class="col-8">{% t "Tax" %}</div>
+            <div class="col-4 text-right order-product-subtotal">{{ order.applied_tax | price }}</div>
+          </div>
+        {% endif %}
+
+        <div class="row no-gutters total">
+          <div class="col-8">
+            <strong>{% t "Total" %}</strong>
+          </div>
+          <div class="col-4 text-right">
+            <strong class="order-product-subtotal">{{ order.total | price }}</strong>
+          </div>
+        </div>
+      </div>
+      <span class="dashed"></span>
+      <div class="success_block">
+        <div class="mb-3">
+          <div class="text-center">
+            {% t "If you have any question or special requirement about reimbursements or shipping please contact us:" %}
+            <b>
+              {%- if options.display_contact_email -%}
+                <a href="mailto:{{ store.email }}">{{ store.email }}</a>
+              {%- else -%}
+                <a href="/contact">{% t "Go to contact page" %}</a>
+              {%- endif -%}</b
+            >.
+          </div>
+        </div>
+      </div>
+      <hr>
+    {% endif %}
+    <div class="success_block text-center">
+      <a href="{{ store.url }}" class="butn butn-block" title="&larr; {% t 'Go back & Keep Shopping' %}">{% t "Go back & Keep Shopping" %}</a>
+    </div>
+    {% if customer == null and store.customers_enabled and store.customers_optional %}
+      <span class="dashed"></span>
+      <div class="success_block">
+        <div class="cart-block mb-3">
+          <h2 class="top_title">
+            <strong>{% t "Create your Customer Account" %}</strong>
+          </h2>
+          <div class="cart-block-inside">
+            {{ customer_reset_password_form }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

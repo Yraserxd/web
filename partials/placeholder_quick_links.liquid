@@ -1,0 +1,12 @@
+{% for quick in (1..6) %}
+  <div class="{{ grid_size }} col-6 pb-4 mb-2">
+    <div class="trsn {% if component.options.only_image != true %}overlay{% endif %}">
+      <a href="/admin/themes/options/{{ theme.id }}" title="{% t 'Add your own quick links' %}" class="quick-link_link quick-link_link_title">
+        {% if component.options.only_image != true %}
+          <div class="quick-link_title">{% t "Add your own quick links" %}</div>
+        {% endif %}
+        <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-510x510.png" alt="{% t 'Add your own quick links' %}" width="510" height="510" loading="lazy">
+      </a>
+    </div>
+  </div>
+{% endfor %}

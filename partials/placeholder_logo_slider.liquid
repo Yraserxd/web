@@ -1,0 +1,7 @@
+{% for items in (1..7) %}
+<div class="swiper-slide">
+  <a href="{{ store.url }}/admin/themes/options/{{ theme.id }}">
+    <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-250x250.png" alt="{% t 'Image alternative text' %}" width="250" height="250" loading="lazy">
+  </a>
+</div>
+{% endfor %}

@@ -1,0 +1,247 @@
+<div class="product-block trsn" data-productid="{{ prod.id }}">
+  {% assign has_colors = false -%}
+  {%- for option in prod.options -%}
+    {%- if option.type == 'color' -%}
+      {%- assign has_colors = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor %}
+
+  <a href="{{ prod.url }}" class="product-block__anchor{% if prod.status != 'available' or prod.stock <= 0 and prod.stock_unlimited == false %} not-available{% endif %}">
+    <div class="product-block__badges">
+    {% unless prod.discount == 0 or options.disable_prices %}
+      <span class="sale">
+        -{{ prod.discount | divided_by: prod.price | times: 100 | round: 0 }}&percnt; {{ options.pb_sale_tag_text }}
+      </span>
+    {% endunless %}
+
+    {%- if options.pb_new_tag_age > 0 %}
+      {% assign age = options.pb_new_tag_age | times: 86400 %}
+      {% assign compare_date = 'now' | date: '%s' | minus: age %}
+      {% assign product_created_at = prod.created_at | date: '%s' | plus: 0 %}
+      {% if compare_date < product_created_at -%}
+        <span class="new">{% t "New" %}</span>
+      {%- endif %}
+    {% endif -%}
+
+    {% if options.pb_show_buttons == false or options.disable_shopping_cart %}
+      {% if prod.stock == 0 and prod.stock_unlimited == false %}
+        <span class="unavailable">{% t "Sold out" %}</span>
+      {% elsif prod.status == 'not-available' %}
+        <span class="unavailable">{% t "Not Available" %}</span>
+      {% endif %}
+    {% endif %}
+    </div>
+
+    {% if prod.images == empty %}
+      <img
+        src="//assets.jumpseller.com/public/placeholder/themes/mega/no-image.jpg"
+        alt="{{ prod.name | escape }}"
+        width="260"
+        height="260"
+        loading="lazy"
+      >
+    {% elsif prod.images.size > 1 and has_colors and options.pb_show_color_options %}
+      <swiper-slider class="swiper product-block__slider" sw-layout="one" sw-root="*">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide product-block__slide overflow-hidden">
+            <img
+              alt="{{ prod.name | escape }}"
+              src="{% if options.pb_image_display == 'resize' %}{{ prod.images.first | resize: '260x260' }}{% else %}{{ prod.images.first | thumb: '260x260' }}{% endif %}"
+              width="260"
+              height="260"
+              loading="lazy"
+            >
+          </div>
+          {% for option in prod.options -%}
+            {%- if option.type == 'color' %}
+              {% for value in option.values limit: 10 -%}
+                {%- if value.image != blank %}
+                  <div class="swiper-slide product-block__slide overflow-hidden" data-color-option-value="{{ value.id }}">
+                    <img
+                      alt="{{ prod.name | escape }} - {{ value.name | escape }}"
+                      src="{% if options.pb_image_display == 'resize' %}{{ value.image | resize: '260x260' }}{% else %}{{ value.image | thumb: '260x260' }}{% endif %}"
+                      width="260"
+                      height="260"
+                      loading="lazy"
+                    >
+                  </div>
+                {% endif -%}
+              {%- endfor -%}
+              {%- break %}
+            {% endif -%}
+          {%- endfor %}
+        </div>
+      </swiper-slider>
+    {% else %}
+      <img
+        class="img-fluid"
+        src="{% if options.pb_image_display == 'resize' %}{{ prod.images.first | resize: '260x260' }}{% else %}{{ prod.images.first | thumb: '260x260' }}{% endif %}"
+        srcset="{% if options.pb_image_display == 'resize' %}{{ prod.images.first | resize: '260x260' }} 1x, {{ prod.images.first | resize: '520x520' }} 2x{% else %}{{ prod.images.first | thumb: '260x260' }} 1x, {{ prod.images.first | thumb: '520x520' }} 2x{% endif %}"
+        title="{{ prod.name | escape }}"
+        alt="{{ prod.name | escape }}"
+        width="260"
+        height="260"
+        loading="lazy">
+    {% endif %}
+  </a>
+
+  <div class="caption">
+    <div class="button-hide">
+      <div class="brand-name trsn">
+        <span class="brand">{{ prod.brand }}</span>
+        <h3>
+          <a
+            class="product-block-name"
+            href="{{ prod.url }}"
+          >
+            {{ prod.name | truncate: 50 }}
+          </a>
+        </h3>
+      </div>
+
+      {% if options.pb_show_buttons and options.disable_shopping_cart == false %}
+        <div class="quick-view my-lg-0 my-2 trsn">
+          {% if prod.stock == 0 and prod.stock_unlimited == false %}
+            <a
+              class="btn gray"
+              href="{{ prod.url }}"
+            >
+              {%- t "Sold out" -%}
+            </a>
+          {% elsif prod.status == 'not-available' %}
+            <a
+              class="btn gray"
+              href="{{ prod.url }}"
+            >
+              {%- t "Not Available" -%}
+            </a>
+          {% elsif prod.options != empty %}
+            <a
+              class="btn secondary"
+              href="{{ prod.url }}"
+            >
+              {%- t "View Options" -%}
+            </a>
+          {% else %}
+            <form
+              action="{{ prod.add_to_cart_url }}"
+              method="post"
+              enctype="multipart/form-data"
+              name="buy"
+            >
+              <div class="row adc-form no-gutters">
+                <div class="col-sm-8 d-sm-block d-none">
+                  <div class="quantity">
+                    <div class="product-qty">
+                      <input
+                        type="number"
+                        class="form-control text-center qty-list-product"
+                        name="qty"
+                        min="1"
+                        value="1"
+                        {% unless prod.stock_unlimited %}
+                          max="{{ prod.stock }}"
+                        {% endunless %}
+                        onchange="verifyAddToCartQuantity(this)"
+                      >
+                      <div class="quantity-nav">
+                        <div
+                          class="quantity-button quantity-up"
+                          onclick="incrementCartFromProductBlock(this)"
+                        >
+                          +
+                        </div>
+                        <div
+                          class="quantity-button quantity-down"
+                          onclick="decrementCartFromProductBlock(this)"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  {% if options.display_cart_notification %}
+                    <button
+                      type="button"
+                      class="adc btn btn-block primary"
+                      onclick="addToCartFromProductBlock(this)"
+                      value="{% t 'Add to Cart' %}"
+                    >
+                      <i class="fas fa-cart-plus"></i>
+                    </button>
+                  {% else %}
+                    <button type="submit" class="adc btn primary" value="{% t 'Add to Cart' %}">
+                      <i class="fas fa-cart-plus"></i>
+                    </button>
+                  {% endif %}
+                </div>
+              </div>
+            </form>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% unless options.disable_prices %}
+      <div class="price">
+        {% if prod.discount > 0 %}
+          {% if options.pb_show_from_prices and prod.variants_min_price != prod.variants_max_price -%}
+            <div class="from-price">{% t "From" %}</div>
+          {%- endif -%}
+          <span class="block-price">{{ prod.price | minus: prod.discount | price }}</span>
+          <span class="product-block-discount block-price-discount"> {{ prod.price | price }}</span>
+        {% else %}
+          {% if options.pb_show_from_prices and prod.variants_min_price != prod.variants_max_price -%}
+            <div class="from-price">{% t "From" %}</div>
+          {% endif -%}
+          <span class="block-price">{{ prod.price | price }}</span>
+        {% endif %}
+      </div>
+    {% endunless %}
+
+    {% if has_colors and options.pb_show_color_options -%}
+      {%- for option in prod.options -%}
+        {%- if option.type == 'color' %}
+          <div class="color-swatch">
+            {% assign swatch_limit = 7 -%}
+            {%- assign swatch_group = random.hex %}
+            <fieldset class="field-group colors">
+              {% for value in option.values limit: swatch_limit %}
+                <div class="color-option">
+                  {% assign label_group = random.hex %}
+                  <input
+                    type="radio"
+                    name="{{ swatch_group }}"
+                    value="{{ value.id }}"
+                    id="{{ label_group }}"
+                    onclick="updateCarouselFromSwatch(this)"
+                  >
+                  <label
+                    title="{{ value.name }}"
+                    for="{{ label_group }}"
+                    style="background-color: {{ value.custom }}"
+                  ></label>
+                </div>
+              {% endfor %}
+              {% if option.values.size > swatch_limit %}
+                <a href="{{ prod.url }}" style="color:black" class="color-option-plus" title="{% t 'See more' %}">+</a>
+              {% endif %}
+            </fieldset>
+          </div>
+          {% break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif %}
+
+    {% if options.pb_show_ratings and prod.reviews != empty and options.pp_reviews %}
+      <div class="d-flex mt-2 product-block-rating-container">
+        {% render 'product_rating', prod: prod %}
+      </div>
+    {% endif %}
+
+    <small class="sku">{{ prod.sku }}</small>
+  </div>
+</div>

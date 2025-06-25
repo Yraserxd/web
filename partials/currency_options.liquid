@@ -1,0 +1,14 @@
+{% if store.currencies_codes.size > 1 %}
+  <script>
+    if(typeof(Storage) !== "undefined") {
+      if (localStorage.getItem('global_currency') == null){
+        localStorage.setItem('global_currency', '{{ store.currency_code }}');
+        localStorage.setItem('store_currency', '{{ store.currency_code }}');
+      }
+    } else {
+      // Sorry! No Web Storage support..
+      console.log("Unable to use multi-currency on this store. Please update your browser.");
+      $('#current_currency').parents('li').hide();
+    }
+  </script>
+{% endif %}

@@ -1,0 +1,29 @@
+<li class="nav-item {% if item.dropdown %}has-children{% endif %} d-none d-lg-block">
+  <a href="{{ item.url }}"{% if item.external %} target="_blank"{% endif %} title="{{ item.name }}" class="{% if item.dropdown %}has-children {% endif %}level-1 trsn nav-link">{{ item.name }}</a>
+  {% if item.dropdown %}
+  <ul class="multi-level">
+    {% for item in item.items %}
+    {% render 'category_menu', item: item %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>
+
+<li class="{% if item.dropdown %}has-dropdown{% endif %} mobile d-lg-none">
+  {% if item.dropdown %}
+  <a title="{{ item.name }}" class="level-{{ item.level }} {% if item.level != 1 %} last-trigger{% else %} first-trigger{% endif %}">{{ item.name }} <i class="fas fa-angle-right" aria-hidden="true"></i></a>
+  {% else %}
+  <a href="{{ item.url }}" title="{{ item.name }}">{{ item.name }}</a>
+  {% endif %}
+
+  {% if item.dropdown %}
+  <ul class="level-{{ item.level }} dropdown">
+    <li><a title="{% t 'Back' %}" class="back-level-{{ item.level }}"><i class="fas fa-angle-double-left" aria-hidden="true"></i> {% t 'Back' %}</a></li>
+    <li><a title="{{ item.name }}" class="top-category">{{ item.name }}</a></li>
+    {% for item in item.items %}
+    	{% render 'category_menu', item: item %}
+    {% endfor %}
+    <li><a href="{{ item.url }}" title="{{ item.name }}" class="goto">{% t 'Go to' %} <span>{{ item.name }}</span></a></li>
+  </ul>
+  {% endif %}
+</li>

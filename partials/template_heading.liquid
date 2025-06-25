@@ -1,0 +1,56 @@
+{% case template %}
+  {% when 'category' %}
+    {% assign title = category.name %}
+  {% when 'contactpage' %}
+    {% capture title %}{% t "Contact" %}{% endcapture %}
+  {% when 'cart' %}
+    {% capture title %}{% t "Shopping Cart" %}{% endcapture %}
+  {% when 'checkout' %}
+    {% capture title %}{% t "Checkout" %}{% endcapture %}
+  {% when 'success' %}
+    {% capture title %}{% t "Order Completed" %}{% endcapture %}
+  {% when 'page' %}
+    {% assign title = page.title %}
+  {% when 'searchresults' %}
+    {% capture title %}{% t "Search Results" %}{% endcapture %}
+    {% capture search_query %}{% t "You've searched for" %}:<strong>{{ search.query }}</strong>{% endcapture %}
+{% endcase %}
+
+{% if options.template_heading_breadcrumbs %}
+  <!-- Store Breadcrumbs -->
+  <section class="breadcrumb d-none d-md-block">
+    <div class="container">
+      <ul>
+        {% for breadcrumb in breadcrumbs %}
+          {% if forloop.last %}
+            <li class="breadcrumb-item">
+              <span>{{ breadcrumb.text }}</span>
+            </li>
+          {% else %}
+            <li class="breadcrumb-item">
+              <a href="{{ breadcrumb.url }}" class="trsn" title="{% t 'Go back to' %} {{ breadcrumb.text }}">{{ breadcrumb.text }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  <!-- end .store-breadcrumbs -->
+{% endif %}
+
+{% unless template == 'error' or template == 'product' or template == 'customer_address' or template == 'customer_details' or template == 'customer_login' or template == 'customer_reset_password' %}
+  <div class="container template-heading">
+    <h1 class="page-title {{ options.template_heading_title_alignment }}">
+      {{ title }}
+      {{ search_query }}
+    </h1>
+
+    {% unless page.template != 'Post' %}
+      {% if options.page_date %}
+        <div class="my-3">
+          {{ page.date | date: options.page_date_format }}
+        </div>
+      {% endif %}
+    {% endunless %}
+  </div>
+{% endunless %}

@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+  const shoppingCartMessage = '{% t "Go to Shopping Cart." %}';
+  const singleProductMessage = '{% t "has been added to the shopping cart." %}'
+  const multiProductMessage = '{% t "have been added to the shopping cart." %}'
+  const emptyCartMessage = '{% t "Your cart is empty." %}'; // used in main.js
+
+  function getProductOptions() {
+    var options = {};
+    $(".prod-options").each(function () {
+      var option = $(this);
+      if ($(this).is("fieldset")) options[option.attr('id')] = option.find(":checked").first().val();
+      else options[option.attr('id')] = option.val();
+    });
+    return options;
+  }
+
+  function addToCart(id, productName, qty, options) {
+    Jumpseller.addProductToCart(id, qty, options, {
+      callback: function(data, status) {
+        toastr.options = {
+          closeButton: true,
+          debug: false,
+          newestOnTop: false,
+          progressBar: true,
+          positionClass: '{{ options.cart_notification_position }}',
+          preventDuplicates: false,
+          onclick: null,
+          showDuration: '500',
+          hideDuration: '1000',
+          timeOut: '5000',
+          extendedTimeOut: '1000',
+          showEasing: 'swing',
+          hideEasing: 'linear',
+          showMethod: 'fadeIn',
+          hideMethod: 'fadeOut',
+        };
+
+        if (data.status && data.status != 200) {
+          toastr.error(data.responseJSON.message);
+          return;
+        }
+
+        const cartLink = $('#cart-link, #header-cart-menu').first().attr('href') || '/cart';
+        const hasBeenAdded = qty == 1 ? singleProductMessage : multiProductMessage;
+        const message = `${qty} ${productName} ${hasBeenAdded} <a href="${cartLink}">${shoppingCartMessage}</a>`;
+
+        toastr.options.onclick = () => window.location.href = cartLink;
+        toastr.success(message);
+
+        updateCart(data);
+      },
+    });
+  }
+</script>

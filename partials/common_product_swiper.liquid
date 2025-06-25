@@ -1,0 +1,10 @@
+<swiper-slider
+  class="col-12 swiper position-relative pb-5"
+  sw-layout="products"
+  sw-root=".store-section__content"
+  sw-autoplay="{{ component.options.autoplay }}"
+  sw-speed="{{ component.options.autoplay_speed }}"
+>
+  <div class="swiper-wrapper">{{ slides }}</div>
+  {% render 'common_swiper_pagination' %}
+</swiper-slider>

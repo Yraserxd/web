@@ -1,0 +1,10 @@
+<li class="nav-item{% if item.dropdown %} dropdown{% endif %}{% if item.active %} active{% endif %} {% if item.level == 1 %}d-table-cell{% endif %}">
+  <a href="{{ item.url }}"{% if item.external %} target="_blank"{% endif %} title="{{ item.name }}" class="{% if item.dropdown %}dropdown-toggle{% endif %} trsn nav-link {% if item.level == 1 %}d-table-cell align-middle{% endif %}">{{ item.name }}</a>
+  {% if item.dropdown %}
+    <ul class="dropdown-menu multi-level">
+      {% for item in item.items %}
+        {% render 'navigation_menu', item: item %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</li>

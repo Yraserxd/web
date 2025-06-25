@@ -1,0 +1,133 @@
+{% if search.results == empty %}
+  <div class="registration search_page pb-5" {{ component.attributes }}>
+    <div class="container">
+      <div class="row text-center">
+        <section class="col-lg-6 offset-lg-3 text-center">
+          <h4 class="mb-3">{% t "There aren't any products that matches your search. Try searching again" %}</h4>
+          <div class="jumpseller-autocomplete">
+            <form id="search_form" class="form-group search_mini_form" method="get" action="{{ search.url_send }}">
+              <input type="text" value="{{ search.query }}" name="q" class="form-control form-control-sm" onfocus="javascript:this.value=''" placeholder="{% t 'Search for products' %}">
+              <button type="submit" class="btn primary"><i class="linear-icon icon-0803-magnifier"></i></button>
+            </form>
+          </div>
+        </section>
+      </div>
+      {% if options.featured_on_search and products.featured != empty %}
+        <div class="col-12 text-center mb-3">
+          <hr>
+          <h4 class="font-weight-bold">{% t "You might also like" %}</h4>
+        </div>
+        <div class="row product-list">
+          {% for prod in products.featured limit: 8 %}
+            <div class="col-lg-3 col-md-4 col-6 pb-3">
+              {% render 'product_block', prod: prod %}
+            </div>
+          {% endfor %}
+          <div class="col-12 text-center">
+            <p>
+              {% t "You do not see what you are looking for?" %}
+              <br>
+              <a class="btn btn-secondary btn-sm mt-2" href="{{ contact.url }}">{% t "Contact Us" %}</a>
+            </p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% else %}
+  {% paginate search.results by component.options.limit %}
+    <div class="container container-section">
+      <div class="row">
+        <div class="col-6">
+          <span class="mt-2 d-none d-lg-flex"
+            ><strong>
+              {{- paged.total }}
+              {% t "Product(s)" -%}
+            </strong></span
+          >
+        </div>
+        <div class="col-6">
+          <form class="form-horizontal d-none d-lg-block">
+            <div class="form-group row align-items-center mb-0">
+              <label class="col-md-4 control-label text-right mb-0">{% t "Sort by" %}:</label>
+              <div class="col-md-8">
+                <div>
+                  <select class="form-control" onchange="window.location.href = this.value">
+                    {% for sorting_option in search.sorting_options %}
+                      <option
+                        value="{{ sorting_option.url }}"
+                        {% if sorting_option.selected %}
+                          selected
+                        {% endif %}
+                      >
+                        {{ sorting_option.text }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class="d-none d-lg-block">
+      <div class="row">
+        {% if filters != empty and component.options.show_filters %}
+          <!-- filter mobile -->
+          <div class="col-5 d-block d-lg-none">
+            <div class="row justify-content-between">
+              <div class="{% if filters != empty %}col-12{% else %}col-6{% endif %} product-qty mt-2 pt-1">
+                <strong>
+                  {{- paged.total }}
+                  {% t "Product(s)" -%}
+                </strong>
+              </div>
+            </div>
+          </div>
+          {% if component.options.show_filters %}
+            <div class="col-7 d-block d-lg-none text-right">
+              <button id="show_filters" type="button" class="btn btn-outline-secondary btn-filter my-0 d-lg-none">
+                <i class="fas fa-sliders-h"></i> {% t "Filters" %}
+                <span class="badge badge-light"></span>
+              </button>
+            </div>
+          {% endif %}
+        {% endif %}
+        <div class="col-12 d-block d-lg-none">
+          <hr>
+        </div>
+        <!-- end filter mobile -->
+        {% if component.options.show_filters %}
+          <div class="col-lg-3 d-lg-block">
+            {% render 'category_filter' %}
+          </div>
+        {% endif %}
+        <div class="{% if filters != empty and component.options.show_filters %}col-lg-9{% else %}col-lg-12{% endif %} col-md-12">
+          <div class="row product-list mx-md-n3 mx-n2">
+            {% for prod in paged.results %}
+              <div class="{% if filters != empty %}col-md-4{% else %}col-lg-3 col-md-4{% endif %} col-6 pb-3">
+                {% render 'product_block', prod: prod %}
+              </div>
+            {% endfor %}
+
+            {% if filters != empty and paged.total == 0 %}
+              <section class="col-12 text-center">
+                <div class="card">
+                  <div class="card-body">
+                    <h5>{% t "There aren't any products available with the selected filters" %}.</h5>
+                    <a href="#" class="all mt-4 btn primary" title="{% t 'Clear filters' %}" onclick="window.location = window.location.href.split('?')[0];">
+                      {% t "Clear filters" %}
+                      <i class="fas fa-eraser"></i>
+                    </a>
+                  </div>
+                </div>
+              </section>
+            {% endif %}
+
+            {% render 'pagination', paged: paged %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endpaginate %}
+{% endif %}

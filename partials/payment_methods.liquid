@@ -1,0 +1,32 @@
+{% for partner in payment-methods.options.partners %}
+  <li><span><img src="{{ partner.badge }}" alt="{{ partner.name | escape }}" height="30" width="56" loading="lazy"></span></li>
+{% endfor %}
+
+{% if payment-methods.options.bank_transfer_payment %}
+<li>
+  <span>
+    {% case languages.first.code %}
+    {% when 'es', 'cl', 'mx', 'co', 'es-PE', 'es-AR' %}
+      <img src="//assets.jumpseller.com/public/placeholder/themes/payments/pay-wire-es.png" alt="{% t 'Wire Transfer' %}" height="30" width="56" loading="lazy">
+    {% when 'pt', 'br' %}
+      <img src="//assets.jumpseller.com/public/placeholder/themes/payments/pay-wire-pt.png" alt="{% t 'Wire Transfer' %}" height="30" width="56" loading="lazy">
+    {% else %}
+      <img src="//assets.jumpseller.com/public/placeholder/themes/payments/pay-wire-en.png" alt="{% t 'Wire Transfer' %}" height="30" width="56" loading="lazy">
+    {% endcase %}
+  </span>
+</li>
+{% endif %}
+{% if payment-methods.options.manual_payment %}
+<li>
+  <span>
+    {% case languages.first.code %}
+    {% when 'es', 'cl', 'mx', 'co', 'es-PE', 'es-AR' %}
+      <img src="//assets.jumpseller.com/public/placeholder/themes/payments/pay-manual-es.png" alt="{% t 'Manual Payment' %}" height="30" width="56" loading="lazy">
+    {% when 'pt', 'br' %}
+      <img src="//assets.jumpseller.com/public/placeholder/themes/payments/pay-manual-pt.png" alt="{% t 'Manual Payment' %}" height="30" width="56" loading="lazy">
+    {% else %}
+      <img src="//assets.jumpseller.com/public/placeholder/themes/payments/pay-manual-en.png" alt="{% t 'Manual Payment' %}" height="30" width="56" loading="lazy">
+    {% endcase %}
+  </span>
+</li>
+{% endif %}

@@ -1,0 +1,20 @@
+{% if options.store_whatsapp and social.whatsapp.url != blank %}
+  {% capture message %}{% if template == 'product' %}{% t 'I would like to know more about this product' %}%20{{ product.name | escape }}%20{{ canonical_url }}{% else %}{% t 'Hello I want more information' %}{% endif %}{% endcapture %}
+  <store-whatsapp box-cookie="{{ options.store_whatsapp_message_hide }}" class="store-whatsapp">
+    {% if options.store_whatsapp_message != blank %}
+      <div class="store-whatsapp__message" style="display: none;">
+        <div class="store-whatsapp__message-close"><i class="fa-solid fa-times fa-fw"></i></div>
+        {{- options.store_whatsapp_message -}}
+      </div>
+    {% endif %}
+    <a
+      href="{{ social.whatsapp.url }}&amp;text={{ message }}"
+      class="store-whatsapp__circle"
+      title="{% t 'Send us a WhatsApp message' %}"
+      target="_blank"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </store-whatsapp>
+
+{% endif %}

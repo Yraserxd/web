@@ -1,0 +1,134 @@
+{
+  "home": {
+    "Default": {
+      "components": [
+        "header",
+        "custom-code(3)",
+        "banners(3)",
+        "custom-code(2)",
+        "quick-links",
+        "line-divider",
+        "latest-products",
+        "featured-products",
+        "banners(2)",
+        "custom-code",
+        "footer"
+      ]
+    }
+  },
+  "product": {
+    "Default": {
+      "components": [
+        "header",
+        "product-template",
+        "bought-together-packs",
+        "product-reviews",
+        "related-products",
+        "footer"
+      ]
+    }
+  },
+  "category": {
+    "Default": {
+      "components": [
+        "header",
+        "template-image",
+        "category-description",
+        "product-feed",
+        "footer"
+      ]
+    }
+  },
+  "page": {
+    "Default": {
+      "components": [
+        "header",
+        "template-image",
+        "page-default-template",
+        "footer"
+      ]
+    },
+    "Blog": {
+      "components": [
+        "header",
+        "template-image",
+        "page-blog-template",
+        "footer"
+      ]
+    },
+    "Post": {
+      "components": [
+        "header",
+        "template-image",
+        "page-post-template",
+        "footer"
+      ]
+    }
+  },
+  "searchresults": {
+    "Default": {
+      "components": [
+        "header",
+        "product-feed",
+        "footer"
+      ]
+    }
+  },
+  "contactpage": {
+    "Default": {
+      "components": [
+        "header",
+        "contact-template",
+        "footer"
+      ]
+    }
+  },
+  "error": {
+    "Default": {
+      "components": [
+        "header",
+        "footer"
+      ]
+    }
+  },
+  "customer__account": {
+    "Default": {
+      "components": [
+        "header",
+        "footer"
+      ]
+    }
+  },
+  "customer__address": {
+    "Default": {
+      "components": [
+        "header",
+        "footer"
+      ]
+    }
+  },
+  "customer__details": {
+    "Default": {
+      "components": [
+        "header",
+        "footer"
+      ]
+    }
+  },
+  "customer__login": {
+    "Default": {
+      "components": [
+        "header",
+        "footer"
+      ]
+    }
+  },
+  "customer__reset_password": {
+    "Default": {
+      "components": [
+        "header",
+        "footer"
+      ]
+    }
+  }
+}

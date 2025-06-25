@@ -1,0 +1,77 @@
+<div class="header-cart-cart">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-md-6">
+        <a href="{{ store.url }}" title="{{ store.name }}" class="logo-link">
+          {% if store.logo != empty %}
+          <img src="{{ store.logo | resize: '200x55' }}" class="navbar-brand store-image" alt="{{ store.name }}" width="200" height="55" loading="eager">
+          {% elsif template == 'home' %}
+          <h1 class="navbar-brand"><span class="text-logo">{{ store.name }}</span></h1>
+          {% else %}
+          <div class="navbar-brand"><span class="text-logo">{{ store.name }}</span></div>
+          {% endif %}
+        </a>
+      </div>
+        </div>
+        <div class="steps">
+          <div class="row">
+            <div class="col active">
+              <span class="steps_number">
+                {% if template != 'cart' %}<i class="fas fa-check"></i>{% else %}1{% endif %}
+              </span>
+              {% if template == 'cart' or template == 'success' %}
+              <div class="steps_title">{% t 'Cart' %}</div>
+              {% else %}
+              <div class="steps_title"><a id="cart-link" href="{{ order.url }}">{% t 'Cart' %}</a></div>
+              {% endif %}
+            </div>
+            <div class="col{% if template == 'checkout' or template == 'revieworder' or template == 'success' %} active{% endif %}">
+              <span class="steps_number">
+                {% if template == 'revieworder' or template == 'success' %}<i class="fas fa-check"></i>{% else %}2{% endif %}
+              </span>
+              {% if template == 'revieworder' %}
+              <div class="steps_title"><a href="/checkout">{% t 'Checkout' %}</a></div>
+              {% else %}
+              <div class="steps_title">{% t 'Checkout' %}</div>
+              {% endif %}
+            </div>
+            <div class="col{% if template == 'revieworder' or template == 'success' %} active{% endif %}">
+              <span class="steps_number">
+                {% if template == 'success' %}<i class="fas fa-check"></i>{% else %}3{% endif %}
+              </span>
+              <div class="steps_title">{% t 'Review' %}</div>
+            </div>
+            <div class="col{% if template == 'success' %} active{% endif %}">
+              <span class="steps_number">
+                {% if template == 'success' %}<i class="fas fa-check"></i>{% else %}4{% endif %}</span>
+              <div class="steps_title">{% t 'Success' %}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.cart-icon-container {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.cart-icon {
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.96));
+}
+
+.cart-icon:hover {
+  transform: scale(1.1) rotate(-10deg);
+}
+
+@media (max-width: 768px) {
+  .cart-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+</style>

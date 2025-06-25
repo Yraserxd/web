@@ -1,0 +1,54 @@
+<script>
+  const isTextClamped = (elm) => elm.prop('scrollHeight') > elm.prop('clientHeight');
+
+  function buildReviewHtml(text, rating, customer, date) {
+    const filledStars = `<span class="fa fa-star checked"></span>`.repeat(rating);
+    const emptyStars = `<span class="fa fa-star"></span>`.repeat(5 - rating);
+
+    const reviewText = $(`<p class="product-review-text mb-1">${text}</p>`);
+    const showMoreButton = $(`<a class="expand-button clickable">{% t 'Show More' %}</a>`);
+    const showLessButton = $(`<a class="expand-button clickable" style="display:none">{% t 'Show Less' %}</a>`);
+
+    const showMore = () => {
+      reviewText.addClass('show-more');
+      showMoreButton.hide();
+      showLessButton.show();
+    };
+    const showLess = () => {
+      reviewText.removeClass('show-more');
+      showLessButton.hide();
+      showMoreButton.show();
+    };
+
+    showMoreButton.click(showMore);
+    showLessButton.click(showLess);
+
+    const review = $(`<div></div>`);
+    review.append(
+      `<div class="product-rating stars">
+          ${filledStars}
+          ${emptyStars}
+      </div>`
+    );
+    review.append(reviewText);
+    review.append(showMoreButton);
+    review.append(showLessButton);
+    review.append(`<p class="author">${customer} {% t "at" %} ${date}</p>`);
+
+    return review;
+  }
+
+  function updateShowMoreButtonsVisibility() {
+    $('.product-review-text').each(function () {
+      const reviewText = $(this);
+      reviewText.removeClass('show-more');
+      if (isTextClamped(reviewText)) {
+        reviewText.parent().find('.expand-button:nth-child(3)').show(); // Enable show more button
+        reviewText.parent().find('.expand-button:nth-child(4)').hide(); // Disabled show less button
+        return;
+      }
+
+      reviewText.parent().find('.expand-button').hide();
+    });
+  }
+</script>

@@ -1,0 +1,35 @@
+{% for placeholder in (1..4) %}
+  <div class="accordion-item card">
+    <div class="card-header">
+      <h5 class="mb-0" id="item-heading-{{ component.id }}-{{ placeholder }}">
+        <span
+          class="accordion-title collapsed"
+          data-toggle="collapse"
+          data-target="#item-collapse-{{ component.id }}-{{ placeholder }}"
+          aria-expanded="false"
+          aria-controls="item-collapse-{{ component.id }}-{{ placeholder }}"
+        >
+          {%- t "This is an example accordion item" %} #{{ placeholder -}}
+
+          <i class="fas fa-chevron-down"></i>
+        </span>
+      </h5>
+    </div>
+
+    <div
+      id="item-collapse-{{ component.id }}-{{ placeholder }}"
+      class="collapse"
+      aria-labelledby="item-heading-{{ component.id }}-{{ placeholder }}"
+      data-parent="#store-accordion-{{ component.id }}"
+    >
+      <div class="card-body">
+        Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Nostrum sint, vel. Accusantium ipsam quam dignissimos tempore. Veritatis placeat exercitationem, voluptates saepe, modi, et corrupti explicabo iste rem numquam delectus, tempora.
+        {% if placeholder == 2 or placeholder == 4 %}
+          <br>
+          <br>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus sint autem vel hic modi dolore enim, at possimus minima! Reprehenderit nam dolorum hic est, fuga totam dolor at nemo cumque.
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}

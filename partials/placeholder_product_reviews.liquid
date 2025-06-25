@@ -1,0 +1,29 @@
+{% for placeholder in (1..6) %}
+<div class="{{ component.options.alignment }}{% if component.options.display == 'carousel' %} swiper-slide{% else %} col-lg-4 col-md-6 col-12 mb-4{% endif %}">
+    <div class="featured-review border rounded p-4 h-100">
+    <i class="fa-solid fa-quote-right"></i>
+        <div class="featured-review_header">
+            {% if component.options.image %}
+            <a href="#" class="featured-review_image-container border">
+                <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-50x50.png" alt="{% t 'Product Name' %}" width="50" height="50" loading="lazy">
+            </a>
+            {% endif %}
+            <div>
+                <a href="#"><strong>{% t "Product Name" %}</strong></a>
+                <div class="stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+        </div>
+        <div class="featured-review_review">{% t "Here the featured review of your products will be displayed." %}</div>
+        <div class="featured-review_name">{% t "Customer's name" %}</div>
+        {%- if component.options.date %}
+        <div class="featured-review_date">{{ 'now' | date: component.options.date_format }}</div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}

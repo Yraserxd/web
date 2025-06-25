@@ -1,0 +1,215 @@
+<div class="content-cart">
+  <div class="container revieworder">
+    {% if order.products == empty %}
+    <div class="title">
+      <div class="inside">
+        <h1 class="page-title">{% t "Shopping Cart" %}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <section class="col-12">
+        <div class="cart-summary_block">{% t "The shopping cart is currently empty. You can go back and start adding products." %}
+          <a href="{{ store.url }}" class="btn btn-secondary" title="&larr; {% t 'Go back & Keep Shopping' %}">&larr; {% t "Go back & Keep Shopping" %}</a>
+        </div>
+      </section>
+    </div>
+    {% else %}
+    <!-- Review Order Table -->
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="row review-order-info">
+          <div class="col-12">
+            <div class="cart-block">
+              <h2 class="block-header">{% t "Contact Information" %}</h2>
+              <div class="cart-block-inside">
+                <div id="review_shipping_address" class="row no-gutters">
+                  <div class="col-sm-6 col-12">
+                    <label>{% t "Email" %}</label>
+                    <span>{{ order.email }}</span>
+                  </div>
+                  {% if order.phone != empty %}
+                  <div class="col-sm-6 col-12">
+                    <label>{% t "Phone" %}</label>
+                    <span>{{ order.phone }}</span>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% if order.shipping_required %}
+          <div class="col-lg-6 col-12">
+            <div class="cart-block">
+              <h2 class="block-header">{% t "Shipping Information" %}</h2>
+              <div class="cart-block-inside">
+                <div id="review_shipping_address" class="row no-gutters">
+                  <div class="col-12">
+                    <label>{% t "Name/Surname" %}</label>
+                    <span>{{ order.shipping_address.fullname }}</span>
+                  </div>
+                  <div class="col-12">
+                    <label>{% t "Address" %}{% if order.shipping_address.postal != blank %} / {% t "Postal Code" %}{% endif %} / {% t "Municipality" %}</label>
+                    <span>{{ order.shipping_address.address_with_street_number }}{% if order.shipping_address.postal != blank %} / {{ order.shipping_address.postal }}{% endif %} / {{ order.shipping_address.municipality }}</span>
+                  </div>
+                  {% if order.shipping_address.taxid != blank %}
+                  <div class="col-12">
+                    <label>{% t "Tax ID" %}</label>
+                    <span>{{ order.shipping_address.taxid }}</span>
+                  </div>
+                  {% endif %}
+                  <div class="col-12">
+                    <label>{% t "City" %} / {% t "Region" %} / {% t "Country" %}</label>
+                    <span>{{ order.shipping_address.city }}, {{ order.shipping_address.region }}, {{ order.shipping_address.country }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          <div class="{% if order.shipping_required %}col-lg-6 {% endif %}col-12">
+            <h2 class="block-header">{% t "Billing Information" %}</h2>
+            <div class="cart-block">
+              <div class="cart-block-inside">
+                <div class="row no-gutters">
+                  <div class="col-12">
+                    <label>{% t "Name/Surname" %}</label>
+                    <span>{{ order.billing_address.fullname }}</span>
+                  </div>
+                  <div class="col-12">
+                    <label>{% t "Address" %}{% if order.billing_address.postal != blank %} / {% t "Postal Code" %}{% endif %} / {% t "Municipality" %}</label>
+                    <span>{{ order.billing_address.address_with_street_number }}{% if order.billing_address.postal != blank %} / {{ order.billing_address.postal }}{% endif %} / {{ order.billing_address.municipality }}</span>
+                  </div>
+
+                  {% if order.billing_address.taxid != blank %}
+                  <div class="col-12">
+                    <label>{% t "Tax ID" %}</label>
+                    <span>{{ order.billing_address.taxid }}</span>
+                  </div>
+                  {% endif %}
+                  <div class="col-12">
+                    <label>{% t "City" %} / {% t "Region" %} / {% t "Country" %}</label>
+                    <span>{{ order.billing_address.city }}, {{ order.billing_address.region }}, {{ order.billing_address.country }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-12 payment">
+            <h2 class="block-header">{% t "Payment method" %}</h2>
+            <div class="cart-block">
+              <div class="cart-block-inside">
+                <div class="row no-gutters">
+                  <div class="col-12">
+                    <label>{{ order.payment_method }}</label>
+                    <span>{{ order.payment_information }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% if order.shipping_required %}
+          <div class="col-lg-6 col-12">
+            <h2 class="block-header">{% t "Shipping method" %}</h2>
+            <div class="cart-block">
+              <div class="cart-block-inside">
+                <div class="row no-gutters">
+                  <div class="col-12">
+                    <label>{{ order.shipping_method }}</label>
+                    <span>{{ order.shipping | price }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="cart-summary review">
+          <div class="cart-summary__inside">
+            <div class="cart-totals">
+              <div class="cart-summary__products cart-summary_block">
+                <h2 class="summary-title">{% t "Order review" %}</h2>
+                {% for ordered_product in order.products %}
+                <div class="cart-summary__products-item">
+                  <a href="{{ ordered_product.url }}" class="cart-summary__products-link" title="{{ ordered_product.name }}">
+                    <img src="{{ ordered_product.image | resize: '50x50' | default: '//assets.jumpseller.com/public/placeholder/themes/mega/no-image-cart.png' }}" alt="{{ ordered_product.name }}" width="50" height="50" loading="lazy">
+                  </a>
+                  <div class="cart-summary__products-info">
+                    <h3>{{ ordered_product.name }}</h3>
+                    {% for option in ordered_product.options %}
+                    <span>{{ option.name }}: {{ option.value }}</span>
+                    {% endfor %}
+
+                    {% if ordered_product.discount > 0 %}
+                    <span class="order-product-subtotal">{{ ordered_product.qty }} x <div class="new">{{ ordered_product.price | minus: ordered_product.discount | price }}</div><div class="old">{{ ordered_product.price | price }}</div></span>
+                    {% else %}
+                    <span class="order-product-subtotal">{{ ordered_product.qty }} x <div class="new">{{ ordered_product.price | price }}</div></span>
+                    {% endif %}
+                  </div>
+                </div>
+                {% endfor %}
+                <table class="table review">
+                  {% if order.subtotal != order.total %}
+                  <tr class="totals">
+                    <td colspan="1" class="text-left">{% t "Subtotal" %}</td>
+                    <td colspan="1" class="text-right">{{ order.subtotal | price }}</td>
+                  </tr>
+                  {% endif %}
+
+                  {% if order.shipping_required %}
+                  <tr class="totals">
+                    <td colspan="1" class="text-left">{% t "Shipping" %}</td>
+                    <td colspan="1" class="text-right">{{ order.shipping | price }}</td>
+                  </tr>
+                  {% endif %}
+
+                  {% if order.discount > 0 %}
+                  <tr class="totals">
+                    <td colspan="1" class="text-left">{% t "Discounts" %}</td>
+                    <td colspan="1" class="text-right">{{ order.discount | price }}</td>
+                  </tr>
+                  {% endif %}
+
+                  {% if order.applied_tax > 0 %}
+                  <tr class="totals">
+                    <td colspan="1" class="text-left">{% t "Tax" %}</td>
+                    <td colspan="1" class="text-right">{{ order.applied_tax | price }}</td>
+                  </tr>
+                  {% endif %}
+
+                  <tr class="totals key">
+                    <td colspan="1" class="text-left"><strong>{% t "Total" %}</strong></td>
+                    <td colspan="1" class="text-right">{{ order.total | price }}</td>
+                  </tr>
+
+                  {% if order.remaining_for_free_shipping_message != blank %}
+                  <tr class="totals">
+                    <td colspan="2" class="alert alert-success p-2">
+                      <i class="fa fa-truck"></i> {{ order.remaining_for_free_shipping_message }}
+                    </td>
+                  </tr>
+                  {% endif %}
+
+                </table>
+                <div class="cart-actions text-center">
+                  <form id="review_form" class="text-right" action="{{ order.place_order_url }}" method="post">
+                    <input type="submit" id="place_order" class="btn btn-block primary" value="{% t 'Place Order' %}" title="{% t 'Place Order' %}">
+                  </form>
+                  <a href="{{ store.url }}/checkout" class="continue" title="{% t 'Edit information' %}">{% t "Edit information" %}</a> |
+                  <a href="{{ store.url }}/cart" class="continue" title="{% t 'Edit order' %}">{% t "Edit order" %}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endif %}
+
+  </div>
+
+</div>

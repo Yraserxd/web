@@ -1,0 +1,14 @@
+{% for items in (1..3) %}
+<div class="swiper-slide">
+  <div class="testimonial-container border">
+    <i class="fas fa-quote-right mb-3"></i>
+    <span class="img-container border rounded-circle overflow-hidden d-block mb-2 mx-auto">
+      <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-50x50.png" alt="{% t 'Image alternative text' %}" width="50" height="50" loading="lazy">
+    </span>
+    <div class="testimonial-quote">{% t "Here is displayed the testimony, feedback or comments that a client gives you. This is helpful to build trust in your brand, and for example give first time customers more information regarding your products or any other information you think is necessary." %}</div>
+    <span class="testimonial-author mt-3 d-block">
+      {% t "Author" %}
+    </span>
+  </div>
+</div>
+{% endfor %}

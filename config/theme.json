@@ -1,0 +1,29 @@
+{
+  "Info": {
+    "name": "Mega",
+    "author": "Jumpseller",
+    "default_lang": "en",
+    "use_system_translations": false,
+    "version": "2.1.0",
+    "capabilities": [
+      "multicurrency"
+    ]
+  },
+  "Menus": {
+    "main": {
+      "name": "Main Menu"
+    },
+    "category": {
+      "name": "Categories Menu"
+    },
+    "footer": {
+      "name": "Footer Menu 1"
+    },
+    "footer_2": {
+      "name": "Footer Menu 2"
+    },
+    "footer_3": {
+      "name": "Footer Menu 3"
+    }
+  }
+}

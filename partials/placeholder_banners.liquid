@@ -1,0 +1,31 @@
+{% capture grid_size %}{% if component.options.columns_desktop == 2 %}col-md-6{% elsif component.options.columns_desktop == 3 %}col-md-4{% elsif component.options.columns_desktop == 4 %}col-lg-3 col-md-6{% endif %}{% endcapture %}
+  <div class="{{ grid_size }}">
+    <div class="banner">
+      <a href="{{ store.url }}/admin/themes/options/{{ theme.id }}" title="{% t 'Add your own banners' %}">
+        <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-510x315.png" alt="{{ store.name }}" width="510" height="315" loading="lazy">
+      </a>
+    </div>
+  </div>
+  <div class="{{ grid_size }}">
+    <div class="banner">
+      <a href="{{ store.url }}/admin/themes/options/{{ theme.id }}" title="{% t 'Add your own banners' %}">
+        <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-510x315.png" alt="{{ store.name }}" width="510" height="315" loading="lazy">
+      </a>
+    </div>
+  </div>
+  <div class="{{ grid_size }}">
+    <div class="banner">
+      <a href="{{ store.url }}/admin/themes/options/{{ theme.id }}" title="{% t 'Add your own banners' %}">
+        <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-510x315.png" alt="{{ store.name }}" width="510" height="315" loading="lazy">
+      </a>
+    </div>
+  </div>
+  {% if component.options.columns_desktop == 4 or component.options.columns_desktop == 2 %}
+  <div class="{{ grid_size }}">
+    <div class="banner">
+      <a href="{{ store.url }}/admin/themes/options/{{ theme.id }}" title="{% t 'Add your own banners' %}">
+        <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-510x315.png" alt="{{ store.name }}" width="510" height="315" loading="lazy">
+      </a>
+    </div>
+  </div>
+{% endif %}
