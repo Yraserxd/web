@@ -1,0 +1,57 @@
+{
+  "name": "Accordion item",
+  "icon": "square",
+  "help": "You can include HTML tags to improve the content of the accordion item, like for example: <b>bold</b>, <i>italic</i>, <a href='url'>link</a>.",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "help": "Mandatory. Title/name of the accordion item",
+      "default": "Accordion item title"
+    },
+    "content": {
+      "name": "Content",
+      "type": "text",
+      "help": "Mandatory. Content (or description) of the accordion item.",
+      "default": "Accordion item content description."
+    },
+    "image": {
+      "name": "Image",
+      "type": "image",
+      "help": "Allows to add an image to the accordion item."
+    },
+    "size": {
+      "name": "Image size",
+      "type": "slider",
+      "help": "Allows to change the image size",
+      "default": 50,
+      "min": 10,
+      "max": 100,
+      "step": 10,
+      "unit": "%"
+    },
+    "image_position": {
+      "name": "Image position",
+      "type": "select",
+      "help": "Allows to define where the image will display: 1) Before the content; 2) After the content.",
+      "default": "after",
+      "options": [
+        {
+          "label": "Before the content",
+          "value": "before"
+        },
+        {
+          "label": "After the content",
+          "value": "after"
+        }
+      ]
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

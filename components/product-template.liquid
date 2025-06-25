@@ -1,0 +1,38 @@
+<style>
+  #component-{{ component.id }} {
+  --product-form-alignment: {% case component.options.alignment %}{% when "left" %}left{% when "center" %}center{% when "right" %}right{% endcase %};
+  --product-fields-alignment: {% case component.options.alignment %}{% when "left" %}start{% when "center" %}center{% when "right" %}end{% endcase %};
+  }
+</style>
+<div class="product-page container my-5" id="product" {{ component.attributes }}>
+  <div class="row align-items-start">
+    {% for child in component.children %}
+      {% case child.property %}
+        {% when 'gallery' %}
+          {% render 'components/product-gallery', product-gallery: child %}
+      {% endcase %}
+    {% endfor %}
+
+    <div class="col-12 col-lg-6 {% case component.options.gallery_position %}{% when 'left' %}order-md-2{% when 'right' %}order-md-1{% endcase %}">
+      <div class="product-form product-info__wrapper">
+        {% for child in component.children %}
+          {% case child.property %}
+            {% when 'heading' %}
+              {% render 'components/product-heading', product-heading: child %}
+            {% when 'form' %}
+              {% render 'components/product-form', product-form: child %}
+              <div class="product-price mt-3">
+                <span>{{ product.price | money }}</span> <span>+ IVA</span>
+              </div>
+            {% when 'description' %}
+              {% render 'components/product-description', product-description: child %}
+            {% when 'attachments' %}
+              {% render 'components/product-attachments', product-attachments: child %}
+            {% when 'share' %}
+              {% render 'components/product-share', product-share: child %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

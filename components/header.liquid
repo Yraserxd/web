@@ -1,0 +1,108 @@
+<style>
+  /* ... (tu CSS previo permanece igual) ... */
+
+  /* Estilos para la barra de búsqueda */
+  .header-search-form {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 5px 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .header-search-form:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .header-search-form input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 8px 10px;
+    flex: 1;
+    border-radius: 30px;
+  }
+
+  .header-search-form button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .header-search-form button i {
+    color: #ff4d4d;
+    font-size: 18px;
+  }
+
+  @media (max-width: 768px) {
+    .header-search-form {
+      max-width: 100%;
+      margin: 10px 0;
+    }
+  }
+</style>
+
+<header class="header" {{ component.attributes }}>
+  <div class="preheader">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- ... código de preheader ... -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Nueva barra principal con búsqueda y carrito -->
+  <div class="container mt-3 mb-3">
+    <div class="row align-items-center justify-content-between">
+      <!-- Barra de búsqueda -->
+      <div class="col-lg-8 col-10">
+        <form action="/search" method="get" class="header-search-form">
+          <input type="text" name="q" placeholder="Buscar productos..." required>
+          <button type="submit" title="Buscar">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Carrito -->
+      <div class="col-lg-4 col-2 text-right">
+        {% unless options.disable_shopping_cart %}
+          <div class="header-cart dropdown">
+            <span class="cart-size">{{ order.products_count }}</span>
+            <button
+              class="btn"
+              type="button"
+              id="header-cart-menu"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              style="border-radius: 50%; border: 2px solid #FFB347; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;"
+            >
+              <img src="https://img.freepik.com/vector-premium/smartphonetarjeta-credito-globos-carrito-compras-entrega-diseno-concepto-compras-linea-vector-3d-virtual-sobre-fondo-naranja-publicidad_425581-46.jpg?w=360" 
+                   class="header-cart-icon" 
+                   alt="Carrito de compras"
+                   style="width: 55px; height: 55px; object-fit: contain; border-radius: 50%; filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.96));"
+                   onmouseover="this.style.transform='scale(1.1) rotate(-10deg)';"
+                   onmouseout="this.style.transform='scale(1) rotate(0deg)';"
+              >
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="header-cart-menu"
+              x-placement="bottom-end"
+              style="border-radius: 10px; border: 1px solid #FFB347; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
+            >
+              {% render 'header_cart_block' %}
+            </div>
+          </div>
+        {% endunless %}
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,51 @@
+{
+  "name": "Header",
+  "icon": "gears",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error",
+    "customer__account",
+    "customer__address",
+    "customer__details",
+    "customer__login",
+    "customer__reset_password"
+  ],
+  "options": {
+    "preheader_message": {
+      "name": "Top promotional message",
+      "type": "input",
+      "default": "Free shipping for purchases over $100"
+    },
+    "hide_category_menu": {
+      "name": "Hide category menu",
+      "type": "checkbox",
+      "default": false
+    },
+    "background_topheader": {
+      "name": "Background top bar color",
+      "type": "color",
+      "default": "#3145CB"
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "default": "#3145CB"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

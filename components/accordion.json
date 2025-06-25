@@ -1,0 +1,44 @@
+{
+  "name": "Accordion",
+  "icon": "arrows-from-dotted-line",
+  "help": "Allows to add an Accordion element to any page of the store, with collapsible items. If no 'Title' or 'Description' are defined, it will only display the Accordion.",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "help": "Optional. Allows to add a title that will display before the accordion.",
+      "default": "Title Accordion component"
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "help": "This color is for the button and the highlighted line color.",
+      "default": "#4770FC"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {
+    "items": {
+      "type": "accordion-item",
+      "multiple": true
+    }
+  }
+}

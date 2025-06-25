@@ -1,0 +1,38 @@
+{
+  "name": "Newsletter",
+  "icon": "paper-plane",
+  "help": "This component allows you to subscribe customer’s emails into your database. All the emails sent on this component will be a new customer created in your customers section.",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "subscribe_title": {
+      "name": "Form title",
+      "type": "text",
+      "default": "Subscribe to our email list to receive news and offers first."
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#EFF7FF"
+    },
+    "button_color": {
+      "name": "Button color",
+      "type": "color",
+      "help": "This color is for the button.",
+      "default": "#4770FC"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

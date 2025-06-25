@@ -1,0 +1,30 @@
+{
+  "name": "Frequently bought together",
+  "icon": "boxes-packing",
+  "max_usage": 1,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "product"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Frequently Bought Together"
+    },
+    "limit": {
+      "name": "Packs to show",
+      "type": "slider",
+      "help": "Allows to choose how many 'packs' will be displayed. 'Packs' are sets or groups of frequently bought together products, including the product being visited.",
+      "default": 4,
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": ""
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

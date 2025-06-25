@@ -1,0 +1,34 @@
+{
+  "name": "Banner",
+  "icon": "image",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [],
+  "options": {
+    "image_desktop": {
+      "name": "Image (desktop)",
+      "type": "image",
+      "help": "Minimum recommended size for width is 540px"
+    },
+    "image_mobile": {
+      "name": "Image (mobile)",
+      "type": "image",
+      "help": "Minimum recommended size for width is 575px"
+    },
+    "link": {
+      "name": "Link",
+      "type": "link",
+      "default": null
+    },
+    "link_text": {
+      "name": "Link text",
+      "type": "input",
+      "help": "Text that displays when the user hovers over the banner.",
+      "default": "Read more"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

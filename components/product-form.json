@@ -1,0 +1,50 @@
+{
+  "name": "Product form",
+  "icon": "basket-shopping",
+  "max_usage": null,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [],
+  "options": {
+    "options_display": {
+      "name": "Product options display",
+      "type": "select",
+      "help": "Allow to change the display of the product options between a selector with all options or a button for each option.",
+      "default": "buttons",
+      "options": [
+        {
+          "label": "Buttons",
+          "value": "buttons"
+        },
+        {
+          "label": "Select",
+          "value": "select"
+        }
+      ]
+    },
+    "options_columns": {
+      "name": "Product options size",
+      "type": "select",
+      "help": "Allow to choose if product options will be displayed in 1 or 2 columns.",
+      "default": "col-12",
+      "options": [
+        {
+          "label": "1 column",
+          "value": "col-12"
+        },
+        {
+          "label": "2 columns",
+          "value": "col-12 col-md-6"
+        }
+      ]
+    },
+    "customfields_title": {
+      "name": "Custom fields Title",
+      "type": "input",
+      "default": "Product details"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

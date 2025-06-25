@@ -1,0 +1,4 @@
+<div class="swiper-slide" {{ logo.attributes }}>
+  {% render 'read_more_hover_link', link: logo.options.link, text: logo.options.link_text %}
+  <img src="{{ logo.options.image.url | resize: '250x250' | default: '//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-250x250.png' }}" alt="{{ logo.options.image.alt | default: store.name | escape }}" width="250" height="250" loading="lazy">
+</div>

@@ -1,0 +1,83 @@
+<!-- Product Gallery -->
+  <div class="col-lg-6 mb-lg-0 mb-4 {% case component.options.gallery_position %}{% when 'left' %}order-md-1{% when 'right' %}order-md-2{% endcase %}" {{ product-gallery.attributes }}>
+    <div class="main-product-image">
+      {% if product.stock == 0 and product.stock_unlimited == false %}
+        <span class="badge badge-secondary status-tag">{% t "Sold out" %}</span>
+      {% elsif product.status == 'not-available' %}
+        <span class="badge badge-secondary status-tag">{% t "Not Available" %}</span>
+      {% endif %}
+
+      {% unless product.discount == 0 or options.disable_prices %}
+        <span class="product-badge product-badge-sale"
+          >-{{ product.discount | divided_by: product.price | times: 100 | round: 0 }}&percnt;</span
+        >
+      {% endunless %}
+
+      {% if product.images == empty %}
+        <!-- There's no image available -->
+        <div class="product-images">
+          <img class="product-image" src="//assets.jumpseller.com/public/placeholder/themes/mega/no-image-product.png" alt="{{ product.name }}" width="700" height="700" loading="lazy">
+        </div>
+        <div class="text-center mt-2">{% t "There's no product image available" %}</div>
+      {% elsif product.images.size == 1 %}
+        <!-- There's only One image -->
+        <div class="product-images">
+          <img
+            src="{{ product.images.first | resize: '700x700' }}"
+            srcset="{{ product.images.first | resize: '700x700' }} 1x, {{ product.images.first | resize: '1400x1400' }} 2x"
+            alt="{{ product.name }}"
+            title="{{ product.name }}"
+            class="product-image"
+            width="700"
+            height="700"
+            loading="lazy">
+        </div>
+      {% elsif product.images.size > 1 %}
+      <swiper-slider
+        class="swiper product-gallery__slider product-gallery__slider--main"
+        sw-layout="one"
+        sw-rewind="true"
+        sw-wait-thumbs="{{ product-gallery.options.thumbnails }}"
+      >
+          <div class="swiper-wrapper">
+            {% for image in product.images %}
+              <div class="swiper-slide product-gallery__slide trsn">
+                <img
+                  alt="{{ product.name }} {{ forloop.index }}"
+                  src="{{ image | resize: '700x700' }}"
+                  srcset="{{ image | resize: '700x700' }} 1x, {{ image | resize: '1400x1400' }} 2x"
+                  width="610"
+                  height="610"
+                  loading="lazy"
+                  class="product-gallery__image"
+                >
+              </div>
+            {% endfor %}
+          </div>
+
+          <button type="button" class="swiper-button-prev"></button>
+          <button type="button" class="swiper-button-next"></button>
+        </swiper-slider>
+        <!-- end .product-gallery__slider--main -->
+      {% endif %}
+
+        {% if product-gallery.options.thumbnails %}
+          <swiper-slider
+            class="swiper product-gallery__slider product-gallery__slider--thumbs mt-3"
+            sw-layout="product-thumbnails"
+            sw-rewind="true"
+            sw-target-thumbs="swiper-slider.product-gallery__slider--main"
+          >
+            <div class="swiper-wrapper">
+              {% for image in product.images %}
+                <div class="swiper-slide product-gallery__thumb trsn">
+                  <img src="{{ image | thumb: '100x100' }}" alt="{{ product.name }} {{ forloop.index }}" class="product-gallery__image product-gallery__image--thumb" width="100" height="100" loading="lazy">
+                </div>
+              {% endfor %}
+            </div>
+            <!-- end .swiper-wrapper -->
+          </swiper-slider>
+          <!-- end .product-gallery__slider--thumbs -->
+        {% endif %}
+    </div>
+  </div>

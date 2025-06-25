@@ -1,0 +1,19 @@
+{% unless product.attachments == empty %}
+  <div class="form-group" {{ product-attachments.attributes }}>
+    <div class="product-form_field-group">
+      <label class="form-control-label" {{ product-attachments.attributes.textfield.title }}> {{ product-attachments.options.title }}</label>
+      <table class="table table-bordered product-form_attachments">
+        <tbody>
+          {% for attachment in product.attachments %}
+            <tr>
+              <td style="width: 90%; text-align: left">{{ attachment.name }}</td>
+              <td>
+                <a target="_blank" href="{{ attachment.url }}" class="btn btn-block btn-sm secondary"><i class="linear-icon icon-0758-download2"></i></a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endunless %}

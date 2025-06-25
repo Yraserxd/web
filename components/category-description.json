@@ -1,0 +1,30 @@
+{
+  "name": "Category Description",
+  "icon": "align-left",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "category"
+  ],
+  "options": {
+    "alignment": {
+      "name": "Alignment",
+      "type": "select",
+      "default": "text-left",
+      "options": [
+        {
+          "label": "Left",
+          "value": "text-left"
+        },
+        {
+          "label": "Center",
+          "value": "text-center"
+        }
+      ]
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

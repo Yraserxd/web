@@ -1,0 +1,38 @@
+<div class="container mt-4" {{ component.attributes }}>
+  <div class="row">
+    <div class="col-12 page-body mb-4">
+      {{ page.body }}
+    </div>
+    <div class="col-12">
+      <div class="row blog-list mb-4">
+        <!-- Blog Post -->
+        {% paginate pages.categories.category.Post.pages by component.options.limit %}
+          {% if pages.categories.category.Post.size == 0 %}
+            <section class="col-md-8 offset-md-2 text-center">
+              <div class="card">
+                <div class="card-body">
+                  <h5>{% t "There aren't any articles available in our blog" %}.</h5>
+                  <a href="{{ store.url }}" class="btn btn-secondary mt-3" title="{% t 'Go back & Keep Shopping' %}">&larr; {% t "Go back & Keep Shopping" -%}</a>
+                </div>
+              </div>
+            </section>
+          {% else %}
+            {% for paged_page in paged.pages %}
+              <div class="col-md-4 col-12">
+                <a href="{{ paged_page.url }}" title="{{ paged_page.title }}" class="blog-post_link trsn" style="background-image: url('{{ paged_page.images.first | thumb: '360x240' | default: '//assets.jumpseller.com/public/placeholder/themes/mega/no-image.jpg' }}')">
+                  <div class="blog-post_wrapper">
+                    <span class="blog-post_date">{{ paged_page.date | date: '%d | %m | %Y' }}</span>
+                    <h4>{{ paged_page.title }}</h4>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          {% endif %}
+          <div class="clearfix"></div>
+          {% render 'pagination', paged: paged %}
+        {% endpaginate %}
+      </div>
+
+    </div>
+  </div>
+</div>

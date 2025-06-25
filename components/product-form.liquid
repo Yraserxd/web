@@ -1,0 +1,204 @@
+<form
+  id="product-form-{{ product.id }}-{{ component.id }}"
+  class="form-horizontal"
+  action="{{ product.add_to_cart_url }}"
+  method="post"
+  enctype="multipart/form-data"
+  name="buy"
+  {{ product-form.attributes }}
+>
+  <div class="row form-group qty-select product-form_options {% if product.options != empty %}visible{% else %}hidden{% endif %}">
+    {% assign option_number = 1 %}
+    {% for option in product.options %}
+      <div class="{{ product-form.options.options_columns }} product-form_field-group variants">
+        <label class="form-control-label" for="{{ option.id }}">{{ option.name }}</label>
+        {% case option.type %}
+          {% when 'option' %}
+            {% if product-form.options.options_display == 'select' %}
+              <select id="{{ option.id }}" name="{{ option.id }}" class="form-control prod-options">
+                {% for value in option.values %}
+                  <option value="{{ value.id }}">{{ value.name }}</option>
+                {% endfor %}
+              </select>
+            {% else %}
+              <fieldset id="{{ option.id }}" class="field-group select-options prod-options">
+                {% for value in option.values %}
+                  <div class="select-option">
+                    <input
+                      type="radio"
+                      name="{{ option.id }}"
+                      value="{{ value.id }}"
+                      id="select_{{ value.id }}"
+                      {% if forloop.first %}
+                        checked
+                      {% endif %}
+                    >
+                    <label for="select_{{ value.id }}" class="button button--bordered button--tiny button--radius">{{ value.name }}</label>
+                  </div>
+                {% endfor %}
+              </fieldset>
+            {% endif %}
+          {% when 'color' %}
+            <fieldset id="{{ option.id }}" class="field-group colors prod-options">
+              {% for value in option.values %}
+                <div class="color-option">
+                  <input
+                    type="radio"
+                    name="{{ option.id }}"
+                    value="{{ value.id }}"
+                    id="color_{{ value.id }}"
+                    {% if forloop.first %}
+                      checked
+                    {% endif %}
+                  >
+                  <label
+                    for="color_{{ value.id }}"
+                    title="{{ value.name }}"
+                    style="background-color: {{ value.custom }}"
+                  ></label>
+                </div>
+              {% endfor %}
+            </fieldset>
+          {% when 'input' %}
+            {% for value in option.values %}
+              <input
+                id="{{ option.id }}"
+                class="text form-control form-control-sm  prod-options"
+                type="text"
+                name="{{ option.id }}"
+                placeholder="{{ option.placeholder }}"
+              >
+            {% endfor %}
+          {% when 'text' %}
+            <textarea
+              id="{{ option.id }}"
+              class="textarea form-control form-control-sm  prod-options"
+              name="{{ option.id }}"
+              placeholder="{{ option.placeholder }}"
+            ></textarea>
+          {% when 'file' %}
+            {% assign file_option = true %}
+            <input
+              id="{{ option.id }}"
+              class="product_option_value_file_upload prod-options"
+              type="file"
+              name="{{ option.id }}"
+              tabindex="-1"
+            >
+            <div class="file_upload_div">
+              <input type="text" class="form-control" id="{{ option.id | append: '_filename' }}" disabled>
+              <label for="{{ option.id }}" class="btn btn-default secondary" tabindex="0">
+                {%- t "Choose File" -%}
+                <i class="linear-icon icon-0153-paperclip"></i
+              ></label>
+            </div>
+        {% endcase %}
+      </div>
+      {% assign option_number = option_number | plus: 1 %}
+    {% endfor %}
+  </div>
+
+  {% unless options.disable_shopping_cart %}
+    <!-- Out of Stock -->
+    <div class="form-group product-stock product-out-stock text-center {% if product.stock == 0 and product.stock_unlimited == false and product.status != 'not-available' %}visible{% else %}hidden{% endif %}">
+      <span class="form-control-label">{% t "Out of stock" %}</span>
+      <p>{% t "This product is currently out of stock. Click the button below to be notified when it's available again" %}.</p>
+      {% if product.back_in_stock_enabled %}
+        <a id="back-in-stock" href="{{ product.back_in_stock_url }}" target="_blank" class="btn secondary btn-sm" title="{% t 'Notify me' %}">{% t "Notify me" %}</a>      
+      {% else %}
+        <a href="{{ contact.url }}" class="btn secondary btn-sm" title="{% t 'Contact Us' %}">{% t "Contact Us" %}</a>
+      {% endif %}
+      <a href="{{ store.url }}" class="clearfix continue" title="&larr; {% t 'or Continue Shopping' %}">&larr; {% t "or Continue Shopping" -%}</a>
+    </div>
+
+    <!-- Not Available -->
+    <div class="form-group product-stock product-unavailable text-center {% if product.status == 'not-available' %}visible{% else %}hidden{% endif %}">
+      <span class="form-control-label">{% t "Not Available" %}</span>
+      <p>{% t "This product is currently unavailable. You may send us an inquiry about it" %}.</p>
+      <a href="{{ contact.url }}" class="btn secondary btn-sm" title="{% t 'Contact Us' %}">{% t "Contact Us" %}</a>
+      <a href="{{ store.url }}" class="clearfix continue" title="&larr; {% t 'or Continue Shopping' %}">&larr; {% t "or Continue Shopping" -%}</a>
+    </div>
+    <div class="form-group product-stock product-available {% if product.status != 'available' or product.stock == 0 and product.stock_unlimited == false %}hidden{% else %}visible{% endif %}">
+      <div class="row no-gutters adc-form">
+        <div class="col-lg-4 col-sm-5">
+          <label for="Quantity" class="form-control-label">{% t "Quantity" %}</label>
+        </div>
+        <div class="col-lg-8 col-sm-7"></div>
+        <div class="col-lg-4 col-sm-5">
+          <div class="quantity">
+            <div class="product-qty">
+              <input
+                type="number"
+                class="qty form-control text-center"
+                id="input-qty"
+                name="qty"
+                min="1"
+                value="1"
+                {% unless product.stock_unlimited %}
+                  max="{{ product.stock }}"
+                {% endunless %}
+              >
+              <div class="quantity-nav">
+                <div class="quantity-button quantity-up" onclick="Jumpseller.incrementCounter('input-qty')">+</div>
+                <div class="quantity-button quantity-down" onclick="Jumpseller.decrementCounter('input-qty')">-</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-sm-7">
+          {% if options.display_cart_notification and file_option != true %}
+            <input
+              type="button"
+              id="add-to-cart"
+              onclick="addToCart('{{ product.id }}', '{{ product.name | replace: "'", "" | escape }}', $('#input-qty').val(), getProductOptions('#product-form-{{ product.id }}-{{ component.id }}'));"
+              class="btn btn-block primary adc"
+              value="{% t 'Add to Cart' %}"
+            >
+          {% else %}
+            <input type="submit" id="add-to-cart" class="adc btn primary" value="{% t 'Add to Cart' %}">
+          {% endif %}
+        </div>
+        <div class="col-12 disclaimer">
+          {% t "Only" %}
+          <strong>{{ product.stock }}</strong> {% t "units of this product remain" %}
+        </div>
+      </div>
+    </div>
+  {% endunless %}
+
+  {% if product.custom_fields != empty %}
+    <div class="form-group product-custom_fields text-left">
+      <label class="form-control-label mb-4" {{ product-form.attributes.textfield.customfields_title }}>{{ product-form.options.customfields_title }}</label>
+      <div id="custom-fields" class="accordion">
+        <!-- Product field -->
+        {% for field in product.custom_fields %}
+          <div class="product-custom_field">
+            <div id="fields-title-{{ forloop.index }}" class="product-custom_field-title">
+              <div data-toggle="collapse" data-target="#collapse-text-{{ forloop.index }}" aria-expanded="true" aria-controls="collapse-text-{{ forloop.index }}">
+                {{ field[0] }}
+              </div>
+            </div>
+            <div id="collapse-text-{{ forloop.index }}" class="collapse" aria-labelledby="fields-title-{{ forloop.index }}" data-parent="#custom-fields">
+              <div class="py-2 product-custom_field_values">
+                {% for custom_field_value in field[1] %}
+                  <span id="product-custom_field_value_{{ custom_field_value.field_id }}" class="product-custom_field_value">{{ custom_field_value.value }}</span>
+                  {% if forloop.index != field[1].size -%}
+                    <span class="product-custom_field_separator">|</span>
+                  {%- endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <!-- End Product field -->
+      </div>
+    </div>
+  {% endif %}
+
+</form>
+
+<script>
+  function addItem(product_id, qty, options) {
+    Jumpseller.addProductToCart(product_id, qty, options, { callback: addToCartCallback });
+  }
+</script>

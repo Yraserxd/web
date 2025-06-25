@@ -1,0 +1,41 @@
+{
+  "name": "Footer",
+  "icon": "",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error",
+    "customer__account",
+    "customer__address",
+    "customer__details",
+    "customer__login",
+    "customer__reset_password"
+  ],
+  "options": {
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "default": "#4770FC"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {
+    "payment-methods": {
+      "type": "payment-methods",
+      "multiple": false
+    }
+  }
+}

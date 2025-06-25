@@ -1,0 +1,21 @@
+<style>
+  #component-{{ component.id }} {
+    --newsletter-background: {{ component.options.background }};
+    --newsletter-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --newsletter-button-color: {{ component.options.button_color }};
+    --newsletter-button-color-contrast: {{ component.options.button_color | color_contrast: '#f1f1f1', '#090909' }};
+  }
+</style>
+
+<div class="newsletter" {{ component.attributes }}>
+  <div class="container">
+    <div class="footer-newsletter-form row justify-content-center">
+      <div class="col-md-5">
+        <h5 {{ component.attributes.textfield.subscribe_title }}>{{ component.options.subscribe_title }}</h5>
+      </div>
+      <newsletter-form fn-button-text="{% t 'Subscribe' %}">
+        {{ newsletter_form }}
+      </newsletter-form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<style>
+  #component-{{ component.id }} {
+    --dynamic-content-background: {{ component.options.background }};
+    --dynamic-content-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --dynamic-content-button-color: {{ component.options.button_color }};
+    --dynamic-content-button-color-contrast: {{ component.options.button_color | color_contrast: '#f1f1f1', '#090909' }};
+  }
+</style>
+
+<div class="dynamic-content py-5" {{ component.attributes }}>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 {% if component.options.alignment == 'Left' %}order-md-1{% else %}order-md-2{% endif %}">
+        <img src="{{ component.options.image_desktop.url | default: '//assets.jumpseller.com/public/placeholder/themes/mega/no-image-home.png' }}" alt="{{ component.options.image_desktop.alt | default: component.options.title | escape | default: store.name }}" class="mb-3 mb-md-0" width="540" height="auto" loading="lazy">
+      </div>
+      <div class="col-md-6 {% if component.options.alignment == 'Left' %}order-md-2{% else %}order-md-1{% endif %}">
+        <h4 {{ component.attributes.textfield.title }}>{{ component.options.title }}</h4>
+        <p {{ component.attributes.textfield.text }}>{{ component.options.text }}</p>
+        {% if component.options.button_link != blank and component.options.button_text != blank %}
+        <a href="{{ component.options.button_link }}" class="btn secondary trsn" title="{{ component.options.button_text }}" {{ component.attributes.textfield.button_text }}>{{ component.options.button_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

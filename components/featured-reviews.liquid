@@ -1,0 +1,60 @@
+<style>
+  #component-{{ component.id }} {
+    --featured-reviews-background: {{ component.options.background }};
+    --featured-reviews-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --featured-reviews-highlight-color: {{ component.options.highlight_color }};
+  }
+</style>
+
+{%- capture product_display_grid -%}
+{%- if component.options.display == 'carousel' %}swiper-slide{% else %}col-lg-4 col-md-6 col-12 mb-4{% endif %}
+{% endcapture %}
+
+{% capture content %}
+  {% for review in store.featured_reviews limit: component.options.limit %}
+    <div class="{{ component.options.alignment }} {{ product_display_grid }}">
+        <div class="featured-review border rounded p-4 h-100 overflow-hidden position-relative">
+          <i class="fas fa-quote-right"></i>
+          <div class="featured-review_header">
+            {% if component.options.image %}
+              <a href="{{ review.product.url }}" class="featured-review_image-container border">
+                <img src="{{ review.product.images.first | thumb: '50x50' | default: '//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-50x50.png' }}" alt="{{ review.product.name | escape }}" width="50" height="50" loading="lazy">
+              </a>
+            {% endif %}
+            <div>
+              <a href="{{ review.product.url }}"><strong>{{ review.product.name }}</strong></a>
+              {% render 'product_rating', prod: review.product %}
+            </div>
+          </div>
+          <div class="featured-review_review">{{ review.review }}</div>
+          <div class="featured-review_name">{{ review.customer_name }}</div>
+          {%- if component.options.date %}
+            <div class="featured-review_date">{{ review.date | date: component.options.date_format }}</div>
+          {% endif %}
+        </div>
+      </div>
+  {% else %}
+    {% render "placeholder_product_reviews" %}
+  {% endfor %}
+{% endcapture %}
+
+<div class="featured-reviews py-5" {{ component.attributes }}>
+  <div class="container">
+    <h2 class="block-header" {{ component.attributes.textfield.title }}>{{ component.options.title }}</h2>
+    {% if component.options.display == 'carousel' %}
+    <swiper-slider
+      class="col-12 swiper position-relative featured-review{% if component.options.enable_arrows or component.options.enable_dots %} pb-5{% endif %}"
+      sw-layout="featured-reviews"
+    >
+      <div class="swiper-wrapper">
+        {{ content }}
+      </div>
+      {% render 'common_swiper_pagination' %}
+    </swiper-slider>
+    {% elsif component.options.display == 'grid' %}
+    <div class="row">
+      {{ content }}
+    </div>
+    {% endif %}
+  </div>
+</div>

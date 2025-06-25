@@ -1,0 +1,58 @@
+{
+  "name": "Big banner",
+  "icon": "image-landscape",
+  "help": "You can display a big image to promote for example a new product, some product features, campaigns or whatever you need in a highlighted big image.",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "image_desktop": {
+      "name": "Image (desktop)",
+      "type": "image",
+      "help": "Minimum recommended size for width is 1110px. If you use 'Full size' the minimum recommended width is 1980px."
+    },
+    "image_mobile": {
+      "name": "Image (mobile)",
+      "type": "image",
+      "help": "Recommended size 575x700px"
+    },
+    "link": {
+      "name": "Link",
+      "type": "link",
+      "default": null
+    },
+    "link_text": {
+      "name": "Link text",
+      "type": "input",
+      "help": "Text that displays when hovering over the banner.",
+      "default": "Read more"
+    },
+    "width": {
+      "name": "Width",
+      "type": "select",
+      "default": "Container",
+      "options": [
+        {
+          "label": "Container",
+          "value": "Container"
+        },
+        {
+          "label": "Full size",
+          "value": "Full size"
+        }
+      ]
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

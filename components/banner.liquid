@@ -1,0 +1,39 @@
+{% capture dimensions %}
+  {% if component.options.image_ratio == 'square' %}
+    520x520
+  {% elsif component.options.image_ratio == 'horizontal' %}
+    520x300
+  {% else %}
+    520x800
+  {% endif %}
+{% endcapture %}
+{% if component.options.image_size == 'resize' %}
+  {% assign img_desktop = banner.options.image_desktop.url | resize: dimensions %}
+  {% assign img_mobile = banner.options.image_mobile.url | resize: dimensions %}
+{% elsif component.options.image_size == 'force' %}
+  {% assign img_desktop = banner.options.image_desktop.url | thumb: dimensions %}
+  {% assign img_mobile = banner.options.image_mobile.url | thumb: dimensions %}
+{% endif %}
+{% capture banner_image %}
+  {% if banner.options.image_desktop.url != blank and banner.options.image_mobile.url != blank %}
+  <picture>
+    <source media="screen and (max-width: 768px)" srcset="{{ img_mobile }}">
+    <source media="screen and (min-width: 769px)" srcset="{{ img_desktop }}">
+    <img src="{{ img_desktop }}" alt="{{ banner.options.image_desktop.alt | escape | default: store.name }}" width="520" height="{% if component.options.image_ratio == 'square' %}520{% elsif component.options.image_ratio == 'horizontal' %}300{% else %}800{% endif %}" loading="lazy">
+  </picture>
+  {% elsif banner.options.image_mobile.url != blank and banner.options.image_desktop.url == blank %}
+  <img src="{{ img_mobile }}" alt="{{ banner.options.image_mobile.alt | default: store.name }}" width="520" height="{% if component.options.image_ratio == 'square' %}520{% elsif component.options.image_ratio == 'horizontal' %}300{% else %}800{% endif %}" loading="lazy">
+  {% elsif banner.options.image_desktop.url != blank and banner.options.image_mobile.url == blank %}
+  <img src="{{ img_desktop }}" alt="{{ banner.options.image_desktop.alt | default: store.name }}" width="520" height="{% if component.options.image_ratio == 'square' %}520{% elsif component.options.image_ratio == 'horizontal' %}300{% else %}800{% endif %}" loading="lazy">
+  {% else %}
+  <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-520x300.png" alt="{{ store.name }}" width="520" height="300" loading="lazy">
+  {% endif %}
+{% endcapture %}
+{% capture grid_size %}{% if component.options.columns_desktop == 2 %}col-md-6{% elsif component.options.columns_desktop == 3 %}col-md-4{% elsif component.options.columns_desktop == 4 %}col-lg-3 col-md-6{% endif %}{% endcapture %}
+
+<div class="{{ grid_size }}" {{ banner.attributes }}>
+  <div class="banner{% if banner.options.link != blank %} hover-link-container{% endif %}">
+    {% render 'read_more_hover_link', link: banner.options.link, text: banner.options.link_text %}
+    {{ banner_image }}
+  </div>
+</div>

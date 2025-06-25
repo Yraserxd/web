@@ -1,0 +1,78 @@
+{
+  "name": "Banners",
+  "icon": "th-large",
+  "help": "This component is dedicated to promote certain features about your store, for example promotions, features products, categories among others using images and links.",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "columns_desktop": {
+      "name": "Number of columns on desktop",
+      "type": "slider",
+      "help": "Choose how many banners will be displayed by row on desktop version.",
+      "default": 3,
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "unit": ""
+    },
+    "image_size": {
+      "name": "Images size",
+      "type": "select",
+      "help": "Original: The image will be displayed with the dimension it was originally uploaded. Resize: adjust the width and height of the image according to the available space. Force: crop the width and height of the image according to the available space.",
+      "default": "resize",
+      "options": [
+        {
+          "label": "Resize",
+          "value": "resize"
+        },
+        {
+          "label": "Force",
+          "value": "force"
+        }
+      ]
+    },
+    "image_ratio": {
+      "name": "Image aspect ratio",
+      "type": "select",
+      "help": "Choose 3 image aspects: Horizontal, Vertical and Square",
+      "default": "horizontal",
+      "options": [
+        {
+          "label": "Horizontal",
+          "value": "horizontal"
+        },
+        {
+          "label": "Vertical",
+          "value": "vertical"
+        },
+        {
+          "label": "Square",
+          "value": "square"
+        }
+      ]
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#F8F9FA"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {
+    "banners": {
+      "type": "banner",
+      "multiple": true
+    }
+  }
+}

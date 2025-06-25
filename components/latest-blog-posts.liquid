@@ -1,0 +1,35 @@
+<style>
+  #component-{{ component.id }} {
+    --latest-blog-posts-background: {{ component.options.background }};
+    --latest-blog-posts-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --latest-blog-posts-highlight-color: {{ component.options.highlight_color }};
+    --latest-blog-posts-highlight-color-contrast: {{ component.options.highlight_color | color_contrast: '#f1f1f1', '#090909' }};
+    --latest-blog-posts-overlay: {{ component.options.overlay_color }};
+  }
+</style>
+{%- assign blog = pages.categories.category[component.options.page_category] -%}
+<div class="latest-blog-posts py-4" {{ component.attributes }}>
+  <div class="container">
+    {% if blog.pages != blank %}
+    <div class="row blog-list">
+      <div class="col-12">
+        <h2 class="block-header" {{ component.attributes.textfield.title }}>{{ component.options.title }}</h2>
+      </div>
+      {% for paged_page in blog.pages reversed %}
+      {% if forloop.index0 == component.options.limit %}{% break %}{% endif %}
+      <div class="col-md-4 col-12">
+        <a href="{{ paged_page.url }}" title="{{ paged_page.title }}" class="blog-post_link trsn" style="background-image: url('{{ paged_page.images.first | thumb: '360x240' | default: '//assets.jumpseller.com/public/placeholder/themes/mega/no-image.jpg' }}')">
+          <div class="blog-post_wrapper">
+            <span class="blog-post_date">{{ paged_page.date | date: "%d | %m | %Y" }}</span>
+            <h4>{{ paged_page.title }}</h4>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+      <div class="col-12 text-center">
+        <a href="blog" title="{% t 'Go to Blog' %}" class="btn secondary trsn">{% t 'Go to Blog' %}</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>

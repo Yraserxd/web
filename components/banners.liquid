@@ -1,0 +1,17 @@
+<style>
+  #component-{{ component.id }} {
+    --banners-background: {{ component.options.background }};
+  }
+</style>
+
+<div class="banners py-4" {{ component.attributes }}>
+  <div class="container">
+    <div class="row">
+      {% for banner in component.subcomponents.banners %}
+        {% render 'components/banner', banner: banner %}
+      {% else %}
+        {% render 'placeholder_banners' %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

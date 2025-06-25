@@ -1,0 +1,80 @@
+{
+  "name": "Logo gallery",
+  "icon": "grip-horizontal",
+  "help": "This component allows you to display a gallery of images, they can be logos from brands that you sell on your store, companies partnership, featured products or whatever you want to communicate with images.",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Our Brands"
+    },
+    "columns_desktop": {
+      "name": "Number of columns on desktop",
+      "type": "slider",
+      "help": "Choose how many logos will be displayed by row on desktop version.",
+      "default": 6,
+      "min": 4,
+      "max": 8,
+      "step": 1,
+      "unit": ""
+    },
+    "autoplay": {
+      "name": "Enable autoplay",
+      "type": "checkbox",
+      "default": false
+    },
+    "autoplay_speed": {
+      "name": "Autoplay speed",
+      "type": "slider",
+      "help": "Time that takes to pass from one 'Block' to the next, in seconds.",
+      "default": 4000,
+      "min": 500,
+      "max": 6000,
+      "step": 500,
+      "unit": "ms"
+    },
+    "enable_arrows": {
+      "name": "Enable arrows",
+      "type": "checkbox",
+      "help": "Displays 'next' and 'previous' arrows for customers to navigate.",
+      "default": true
+    },
+    "enable_dots": {
+      "name": "Enable dots",
+      "type": "checkbox",
+      "help": "Displays navigational dots (points) for customers to navigate.",
+      "default": true
+    },
+    "background": {
+      "name": "Background",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "help": "This color is for the highlighted line.",
+      "default": "#4770FC"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {
+    "logos": {
+      "type": "logo",
+      "multiple": true
+    }
+  }
+}

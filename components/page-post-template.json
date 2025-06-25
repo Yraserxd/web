@@ -1,0 +1,69 @@
+{
+  "name": "Page Post template",
+  "icon": "file-lines",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "page"
+  ],
+  "options": {
+    "latest_articles": {
+      "name": "Display latest articles",
+      "type": "checkbox",
+      "default": true
+    },
+    "latest_articles_title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Latest Articles"
+    },
+    "latest_articles_limit": {
+      "name": "Quantity of articles to display",
+      "type": "slider",
+      "default": 3,
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": ""
+    },
+    "back_button": {
+      "name": "Show 'back to blog' button",
+      "type": "checkbox",
+      "default": true
+    },
+    "share": {
+      "name": "Show share links",
+      "type": "checkbox",
+      "default": true
+    },
+    "share_title": {
+      "name": "Share links title",
+      "type": "input",
+      "default": "Share this article"
+    },
+    "facebook_button": {
+      "name": "Display Facebook share link",
+      "type": "checkbox",
+      "default": true
+    },
+    "twitter_button": {
+      "name": "Display 𝕏 share link",
+      "type": "checkbox",
+      "default": true
+    },
+    "pinterest_button": {
+      "name": "Display Pinterest share link",
+      "type": "checkbox",
+      "default": true
+    },
+    "tumblr_button": {
+      "name": "Display Tumblr share link",
+      "type": "checkbox",
+      "default": true
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

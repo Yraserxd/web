@@ -1,0 +1,21 @@
+<style>
+  #component-{{ component.id }} {
+    --accordion-background: {{ component.options.background }};
+    --accordion-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --accordion-highlight-color: {{ component.options.highlight_color }};
+    --accordion-highlight-color-contrast: {{ component.options.highlight_color | color_contrast: '#f1f1f1', '#090909' }};
+  }
+</style>
+
+<section class="accordion store-accordion py-4" {{ component.attributes }}>
+  <div class="container">
+    <h2 class="block-header" {{ component.attributes.textfield.title }}>{{ component.options.title }}</h2>
+    <div id="store-accordion-{{ component.id }}" class="accordion-wrapper">
+      {% for accordion-item in component.subcomponents.items %}
+        {% render 'components/accordion-item', accordion-item: accordion-item %}
+      {% else %}
+        {% render 'placeholder_accordion' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

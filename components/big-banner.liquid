@@ -1,0 +1,20 @@
+{% capture banner_image %}
+  {% if component.options.image_desktop.url != blank and component.options.image_mobile.url != blank %}
+  <picture>
+    <source media="screen and (max-width: 575px)" srcset="{{ component.options.image_mobile.url }}">
+    <source media="screen and (min-width: 576px)" srcset="{{ component.options.image_desktop.url }}">
+<img src="{{ component.options.image_desktop.url }}" alt="{{ component.options.image_desktop.alt | default: store.name | escape }}" {% if component.options.width != 'Container' %}class="w-100"{% endif %} width="auto" height="auto" loading="lazy">
+  </picture>
+  {% elsif component.options.image_mobile.url != blank and component.options.image_desktop.url == blank %}
+  <img src="{{ component.options.image_mobile.url }}" alt="{{ component.options.image_mobile.alt | default: store.name | escape }}" {% if component.options.width != 'Container' %}class="w-100"{% endif %} width="auto" height="auto" loading="lazy">
+  {% elsif component.options.image_desktop.url != blank and component.options.image_mobile.url == blank %}
+  <img src="{{ component.options.image_desktop.url }}" alt="{{ component.options.image_desktop.alt | default: store.name | escape }}" {% if component.options.width != 'Container' %}class="w-100"{% endif %} width="auto" height="auto" loading="lazy">
+  {% else %}
+  <img src="//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-1100x685.png" alt="{{ store.name }}" {% if component.options.width != 'Container' %}class="w-100"{% endif %} width="1100" height="685" loading="lazy">
+  {% endif %}
+{% endcapture %}
+
+<div id="big-banner-{{ component.id }}" class="{% if component.options.width == 'Container' %}container{% endif %} py-3 hover-link-container" {{ component.attributes }}>
+  {% render 'read_more_hover_link', link: component.options.link, text: component.options.link_text %}
+  {{ banner_image }}
+</div>

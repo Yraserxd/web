@@ -1,0 +1,27 @@
+{
+  "name": "Payment methods",
+  "icon": "credit-card",
+  "max_usage": null,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [],
+  "options": {
+    "bank_transfer_payment": {
+      "name": "Show bank transfer badge",
+      "type": "checkbox",
+      "default": false
+    },
+    "manual_payment": {
+      "name": "Show manual payment badge",
+      "type": "checkbox",
+      "default": false
+    },
+    "partners": {
+      "name": "Payment methods list",
+      "type": "partners"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

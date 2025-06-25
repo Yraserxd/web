@@ -1,0 +1,32 @@
+<style>
+  #component-{{ component.id }} {
+    --featured-products-background: {{ component.options.background }};
+    --featured-products-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --featured-products-highlight-color: {{ component.options.highlight_color }};
+  }
+</style>
+
+{% capture content %}
+  {% for prod in products.featured limit: component.options.limit %}
+    <div class="swiper-slide">
+      {% render 'product_block', prod: prod %}
+    </div>
+  {% endfor %}
+{% endcapture %}
+
+{% if products.featured != blank %}
+<div class="featured-products py-4" {{ component.attributes }}>
+  <div class="container">
+    <h2 class="block-header" {{ component.attributes.textfield.title }}>{{ component.options.title }}</h2>
+    <div>
+      {% render 'common_product_swiper', slides: content %}
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="featured-products py-4">
+  <div class="container">
+    <h2 class="block-header">{% t 'There are no featured products' %}</h2>
+  </div>
+</div>
+{% endif %}

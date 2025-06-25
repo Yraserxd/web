@@ -1,0 +1,6 @@
+{% case template %}
+  {% when 'category' %}
+    {% render 'products_category_gallery' %}
+  {% when 'searchresults' %}
+    {% render 'products_search_gallery' %}
+{% endcase %}

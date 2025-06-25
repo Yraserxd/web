@@ -1,0 +1,16 @@
+<div class="{{ grid_size }} col-6 pb-4 mb-2" {{ quick-link.attributes }}>
+  <div class="trsn hover-link-container{% if component.options.only_image != true %} overlay{% endif %}">
+    {% render 'read_more_hover_link', link: quick-link.options.link, text: quick-link.options.link_text %}
+
+    {% if component.options.only_image != true %}
+      <div class="quick-link_title" {{ quick-link.attributes.textfield.title }}>{{ quick-link.options.title }}</div>
+    {% endif %}
+    <img
+      src="{% if component.options.image_dimensions == 'square' %}{{ quick-link.options.image.url | thumb: '510x510' | default: '//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-200x200.png' }}{% else %}{{ quick-link.options.image.url | default: '//assets.jumpseller.com/public/placeholder/themes/mega/placeholder-200x200.png' }}{% endif %}"
+      alt="{{ quick-link.options.image.alt | default: quick-link.options.title | escape }}"
+      width="510"
+      height="510"
+      loading="lazy"
+    >
+  </div>
+</div>

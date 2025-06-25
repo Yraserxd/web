@@ -1,0 +1,118 @@
+{
+  "name": "Featured reviews",
+  "icon": "stars",
+  "help": "On this component you can display a collection of featured reviews from the products on your store. You need to have enabled the emails to request product reviews to your customers. After receiving reviews you have to publish and feature them, those featured reviews will be displayed in this component. You can check the documentation for Product Reviews on [this article](/admin/landing?url=/support/product-reviews/)",
+  "max_usage": 1,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Featured Reviews"
+    },
+    "display": {
+      "name": "Layout",
+      "type": "select",
+      "default": "carousel",
+      "options": [
+        {
+          "label": "Carousel",
+          "value": "carousel"
+        },
+        {
+          "label": "Grid",
+          "value": "grid"
+        }
+      ]
+    },
+    "alignment": {
+      "name": "Reviews alignment",
+      "type": "select",
+      "default": "text-left",
+      "options": [
+        {
+          "label": "Left",
+          "value": "text-left"
+        },
+        {
+          "label": "Center",
+          "value": "text-center"
+        }
+      ]
+    },
+    "limit": {
+      "name": "Quantity of items to display",
+      "type": "slider",
+      "default": 8,
+      "min": 4,
+      "max": 16,
+      "step": 4,
+      "unit": ""
+    },
+    "image": {
+      "name": "Display product image",
+      "type": "checkbox",
+      "default": true
+    },
+    "date": {
+      "name": "Display creation date",
+      "type": "checkbox",
+      "default": true
+    },
+    "date_format": {
+      "name": "Format of the creation date",
+      "type": "select",
+      "default": "%d-%m-%Y",
+      "options": [
+        {
+          "label": "dd-mm-yyyy",
+          "value": "%d-%m-%Y"
+        },
+        {
+          "label": "mm-dd-yyyy",
+          "value": "%m-%d-%Y"
+        },
+        {
+          "label": "yyyy-mm-dd",
+          "value": "%Y-%m-%d"
+        }
+      ]
+    },
+    "enable_arrows": {
+      "name": "Enable arrows",
+      "type": "checkbox",
+      "help": "Displays 'next' and 'previous' arrows for customers to navigate.",
+      "default": true
+    },
+    "enable_dots": {
+      "name": "Enable dots",
+      "type": "checkbox",
+      "help": "Displays navigational dots (points) for customers to navigate.",
+      "default": true
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "help": "This color is for the button, the highlighted line and the overlay color.",
+      "default": "#F77D00"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

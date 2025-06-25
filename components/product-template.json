@@ -1,0 +1,74 @@
+{
+  "name": "Product template",
+  "icon": "archive",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "product"
+  ],
+  "options": {
+    "alignment": {
+      "name": "Product form content aligment",
+      "type": "select",
+      "default": "center",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    },
+    "gallery_position": {
+      "name": "Gallery images position",
+      "type": "select",
+      "default": "left",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    }
+  },
+  "mode": "children",
+  "properties": {
+    "gallery": {
+      "type": "product-gallery",
+      "multiple": false
+    },
+    "heading": {
+      "type": "product-heading",
+      "multiple": false
+    },
+    "form": {
+      "type": "product-form",
+      "multiple": false
+    },
+    "attachments": {
+      "type": "product-attachments",
+      "multiple": false
+    },
+    "description": {
+      "type": "product-description",
+      "multiple": false
+    },
+    "share": {
+      "type": "product-share",
+      "multiple": false
+    }
+  }
+}

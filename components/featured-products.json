@@ -1,0 +1,74 @@
+{
+  "name": "Featured products",
+  "icon": "badge-check",
+  "help": "This component allows you to display products that have been marked as 'Featured'. You can manage your featured products inside each Product configuration.",
+  "max_usage": 1,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Featured Products"
+    },
+    "limit": {
+      "name": "Quantity of items to display",
+      "type": "slider",
+      "default": 8,
+      "min": 4,
+      "max": 16,
+      "step": 4,
+      "unit": ""
+    },
+    "autoplay": {
+      "name": "Enable autoplay",
+      "type": "checkbox",
+      "default": false
+    },
+    "autoplay_speed": {
+      "name": "Autoplay speed",
+      "type": "slider",
+      "help": "Time that takes to pass from one 'Block' to the next, in seconds.",
+      "default": 4000,
+      "min": 500,
+      "max": 6000,
+      "step": 500,
+      "unit": "ms"
+    },
+    "enable_arrows": {
+      "name": "Enable arrows",
+      "type": "checkbox",
+      "help": "Displays 'next' and 'previous' arrows for customers to navigate.",
+      "default": true
+    },
+    "enable_dots": {
+      "name": "Enable dots",
+      "type": "checkbox",
+      "help": "Displays navigational dots (points) for customers to navigate.",
+      "default": true
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "help": "This color is for the button, the highlighted line and the overlay color.",
+      "default": "#4770FC"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Product reviews",
+  "icon": "star",
+  "max_usage": 1,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "product"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Product Reviews"
+    },
+    "limit": {
+      "name": "Reviews number",
+      "type": "slider",
+      "help": "Set the number of reviews to show initially with each product.",
+      "default": 5,
+      "min": 1,
+      "max": 9,
+      "step": 1,
+      "unit": ""
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

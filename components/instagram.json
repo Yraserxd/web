@@ -1,0 +1,47 @@
+{
+  "name": "Instagram",
+  "icon": "camera-polaroid",
+  "help": "This is a component integrated with your Instagram account. To use it you have to be logged in into your account on your administration panel, inside the section General > Preferences > General Preferences. Take in consideration that your account shouldn't be private.",
+  "max_usage": 1,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Instagram"
+    },
+    "limit": {
+      "name": "Number of Instagram posts",
+      "type": "slider",
+      "default": 12,
+      "min": 6,
+      "max": 12,
+      "step": 6,
+      "unit": ""
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "help": "This color is for the button and the highlighted line.",
+      "default": "#4770FC"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

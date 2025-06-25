@@ -1,0 +1,29 @@
+{
+  "name": "Logo",
+  "icon": "image",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [],
+  "options": {
+    "image": {
+      "name": "Image",
+      "type": "image",
+      "help": "Recommended size 510x510px"
+    },
+    "link": {
+      "name": "Link",
+      "type": "link",
+      "default": null
+    },
+    "link_text": {
+      "name": "Link text",
+      "type": "input",
+      "help": "Text that appears when the user hovers the mouse over the logo.",
+      "default": "See more"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

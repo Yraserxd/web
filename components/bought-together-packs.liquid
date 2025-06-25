@@ -1,0 +1,321 @@
+{% if bought_together.product_count > 0 and bought_together.packs_stock? %}
+  {% if product.stock > 0 or product.stock_unlimited and product.status == 'available' %}
+    <div class="row my-5" {{ component.attributes }}>
+      <div id="fbt-products" class="col-12">
+        <div>
+          <h2 class="block-header" {{ component.attributes.textfield.title }}>{{ component.options.title }}</h2>
+        </div>
+        <swiper-slider
+          class="swiper_bought_together_packs col-12 swiper"
+          sw-layout="one"
+          sw-loop="true"
+          sw-grab="true"
+          sw-auto-height="true"
+        >
+          <div class="swiper-wrapper">
+            {% assign num_packs_displayed = 0 %}
+            {% for btr_pack in bought_together.packs %}
+              {% if btr_pack.stock? == false %} {% continue %} {% endif %}
+              <!-- Limit number of packs shown with the option fbt_packs_to_show -->
+              {% if num_packs_displayed >= component.options.limit %}{% break %}{% endif %}
+              {% assign num_packs_displayed = num_packs_displayed | plus: 1 %}
+              <!-- Ids of all products of the pack -->
+              {% assign pack_ids = btr_pack.products | map: 'id' %}
+              <div class="swiper-slide">
+                <!-- Product -->
+                <form
+                  action="{{ store.add_multiple_to_cart_url }}"
+                  id="form-add-multiple-{{ product.id }}-{{ pack_ids | join: '-' }}"
+                  method="post"
+                  enctype="multipart/form-data"
+                  class="row justify-content-center mx-1 pb-5"
+                >
+                  <input type="hidden" name="products[][id]" class="hidden-btr-product-id" value="{{ product.id }}">
+                  <input type="hidden" name="products[][qty]" class="hidden-btr-product-qty" value="1">
+                  <input type="hidden" name="products[][options]" class="hidden-btr-product-options">
+                  <!-- Product image -->
+                  <div class="col-12 product-block-btp mb-3 mb-lg-0 card px-3 py-2">
+                    <div class="row mb-3 justify-content-center">
+                      <div class="col-auto">
+                        {% if product.images.first != blank %}
+                          <img
+                            src="{{ product.images.first | resize: '250x250' }}"
+                            alt="{{ product.name }}"
+                            class="original-product-image bg-light"
+                            width="250"
+                            height="250"
+                            loading="lazy"
+                          >
+                        {% else %}
+                          <img
+                            src="//assets.jumpseller.com/public/placeholder/themes/mega/no-image-home.png"
+                            alt="{{ product.name }}"
+                            class="bg-light"
+                            width="250"
+                            height="250"
+                            loading="lazy"
+                          >
+                        {% endif %}
+                      </div>
+                      <!-- Product name -->
+                      <div class="col align-self-center">
+                        {% assign prod_names = product.name | replace: "'", '' | escape %}
+                        <strong>{{ product.name }}</strong>
+                        <div
+                          class="small text-muted current-product-options"
+                          data-current-product=""
+                          {{ product.id }}
+                        ></div>
+                        {% if options.pb_show_ratings and product.reviews != empty and options.pp_reviews %}
+                          <div class="d-flex">
+                            {% render 'product_rating', prod: product %}
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-frequent-plus align-self-center text-center mx-md-3">
+                    <span class="product-frequent-icon"><i class="fas fa-plus" aria-hidden="true"></i></span>
+                  </div>
+                  <!-- end .product-frequent__column -->
+
+                  {% for btr_prod in btr_pack.products %}
+                    <!-- Current Recommended Product inside the pack -->
+                    <input type="hidden" name="products[][id]" class="hidden-btr-product-id" value="{{ btr_prod.id }}">
+                    <input type="hidden" name="products[][qty]" class="hidden-btr-product-qty" value="1">
+                    {% if btr_prod.variant != blank %}
+                      {% assign variant_value = btr_prod.variant.values.first %}
+                      <input
+                        type="hidden"
+                        name="products[][options]"
+                        class="hidden-btr-product-options"
+                        value='{"{{ variant_value.option.id }}": "{{ variant_value.id }}"}'
+                      >
+                    {% else %}
+                      <input type="hidden" name="products[][options]" class="hidden-btr-product-options" value="">
+                    {% endif %}
+
+                    <a
+                      href="{{ btr_prod.url }}"
+                      title="{{ btr_prod.name }}"
+                      class="col-12 product-block-btp card px-3 py-2 mb-3 mb-lg-0"
+                    >
+                      <div class="row mb-3 justify-content-center">
+                        <div class="col-auto">
+                          {% if btr_prod.images.first != blank %}
+                            <img
+                              src="{{ btr_prod.images.first | resize: '250x250' }}"
+                              alt="{{ btr_prod.name }}"
+                              class="bg-light"
+                              width="250"
+                              height="250"
+                              loading="lazy"
+                            >
+                          {% else %}
+                            <img
+                              src="//assets.jumpseller.com/public/placeholder/themes/mega/no-image-home.png"
+                              alt="{{ btr_prod.name }}"
+                              class="bg-light"
+                              width="250"
+                              height="250"
+                              loading="lazy"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="col align-self-center">
+                          {% assign prod_names = prod_names | append: ',' | append: btr_prod.name | replace: "'", '' | escape %}
+                          <strong class="btr-product-name">{{ btr_prod.name }}</strong>
+                          {% if btr_prod.variant != blank %}
+                            {% for variant_value in btr_prod.variant.values %}
+                              <div
+                                data-bought-together="{{ btr_prod.id }}"
+                                data-option="{{ variant_value.option.id }}"
+                                data-variant="{{ variant_value.id }}"
+                                class="bought-together-variant small text-muted"
+                              >
+                                {{ variant_value.option.name }}: {{ variant_value.name }}
+                              </div>
+                            {% endfor %}
+                          {% endif %}
+
+                          {% if options.pb_show_ratings and btr_prod.reviews != empty and options.pp_reviews %}
+                            <div class="d-flex">
+                              {% render 'product_rating', prod: btr_prod %}
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </a>
+
+                    {% unless forloop.last %}
+                      <div class="product-frequent-plus align-self-center text-center mx-md-3">
+                        <span class="product-frequent-icon"><i class="fas fa-plus" aria-hidden="true"></i></span>
+                      </div>
+                      <!-- end .product-frequent__column -->
+                    {% endunless %}
+                  {% endfor %}
+                  <div class="col-12 mt-md-3">
+                    <div class="row align-items-center col-12 col-lg-6 mx-auto">
+                      {% unless options.disable_prices %}
+                        <div class="col-12 col-md-6 text-center text-md-right">
+                          {% t "Buy these items for" %}:
+                          {% assign discount_value = 0 %}
+                          {% if product.discount > 0 or btr_pack.discount? %}
+                            {% assign discount_value = product.discount | plus: btr_pack.pack_discount %}
+                            <div class="price-total h4">
+                              <span
+                                class="font-weight-bold btr-pack-price product-form_price_discounted"
+                                data-price=""
+                                {{ btr_pack.pack_price | minus: btr_pack.pack_discount }}
+                              >
+                                {{ product.price | plus: btr_pack.pack_price | minus: discount_value | price }}
+                              </span>
+                              <del
+                                class="small text-muted btr-pack-price btr-pack-discount"
+                                data-price=""
+                                {{ btr_pack.pack_price }}
+                              >
+                                {{- product.price | plus: btr_pack.pack_price | price -}}
+                              </del>
+                            </div>
+                          {% else %}
+                            <div
+                              class="price-total h4 font-weight-bold btr-pack-price"
+                              data-price=""
+                              {{ btr_pack.pack_price }}
+                            >
+                              {{ product.price | plus: btr_pack.pack_price | price }}
+                            </div>
+                          {% endif %}
+                        </div>
+                      {% endunless %}
+                      <!-- Add to cart -->
+                      <div class="col-12 col-md-6 btr-pack-available {% if product.stock > 0 or product.stock_unlimited and product.status == 'available' %}d-inline-block{% else %}d-none{% endif %}">
+                        <button
+                          type="button"
+                          onclick="addMultipleToCart(Jumpseller.aggregateProducts([{{ product.id }},{{ pack_ids | join: ',' }}]), {{ prod_names | split: ',' | json | replace: '"', "'" }})"
+                          class="btn btn-block primary adc"
+                        >
+                          {% t 'Add them to cart' %}
+                        </button>
+                      </div>
+                      <!-- Out of Stock -->
+                      <div class="col-12 col-md-6 btr-pack-out-stock text-center hidden">
+                        <span class="product-form_price">{% t "Out of stock" %}</span>
+                      </div>
+                      <!-- Not Available -->
+                      <div class="col-12 col-md-6 btr-pack-unavailable text-center hidden">
+                        <span class="product-form_price">{% t "Not Available" %}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end .product-frequent__actions -->
+                </form>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="swiper-pagination"></div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+      </swiper-slider>
+      </div>
+    </div>
+  {% endif %}
+  <script>
+    function addMultipleToCart(products, productNames, options){
+      Jumpseller.addMultipleProductsToCart(products, {
+        callback: function(data, status) {
+          toastr.options = {
+            closeButton: true,
+            debug: false,
+            newestOnTop: false,
+            progressBar: true,
+            positionClass: '{{ options.cart_notification_position }}',
+            preventDuplicates: false,
+            onclick: null,
+            showDuration: '500',
+            hideDuration: '1000',
+            timeOut: '5000',
+            extendedTimeOut: '1000',
+            showEasing: 'swing',
+            hideEasing: 'linear',
+            showMethod: 'fadeIn',
+            hideMethod: 'fadeOut',
+          };
+          if (data.status == 404) {
+            toastr.error(data.responseJSON.message);
+          } else {
+            // update cart in page
+            let finalMessage = products.reduce(function(prevVal, prod, idx) {
+              let [product_id, qty, product_options] = prod;
+              let msg = qty + ' ' + productNames[idx] + ' ' + (parseInt(qty) == 1 ? singleProductMessage : multiProductMessage)
+              return prevVal + msg + '<br>';
+            }, '')
+            toastr.success(finalMessage + '<br>' + '<a href="'+$("#cart-link").attr('href')+'"> ' + shoppingCartMessage + '</a>')
+            let totalQty = products.reduce(function(prevVal, prod) {
+              let [product_id, qty, product_options] = prod;
+              return prevVal + parseInt(qty)
+            }, 0)
+            $('.cart-size').text(parseInt($('.cart-size').text()) + totalQty);
+          }
+        },
+      });
+    }
+
+    var updateOriginalProductOptions = function() {
+      let allOptions = Jumpseller.getAllOptions();
+      let productOptions = allOptions[{{ product.id }}];
+      let currentOptions = Object.keys(productOptions).reduce(function (filtered, key) {
+        if (productOptions[key] != "") filtered[key] = (productOptions[key].length > 50) ? productOptions[key].substr(0, 50) + '&hellip;' : productOptions[key];
+        return filtered;
+      }, {});
+
+      $('.current-product-options').each(function() {
+        let curr = $(this);
+        curr.empty();
+        const productOptionsNames = Jumpseller.getProductOptionNames(currentOptions)
+        // Creates string of the options as "OptionName1: OptionValue1<br>OptionName2: OptionValue2"
+        curr.append(Jumpseller.getProductOptionString(productOptionsNames));
+      })
+
+      // Adds the variants options to the hidden form so it can be sent when adding bought together products to the cart
+      $('.hidden-btr-product-options').each(function(index){
+        let id = $('.hidden-btr-product-id')[index].value
+        $(this)[0].value = JSON.stringify(allOptions[id])
+      })
+    }
+
+    var callbackVariant = function(event, productInfo){
+      // if productInfo is not emtpy or null
+      if(!$.isEmptyObject(productInfo)){
+        //update stock
+        if((productInfo.stock == 0 && productInfo.stock_unlimited == false) || productInfo.status == 'not-available') {
+          $('.btr-pack-out-stock').removeClass('hidden');
+          $('.btr-pack-available').addClass('hidden');
+          $('.btr-pack-unavailable').addClass('hidden');
+        } else {
+          $('.btr-pack-available').removeClass('hidden');
+          $('.btr-pack-out-stock').addClass('hidden');
+          $('.btr-pack-unavailable').addClass('hidden');
+        }
+
+        // Update original product image to variant
+        let variant_images = { {% for variant in product.variants %}"{{ variant.image_id }}": "{{ variant.image | resize: '250x250' }}", {% endfor %} };
+        let variantImageSrc = variant_images[productInfo['image_id']] || {% if product.images.first != blank %}"{{ product.images.first | resize: '250x250' }}"{% else %}"//assets.jumpseller.com/public/placeholder/themes/mega/no-image-home.png"{% endif %};
+        document.querySelectorAll('.original-product-image').forEach(imgElem => imgElem.src = variantImageSrc);
+      }
+      updateOriginalProductOptions();
+    }
+
+    $(document).ready(function() {
+    	Jumpseller.productVariantListener('.variants .prod-options', {product: '{{ product | json }}', callback: callbackVariant});
+      $('.variants .prod-options:not(select)').each(function() {
+        $(this).change(updateOriginalProductOptions);
+      });
+    });
+  </script>
+{% endif %}

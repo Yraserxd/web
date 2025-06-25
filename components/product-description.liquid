@@ -1,0 +1,8 @@
+{% if product.description != blank %}
+  <div class="form-group description text-left" {{ product-description.attributes }}>
+    <label class="form-control-label" {{ product-description.attributes.textfield.title }}>{{ product-description.options.title }}</label>
+    <div>
+      {{ product.description }}
+    </div>
+  </div>
+{% endif %}

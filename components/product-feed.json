@@ -1,0 +1,30 @@
+{
+  "name": "Product feed",
+  "icon": "boxes-stacked",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "category",
+    "searchresults"
+  ],
+  "options": {
+    "limit": {
+      "name": "Products per Page",
+      "type": "slider",
+      "default": 12,
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": ""
+    },
+    "show_filters": {
+      "name": "Display Filters",
+      "type": "checkbox",
+      "default": true
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

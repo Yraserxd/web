@@ -1,0 +1,10 @@
+<style>
+  #component-{{ component.id }} {
+    --store-divider-color: {{ component.options.color }};
+    --divider-space: {{ component.options.spacing }}px;
+  }
+</style>
+
+<div class="{{ component.options.width }} store-divider" {{ component.attributes }}>
+  <hr class="store-divider__line">
+</div>

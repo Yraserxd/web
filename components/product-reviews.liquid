@@ -1,0 +1,164 @@
+{% if product.reviews.count > 0 %}
+  {% render 'product_review_scripts' %}
+
+  <div class="product-reviews" id="product-reviews" {{ component.attributes }}>
+    <div class="col-12">
+      <h2 class="block-header" {{ component.attributes.textfield.title }}> {{ component.options.title }}</h2>
+    </div>
+    <div class="centered">
+      <div class="product-rating rating">
+        {% render 'product_rating', prod: product %}
+        <p>{{ product.reviews.rating | round: 1 }}</p>
+      </div>
+      <p class="bold">
+        {{ product.reviews.count }}
+        {% if product.reviews.count > 1 %}
+          {% t "Reviews" %}
+        {% else %}
+          {% t "Review" %}
+        {% endif %}
+      </p>
+    </div>
+
+    <div class="body dropdown-container clickable mb-5">
+      <div class="header-toolbar__item">
+        <div class="dropdown product-reviews-dropdown">
+          <div
+            id="langMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            role="button"
+            class="header_actions-link"
+          >
+            <span class="header-toolbar__text--dropdown">
+              {% t "Sort by:" -%}
+              <strong id="current-sort">{% t "Latest" %}</strong>
+              <i class="fas fa-angle-down header-toolbar__angle-down" aria-hidden="true"></i>
+            </span>
+          </div>
+
+          <ul class="dropdown-menu toolbar-dropdown" aria-labelledby="dropdownMenuLink">
+            <li class="toolbar-dropdown__item">
+              <a
+                id="date_desc"
+                class="dropdown-item toolbar-dropdown__link selected"
+                onclick="changeSort('date_desc')"
+              >
+                {% t "Latest" %}
+              </a>
+            </li>
+            <li class="toolbar-dropdown__item">
+              <a
+                id="date_asc"
+                class="dropdown-item toolbar-dropdown__link selected"
+                onclick="changeSort('date_asc')"
+              >
+                {% t "Oldest" %}
+              </a>
+            </li>
+            <li class="toolbar-dropdown__item">
+              <a
+                id="rating_desc"
+                class="dropdown-item toolbar-dropdown__link selected"
+                onclick="changeSort('rating_desc')"
+              >
+                {% t "Best ratings" %}
+              </a>
+            </li>
+            <li class="toolbar-dropdown__item">
+              <a
+                id="rating_asc"
+                class="dropdown-item toolbar-dropdown__link selected"
+                onclick="changeSort('rating_asc')"
+              >
+                {% t "Lowest ratings" %}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="body mb-5" id="product-reviews-container"></div>
+
+    <div class="more-reviews mb-5">
+      <i class="fas fa-angle-double-down"></i>
+    </div>
+    <div class="loading-reviews mb-5">
+      <i class="fas fa-spinner fa-spin"></i>
+    </div>
+  </div>
+
+  <script>
+    let reviewsPage = 1;
+    let sort = "date_desc";
+    const productId = "{{ product.id }}";
+    const moreReviewsButton = $(".more-reviews");
+    const currentSortText = $("#current-sort");
+    const loadingIcon = $(".loading-reviews");
+    const sortItems = $(".product-reviews-dropdown .dropdown-item");
+    let isResizing = false;
+
+    let isLoading = false;
+
+    function scrollToReviews(e) {
+        var element = document.getElementById('product-reviews');
+        var headerOffset = 200;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+
+    const changeSort = (filter) => {
+        sortItems.removeClass("selected");
+        const selectedFilter = $(`#${filter}`);
+        selectedFilter.addClass("selected");
+        currentSortText.text(selectedFilter.text());
+        sort = filter;
+        resetReviews();
+        insertReviews();
+    }
+
+    const insertReviews = async () => {
+        moreReviewsButton.hide();
+        loadingIcon.show();
+
+        try {
+            const {reviews, reviews_count: count, page_count: pages} = await Jumpseller.fetchReviews(productId, reviewsPage++, sort, {{ component.options.limit }});
+
+            reviews.forEach((review) => {
+                $("#product-reviews-container").append(buildReviewHtml(review.text, review.rating, review.customer, review.date));
+            });
+
+            updateShowMoreButtonsVisibility();
+
+            if (reviewsPage > pages) {
+                moreReviewsButton.hide();
+            } else {
+                moreReviewsButton.show();
+            }
+
+        } catch (err) {
+            moreReviewsButton.show();
+            console.error(err);
+        }
+
+        loadingIcon.hide();
+    }
+
+    const resetReviews = () => {
+        $("#product-reviews-container").empty();
+        reviewsPage = 1;
+    }
+
+    $(document).ready(function() {
+        moreReviewsButton.click(insertReviews);
+        insertReviews();
+        $(window).resize(Jumpseller.throttle(500, updateShowMoreButtonsVisibility));
+    });
+  </script>
+{% endif %}

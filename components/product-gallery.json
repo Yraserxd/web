@@ -1,0 +1,21 @@
+{
+  "name": "Product gallery",
+  "icon": "image-polaroid",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "product"
+  ],
+  "options": {
+    "thumbnails": {
+      "name": "Display gallery thumbnails",
+      "type": "checkbox",
+      "help": "If enabled, the product image gallery will display thumbnails along with the carousel images, if product images size is greater than one (1).",
+      "default": true
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

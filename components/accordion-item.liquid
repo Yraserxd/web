@@ -1,0 +1,40 @@
+{% capture item_image %}
+<img src="{{ accordion-item.options.image.url }}" alt="{{ accordion-item.options.image.alt | default: accordion-item.options.title | escape }}" width="auto" height="auto" loading="lazy" style="width: {{ accordion-item.options.size }}%">
+{% endcapture %}
+
+<div class="accordion-item card" {{ accordion-item.attributes }}>
+  <div class="card-header">
+    <h5 id="item-heading-{{ accordion-item.id }}" class="mb-0">
+      <span
+        class="accordion-title collapsed"
+        data-toggle="collapse"
+        data-target="#item-collapse-{{ accordion-item.id }}"
+        aria-expanded="false"
+        aria-controls="item-collapse-{{ accordion-item.id }}"
+      >
+        <span {{ accordion-item.attributes.textfield.title }}>{{- accordion-item.options.title -}}</span>
+
+        <i class="fas fa-chevron-down"></i>
+      </span>
+    </h5>
+  </div>
+
+  <div
+    id="item-collapse-{{ accordion-item.id }}"
+    class="collapse"
+    aria-labelledby="item-heading-{{ accordion-item.id }}"
+    data-parent="#store-accordion-{{ component.id }}"
+  >
+    <div class="card-body">
+      {% if accordion-item.options.image.url != blank and accordion-item.options.image_position == 'before' %}
+        {{ item_image }}
+      {% endif %}
+
+      <span {{ accordion-item.attributes.textfield.content }}>{{ accordion-item.options.content | newline_to_br }}</span>
+
+      {% if accordion-item.options.image.url != blank and accordion-item.options.image_position == 'after' %}
+        {{ item_image }}
+      {% endif %}
+    </div>
+  </div>
+</div>

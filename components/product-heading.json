@@ -1,0 +1,31 @@
+{
+  "name": "Product heading",
+  "icon": "heading",
+  "max_usage": null,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [],
+  "options": {
+    "brand_enable": {
+      "name": "Show Product Brand",
+      "type": "checkbox",
+      "help": "If enabled, the product 'Brand' will display on top of the product name.",
+      "default": false
+    },
+    "sku_enable": {
+      "name": "Show Product SKU",
+      "type": "checkbox",
+      "help": "If enabled, the product 'SKU' will be displayed below the product name.",
+      "default": true
+    },
+    "stock_enable": {
+      "name": "Show Product Stock",
+      "type": "checkbox",
+      "help": "If enabled, the product 'Stock' will be displayed below the product name (and after the SKU if enabled).",
+      "default": false
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

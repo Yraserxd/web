@@ -1,0 +1,33 @@
+<style>
+  #component-{{ component.id }} {
+    --logo-gallery-background: {{ component.options.background }};
+    --logo-gallery-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --logo-gallery-highlight-color: {{ component.options.highlight_color }};
+  }
+</style>
+
+{% capture content %}
+  {% for logo in component.subcomponents.logos %}
+    {% render 'components/logo', logo: logo %}
+  {% else %}
+    {% render 'placeholder_logo_slider' %}
+  {% endfor %}
+{% endcapture %}
+
+<div class="logo-gallery py-4" {{ component.attributes }}>
+  <div class="container">
+    <h2 class="block-header" {{ component.attributes.textfield.title }}>{{ component.options.title }}</h2>
+    <swiper-slider
+      class="col-12 swiper position-relative{% if component.options.enable_arrows or component.options.enable_dots %} pb-5{% endif %}"
+      sw-layout="logo-gallery"
+      sw-autoplay="{{ component.options.autoplay }}"
+      sw-speed="{{ component.options.autoplay_speed }}"
+      sw-span="{{ component.options.columns_desktop }}"
+    >
+      <div class="swiper-wrapper">
+        {{ content }}
+      </div>
+      {% render 'common_swiper_pagination' %}
+    </swiper-slider>
+  </div>
+</div>

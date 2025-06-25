@@ -1,0 +1,130 @@
+<style>
+  body {
+    --footer-background: {{ component.options.background }};
+    --footer-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --footer-highlight-color: {{ component.options.highlight_color }};
+  }
+</style>
+
+<!-- Footer -->
+<footer {{ component.attributes }}>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-sm-6 find-us">
+        <h5>{% t 'Find Us' %}</h5>
+        <ul class="icon-list">
+          {% if store.address != empty and options.display_address %}<li><i class="linear-icon icon-0379-map-marker"></i> {{ store.address }}{% if store.city != empty %}, {{ store.city }}{% endif %}{% if store.region != empty %}, {{ store.region }}{% endif %}, {{ store.country }}</li>{% endif %}
+          {% if options.working_hours != blank %}<li><i class="linear-icon icon-0745-clock3"></i> {% t 'Working hours' %}: <br>{{ options.working_hours }}</li>{% endif %}
+          {% if store.location.phone != blank and options.display_phone %}<li><i class="linear-icon icon-0241-headset"></i> <a href="tel:{{ store.location.phone }}">{{ store.location.phone }}</a></li>{% endif %}
+          {% if options.display_contact_email %}<li><i class="linear-icon icon-0151-envelope"></i> <a href="mailto:{{ store.email }}" target="_blank">{{ store.email }}</a></li>{% endif %}
+          {% if options.store_2_name != empty or options.store_3_name != empty or options.store_4_name != empty %}<li><i class="linear-icon icon-0325-store"></i> <a href="{{ store.url }}/contact#stores" title="{% t 'Our Stores' %}">{% t 'Our Stores' %}</a></li>{% endif %}
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <h5>{% t 'Customer Service' %}</h5>
+        <ul class="footer_menu">
+          {% for item in menu.footer.items %}
+          <li>
+            <a href="{{ item.url }}"{% if item.external %} target="_blank"{% endif %} title="{{ item.name }}">{{ item.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <h5>{% t 'Featured Categories' %}</h5>
+        <ul class="footer_menu">
+          {% for item in menu.footer_2.items %}
+          <li>
+            <a href="{{ item.url }}"{% if item.external %} target="_blank"{% endif %} title="{{ item.name }}">{{ item.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <h5>{% t 'Quick Links' %}</h5>
+        <ul class="footer_menu">
+          {% for item in menu.footer_3.items %}
+          <li>
+            <a href="{{ item.url }}"{% if item.external %} target="_blank"{% endif %} title="{{ item.name }}">{{ item.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-md-4 col-12">
+        <ul class="social list-inline text-center text-md-left mb-md-3">
+          {% if social.facebook.url != blank %}
+          <li class="list-inline-item">
+            <a href="{{ social.facebook.url }}" class="trsn" title="{% t 'Go to' %} Facebook" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          {% endif %}
+          {% if social.twitter.url != blank %}
+          <li class="list-inline-item">
+            <a href="{{ social.twitter.url }}" class="trsn" title="{% t 'Go to' %} 𝕏" target="_blank">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </li>
+          {% endif %}
+          {% if social.pinterest.url != blank %}
+          <li class="list-inline-item">
+            <a href="{{ social.pinterest.url }}" class="trsn" title="{% t 'Go to' %} Pinterest" target="_blank">
+              <i class="fab fa-pinterest-square"></i>
+            </a>
+          </li>
+          {% endif %}
+          {% if social.instagram.url != blank %}
+          <li class="list-inline-item">
+            <a href="{{ social.instagram.url }}" class="trsn" title="{% t 'Go to' %} Instagram" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          {% endif %}
+          {% if social.whatsapp.url != blank %}
+          <li class="list-inline-item">
+            <a href="{{ social.whatsapp.url }}&text={% t 'Hello' %}%20{{ store.name }}" class="trsn" title="WhatsApp" target="_blank">
+              <i class="fab fa-whatsapp fa-fw"></i>
+            </a>
+          </li>
+          {% endif %}
+          {% if social.youtube.url != blank %}
+          <li class="list-inline-item">
+            <a href="{{ social.youtube.url }}" class="trsn" title="Youtube" target="_blank">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          {% endif %}
+          {% if social.tiktok.url != blank %}
+          <li class="list-inline-item">
+            <a href="{{ social.tiktok.url }}" class="trsn" title="{% t 'Go to' %} Tiktok" target="_blank">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="col-md-4 col-12 text-center">
+        <a href="{{ store.url }}" title="{{ store.name }}" class="brand-footer">
+          {% if store.logo != empty %}
+          <img src="{{ store.logo }}" alt="{{ store.name }}" class="store-image" width="auto" height="auto" loading="lazy">
+          {% elsif template == 'home' %}
+          <h1><span class="text-logo">{{ store.name }}</span></h1>
+          {% else %}
+          <span class="text-logo">{{ store.name }}</span>
+          {% endif %}
+        </a>
+      </div>
+      {% if component.subcomponents.payment-methods %}
+      <div class="col-md-4 col-12">
+        {% render "components/payment-methods", payment-methods: component.subcomponents.payment-methods %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <p class="powered-by">&copy; {{ 'now' | date: "%Y" }} {{ store.name }}. {% t "All Rights Reserved." %} {{ powered_by }}</p>
+</footer>

@@ -1,0 +1,76 @@
+{
+  "name": "Quick links",
+  "icon": "link",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "grid": {
+      "name": "Quantity of blocks per row",
+      "type": "slider",
+      "help": "Choose how many blocks will be displayed by row on desktop version.",
+      "default": 6,
+      "min": 2,
+      "max": 6,
+      "step": 2,
+      "unit": ""
+    },
+    "only_image": {
+      "name": "Show only image",
+      "type": "checkbox",
+      "help": "If it is enabled, the title will be hidden.",
+      "default": false
+    },
+    "image_dimensions": {
+      "name": "Image dimensions",
+      "type": "select",
+      "default": "square",
+      "options": [
+        {
+          "label": "Square",
+          "value": "square"
+        },
+        {
+          "label": "Original",
+          "value": "original"
+        }
+      ]
+    },
+    "background": {
+      "name": "Section background",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "background_overlay": {
+      "name": "Overlay color",
+      "type": "color",
+      "default": "#1E3B51"
+    },
+    "background_overlay_opacity": {
+      "name": "Overlay opacity",
+      "type": "slider",
+      "default": 50,
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {
+    "quick-links": {
+      "type": "quick-link",
+      "multiple": true
+    }
+  }
+}

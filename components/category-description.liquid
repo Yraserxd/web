@@ -1,0 +1,5 @@
+{% if category.description != blank %}
+  <div class="container category-page {{ component.options.alignment }}" {{ component.attributes }}>
+    <h2 class="category-description">{{ category.description | newline_to_br }}</h2>
+  </div>
+{% endif %}

@@ -1,0 +1,57 @@
+{
+  "name": "Latest blog posts",
+  "icon": "newspaper",
+  "max_usage": 1,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Latest Posts"
+    },
+    "page_category": {
+      "name": "Blog category",
+      "type": "page_category",
+      "help": "Here you must define the 'Page Category' that will group all 'Posts', which you can find in 'Pages > All Pages > Categories'. By default 'Post' will be used.",
+      "default": "Post"
+    },
+    "limit": {
+      "name": "Post quantity",
+      "type": "slider",
+      "default": 3,
+      "min": 3,
+      "max": 9,
+      "step": 3,
+      "unit": ""
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "help": "This color is for the button, the highlighted line and the overlay color.",
+      "default": "#F77D00"
+    },
+    "overlay_color": {
+      "name": "Overlay color",
+      "type": "color",
+      "default": "#1E3B51"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

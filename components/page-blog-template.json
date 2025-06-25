@@ -1,0 +1,24 @@
+{
+  "name": "Page Blog template",
+  "icon": "blog",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "page"
+  ],
+  "options": {
+    "limit": {
+      "name": "Blog posts per page",
+      "type": "slider",
+      "default": 9,
+      "min": 3,
+      "max": 21,
+      "step": 3,
+      "unit": ""
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

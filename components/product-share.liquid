@@ -1,0 +1,43 @@
+<div id="product-sharing" class="form-group" {{ product-share.attributes }}>
+  <div class="product-form_field-group">
+    <label class="form-control-label" {{ product-share.attributes.textfield.title }}> {{ product-share.options.title }}</label>
+    <ul class="list-group list-group-horizontal d-flex">
+      {% if product-share.options.share_facebook %}
+        <li class="list-group-item border-0">
+          <a href="//facebook.com/sharer/sharer.php?u={{ store.base_url }}{{ product.url }}">
+            <i class="fab fa-brands fa-facebook"></i>
+          </a>
+        </li>
+      {% endif %}
+      {% if product-share.options.share_twitter %}
+        <li class="list-group-item border-0">
+          <a href="twitter.com/share?url={{ store.base_url }}{{ product.url }}&text={% t 'Check this product' %}%20{{ product.name | escape }}">
+            <i class="fab fa-brands fa-x-twitter"></i>
+          </a>
+        </li>
+      {% endif %}
+      {% if product-share.options.share_pinterest %}
+        <li class="list-group-item border-0">
+          <a href="//pinterest.com/pin/create/bookmarklet/?media={{ product.images.first }}&url={{ store.base_url }}{{ product.url }}&is_video=false&description={{ product.name }}: {{ product.description | strip_html }}">
+            <i class="fab fa-brands fa-pinterest"></i>
+          </a>
+        </li>
+      {% endif %}
+      {% if product-share.options.share_whatsapp %}
+        <li class="list-group-item border-0">
+          <a
+            class="has-tip tip-top radius button tiny button-whats trsn"
+            href="//api.whatsapp.com/send?text={% t 'Check this product' %}%20{{ product.name | escape }} | {{ store.base_url }}{{ product.url }}"
+          >
+            <i class="fab fa-brands fa-whatsapp"></i>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+  <script>
+    $('#product-sharing a').click(function () {
+      return !window.open(this.href, 'Share', 'width=640,height=300');
+    });
+  </script>
+</div>

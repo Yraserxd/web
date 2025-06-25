@@ -1,0 +1,88 @@
+{
+  "name": "Featured category",
+  "icon": "tag",
+  "help": "This component helps to display a group of products from a specific category of your store. You can decide how many products you want to show on the settings.",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "permalink": {
+      "name": "Featured category",
+      "type": "category"
+    },
+    "image": {
+      "name": "Image",
+      "type": "image",
+      "help": "Recommended size  510x370px"
+    },
+    "title": {
+      "name": "Featured category banner title",
+      "type": "input",
+      "default": ""
+    },
+    "button": {
+      "name": "Featured category button text",
+      "type": "input",
+      "default": "See more products"
+    },
+    "limit": {
+      "name": "Quantity of items to display",
+      "type": "slider",
+      "default": 6,
+      "min": 3,
+      "max": 12,
+      "step": 3,
+      "unit": ""
+    },
+    "autoplay": {
+      "name": "Enable autoplay",
+      "type": "checkbox",
+      "default": false
+    },
+    "autoplay_speed": {
+      "name": "Autoplay speed",
+      "type": "slider",
+      "help": "Time that takes to pass from one 'Block' to the next, in seconds.",
+      "default": 4000,
+      "min": 500,
+      "max": 6000,
+      "step": 500,
+      "unit": "ms"
+    },
+    "enable_arrows": {
+      "name": "Enable arrows",
+      "type": "checkbox",
+      "help": "Displays 'next' and 'previous' arrows for customers to navigate.",
+      "default": true
+    },
+    "enable_dots": {
+      "name": "Enable dots",
+      "type": "checkbox",
+      "help": "Displays navigational dots (points) for customers to navigate.",
+      "default": true
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "help": "This color is for the button and the highlighted line.",
+      "default": "#4770FC"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

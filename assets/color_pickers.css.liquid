@@ -1,0 +1,188 @@
+{% comment %}
+Here you find declarations of global CSS variables and a handful of conditional CSS rules,
+mostly computed from theme option settings. Important design considerations:
+
+- The visual editor system will look for the pattern `options.<option_code>` in this file
+  to determine that changes to option <option_code> can be previewed by *only* refreshing this file.
+- This file is refreshed inplace in the visual editor preview in such cases.
+
+Documentation: https://jumpseller.com/support/creating-a-custom-html-theme#special-variables
+{% endcomment -%}
+
+@import url('https://fonts.googleapis.com/css2?family={{ options.general_font | split: "," | first | strip | url_encode }}:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family={{ options.titles_font | split: "," | first | strip | url_encode }}:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family={{ options.store_name_font | split: "," | first | strip | url_encode }}:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+  --store-background-color: {{ options.store_background }};
+  --store-background-color-contrast-25: {{ options.store_background | color_contrast: '#fbfbfb', '#020202' | color_opacity: 0.25 }};
+  --store-background-color-contrast-50: {{ options.store_background | color_contrast: '#fbfbfb', '#020202' | color_opacity: 0.5 }};
+  --primary-color: {{ options.primary_color }};
+  --primary-color-contrast: {{ options.primary_color | color_contrast: '#ffffff', '#ffffff' }};
+  --secondary-color: {{ options.secondary_color }};
+  --secondary-color-contrast: {{ options.secondary_color | color_contrast: '#ffffff', '#ffffff' }};
+  --general-text-color: {{ options.general_text_color }};
+  --general-links-color: {{ options.general_links_color }};
+  --cart-notification-color: {{ options.cart_notification_color }};
+  --cart-notification-contrast: {{ options.cart_notification_color | color_contrast: '#f1f1f1', '#090909' }};
+  --cart-notification-contrast-img: url('{{ options.cart_notification_color | color_contrast: "//assets.jumpseller.com/public/placeholder/themes/mega/circle-check-light.svg", "//assets.jumpseller.com/public/placeholder/themes/mega/circle-check-dark.svg" }}');
+  --store-whatsapp-message-color-background: {{ options.store_whatsapp_message_background }};
+  --store-whatsapp-message-color-background-contrast: {{ options.store_whatsapp_message_background | color_contrast: '#ffffff', '#222222' }};
+  --store-whatsapp-color-text: {{ options.store_whatsapp_color_text }};
+  --store-whatsapp-color-background: {{ options.store_whatsapp_color_background }};
+  --store-whatsapp-color-background-hover: {{ options.store_whatsapp_color_background_hover }};
+
+  --general-font: {{ options.general_font }};
+  --general-font-size: {{ options.general_font_size }}px;
+  --menu-font-size: {{ options.menu_font_size }}px;
+  --titles-font: {{ options.titles_font }};
+  --store-name-font: {{ options.store_name_font }};
+  --store-name-font-size: {{ options.store_name_font_size }}px;
+  --block-title-font-size: {{ options.block_title_font_size }}px;
+
+  --discount-color: {{ options.discount_color }};
+  --discount-color-contrast: {{ options.discount_color | color_contrast: '#f1f1f1', '#090909' }};
+  --new-color: {{ options.new_color }};
+  --new-color-contrast: {{ options.new_color | color_contrast: '#f1f1f1', '#090909' }};
+  --unavailable-color: {{ options.unavailable_color }};
+  --unavailable-color-contrast: {{ options.unavailable_color | color_contrast: '#f1f1f1', '#090909' }};
+
+  --slide-title-color: #FFFFFF;
+  --slide-button-color: #4770FC;
+  --slide-button-color-contrast: #f1f1f1;
+
+  --pb-base-font-size: 15px;
+  --pb-background-color: {{ options.pb_background_color }};
+  --pb-padding: {{ options.pb_padding }}px;
+  --pb-font-size-scale: {{ options.pb_font_size_scale | divided_by: 100.0 }};
+  --pb-border-radius: {{ options.pb_border_radius }}px;
+  --pb-border-width: {{ options.pb_border_width }}px;
+  --pb-border-color: {{ options.pb_border_color }};
+
+  --template-heading-spacing: {{ options.template_heading_spacing }}px;
+}
+
+{% case options.pb_badge_alignment %}
+{% when "top-left" %}
+.product-block__badges {
+  top: 5px;
+  right: auto;
+  bottom: auto;
+  left: 5px;
+}
+{% when "top-right" %}
+.product-block__badges {
+  top: 5px;
+  right: 5px;
+  bottom: auto;
+  left: auto;
+}
+{% endcase %}
+
+{% case options.pb_alignment %}
+{% when "text-start" %}
+.product-block {
+  text-align: left;
+}
+.product-block .color-swatch fieldset.colors,
+.product-block .product-block-rating-container {
+  justify-content: flex-start;
+}
+{% when "text-center" %}
+.product-block {
+  text-align: center !important;
+}
+.product-block .color-swatch fieldset.colors,
+.product-block .product-block-rating-container {
+  justify-content: center;
+}
+{% when "text-end" %}
+.product-block {
+  text-align: right !important;
+}
+.product-block .color-swatch fieldset.colors,
+.product-block .product-block-rating-container {
+  justify-content: flex-end;
+}
+{% endcase %}
+
+{% if options.pb_hover_image_scale %}
+.product-block a img:hover {
+  scale: 1.10;
+}
+{% endif %}
+
+{% if options.pb_show_brand %}
+.product-block .caption .brand {
+  display: block !important;
+}
+{% endif %}
+
+{% if options.pb_show_sku %}
+.product-block .sku {
+  display: block !important;
+}
+{% endif %}
+
+{% case options.store_whatsapp_position %}
+{% when "top-right" %}
+.store-whatsapp {
+  top: 20px;
+  right: 20px;
+}
+
+.store-whatsapp__circle {
+  top: 0;
+  right: 0;
+}
+
+.store-whatsapp__message {
+  top: 0;
+  right: 60px;
+}
+{% when "top-left" %}
+.store-whatsapp {
+  top: 20px;
+  left: 20px;
+}
+
+.store-whatsapp__circle {
+  top: 0;
+  left: 0;
+}
+
+.store-whatsapp__message {
+  top: 0;
+  left: 60px;
+}
+{% when "bottom-right" %}
+.store-whatsapp {
+  right: 20px;
+  bottom: 20px;
+}
+
+.store-whatsapp__circle {
+  bottom: 0;
+  right: 0;
+}
+
+.store-whatsapp__message {
+  right: 60px;
+  bottom: 0;
+}
+{% when "bottom-left" %}
+.store-whatsapp {
+  bottom: 20px;
+  left: 20px;
+}
+
+.store-whatsapp__circle {
+  bottom: 0;
+  left: 0;
+}
+
+.store-whatsapp__message {
+  left: 60px;
+  bottom: 0;
+}
+{% endcase %}

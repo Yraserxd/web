@@ -1,0 +1,49 @@
+<style>
+  #component-{{ component.id }} {
+    --latest-products-background: {{ component.options.background }};
+    --latest-products-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --latest-products-highlight-color: {{ component.options.highlight_color }};
+  }
+</style>
+
+{% capture content %}
+  {% for prod in products.latest limit: component.options.limit %}
+    <div class="swiper-slide">
+      {% render 'product_block', prod: prod %}
+    </div>
+  {% endfor %}
+{% endcapture %}
+
+<div class="latest-products py-4" {{ component.attributes }}>
+  <div class="container">
+    <h2 class="block-header" {{ component.attributes.textfield.title }}>{{ component.options.title }}</h2>
+    {% if products.all == empty %}
+      <swiper-slider
+        class="col-12 swiper position-relative pb-5"
+        sw-layout="products"
+        sw-root=".store-section__content"
+      >
+        <div class="swiper-wrapper">
+          {% for placeholder in (1..6) %}
+            <div class="swiper-slide">
+              <div class="product-block">
+                <img src="//assets.jumpseller.com/public/placeholder/themes/mega/no-image.jpg" alt="{% t 'Add your products' %}" width="260" height="260" loading="lazy">
+                <div class="caption">
+                  <h3>
+                    <a href="{{ store.url }}/admin/products/new">{% t 'Add your products' %}</a>
+                  </h3>
+                  <div class="price">{{ 1.0 | price }}</div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% render 'common_swiper_pagination' %}
+      </swiper-slider>
+    {% else %}
+      <div>
+        {% render 'common_product_swiper', slides: content %}
+      </div>
+    {% endif %}
+  </div>
+</div>

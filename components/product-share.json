@@ -1,0 +1,42 @@
+{
+  "name": "Product share",
+  "icon": "share",
+  "max_usage": 1,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Share"
+    },
+    "share_facebook": {
+      "name": "Enable Facebook",
+      "type": "checkbox",
+      "help": "Customers will be able to share products on Facebook.",
+      "default": true
+    },
+    "share_twitter": {
+      "name": "Enable 𝕏",
+      "type": "checkbox",
+      "help": "Customers will be able to share products on 𝕏.",
+      "default": true
+    },
+    "share_pinterest": {
+      "name": "Enable Pinterest",
+      "type": "checkbox",
+      "help": "Customers will be able to share products on Pinterest.",
+      "default": false
+    },
+    "share_whatsapp": {
+      "name": "Enable WhatsApp",
+      "type": "checkbox",
+      "help": "Customers will be able to share products on WhatsApp.",
+      "default": true
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

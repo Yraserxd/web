@@ -1,0 +1,54 @@
+{
+  "name": "Line divider",
+  "icon": "grid-dividers",
+  "help": "This component helps you to add a line divider to separate and add extra spacing between components.",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "width": {
+      "name": "Width",
+      "type": "select",
+      "help": "Allows to define the width that the section will have.",
+      "default": "container",
+      "options": [
+        {
+          "label": "Browser Width",
+          "value": "container-fluid"
+        },
+        {
+          "label": "Grid Width",
+          "value": "container"
+        }
+      ]
+    },
+    "spacing": {
+      "name": "Spacing",
+      "type": "slider",
+      "help": "Allows to define the amount of separating space that the section will have.",
+      "default": 16,
+      "min": 0,
+      "max": 80,
+      "step": 8,
+      "unit": "px"
+    },
+    "color": {
+      "name": "Line color",
+      "type": "color",
+      "help": "Allows to modify the color of the divisory line.",
+      "default": "#EAEBEC"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

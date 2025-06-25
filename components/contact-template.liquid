@@ -1,0 +1,153 @@
+<div class="container container-section contact-page" {{ component.attributes }}>
+  <div class="row">
+    <div class="{% if options.store_2_name == empty and options.store_3_name == empty and options.store_4_name == empty %}col-lg-8{% else %}col-12{% endif %}">
+      <h1 class="block-header" {{ component.attributes.textfield.title }}>{{ component.options.title }}</h1>
+      <p {{ component.attributes.textfield.description }}>{{ component.options.description }}</p>
+      {{ contact_form }}
+    </div>
+    {% if options.store_2_name == empty and options.store_3_name == empty and options.store_4_name == empty %}
+      <div class="col-lg-4">
+        <h2 class="block-header" {{ component.attributes.textfield.contact_title }}>{{ component.options.contact_title }}</h2>
+        <ul class="icon-list">
+          {% if options.display_contact_email %}
+            <li>
+              <i class="linear-icon icon-0151-envelope"></i> <a href="mailto:{{ store.email }}">{{ store.email }}</a>
+            </li>
+          {% endif %}
+          {% if store.location.phone != blank and options.display_phone %}
+            <li>
+              <i class="linear-icon icon-0241-headset"></i> <a href="tel:{{ store.location.phone }}">{{ store.location.phone }}</a>
+            </li>
+          {% endif %}
+          {% if store.address != empty and options.display_address %}
+            <li>
+              <i class="linear-icon icon-0379-map-marker"></i> {{ store.address -}}
+              {%- if store.city != empty %}, {{ store.city }}{% endif -%}
+              {%- if store.region != empty %}, {{ store.region }}{% endif %}, {{ store.country }}
+            </li>
+          {% endif %}
+          {% if options.working_hours != empty %}
+            <li><i class="linear-icon icon-0745-clock3"></i> {{ options.working_hours }}</li>
+          {% endif %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if options.store_2_name != empty or options.store_3_name != empty or options.store_4_name != empty %}
+      <div class="col-md-12">
+        <div id="stores">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="block-header">{% t 'Our Stores' %}</h2>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h5>{% t 'Head Store' %}</h5>
+              <ul class="icon-list">
+                {% if options.display_contact_email %}
+                  <li>
+                    <i class="linear-icon icon-0151-envelope"></i> <a href="mailto:{{ store.email }}">{{ store.email }}</a>
+                  </li>
+                {% endif %}
+                <li>
+                  <i class="linear-icon icon-0241-headset"></i> <a href="tel:{{ store.location.phone }}">{{ store.location.phone }}</a>
+                </li>
+                {% if store.address != empty and options.display_address %}
+                  <li>
+                    <i class="linear-icon icon-0379-map-marker"></i> {{ store.address -}}
+                    {%- if store.city != empty %}, {{ store.city }}{% endif -%}
+                    {%- if store.region != empty %}, {{ store.region }}{% endif %}, {{ store.country }}
+                  </li>
+                {% endif %}
+                {% if options.working_hours != empty %}
+                  <li><i class="linear-icon icon-0745-clock3"></i> {{ options.working_hours }}</li>
+                {% endif %}
+              </ul>
+            </div>
+            {% if options.display_address %}
+              <div class="col-lg-9 col-md-6">
+                <iframe
+                  title="{% t 'Main store address on Google Maps' %}"
+                  width="100%"
+                  height="390"
+                  src="https://maps.google.com/maps?q={{ store.address | replace: '#', '' }},{{ store.city }},{{ store.region }},{{ store.country }}&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  style="border: 0px; overflow: hidden"
+                >
+                </iframe>
+              </div>
+            {% endif %}
+          </div>
+          {% if options.store_2_name != empty and options.store_2_address != empty %}
+            <hr>
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <h5>{{ options.store_2_name }}</h5>
+                <ul class="icon-list">
+                  <li><i class="linear-icon icon-0379-map-marker"></i> {{ options.store_2_address }}</li>
+                  {% if options.store_2_phone != empty %}
+                    <li><i class="linear-icon icon-0241-headset"></i> {{ options.store_2_phone }}</li>
+                  {% endif %}
+                  {% if options.store_2_hours != empty %}
+                    <li><i class="linear-icon icon-0745-clock3"></i> {{ options.store_2_hours }}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="col-lg-9 col-md-6">
+                <iframe title="{% t '2nd store address on Google Maps' %}" width="100%" height="390" src="https://maps.google.com/maps?q={{ options.store_2_address | replace: '#', '' }}&t=&z=15&ie=UTF8&iwloc=&output=embed" style="border: 0px; overflow: hidden"> </iframe>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if options.store_3_name != empty and options.store_3_address != empty %}
+            <hr>
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <h5>{{ options.store_3_name }}</h5>
+                <ul class="icon-list">
+                  <li><i class="linear-icon icon-0379-map-marker"></i> {{ options.store_3_address }}</li>
+                  {% if options.store_3_phone != empty %}
+                    <li><i class="linear-icon icon-0241-headset"></i> {{ options.store_3_phone }}</li>
+                  {% endif %}
+                  {% if options.store_3_hours != empty %}
+                    <li><i class="linear-icon icon-0745-clock3"></i> {{ options.store_3_hours }}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="col-lg-9 col-md-6">
+                <iframe title="{% t '3rd store address on Google Maps' %}" width="100%" height="390" src="https://maps.google.com/maps?q={{ options.store_3_address | replace: '#', '' }}&t=&z=15&ie=UTF8&iwloc=&output=embed" style="border: 0px; overflow: hidden"> </iframe>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if options.store_4_name != empty and options.store_4_address != empty %}
+            <hr>
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <h5>{{ options.store_4_name }}</h5>
+                <ul class="icon-list">
+                  <li><i class="linear-icon icon-0379-map-marker"></i> {{ options.store_4_address }}</li>
+                  {% if options.store_4_phone != empty %}
+                    <li><i class="linear-icon icon-0241-headset"></i> {{ options.store_4_phone }}</li>
+                  {% endif %}
+                  {% if options.store_4_hours != empty %}
+                    <li><i class="linear-icon icon-0745-clock3"></i> {{ options.store_4_hours }}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="col-lg-9 col-md-6">
+                <iframe title="{% t '4th store address on Google Maps' %}" width="100%" height="390" src="https://maps.google.com/maps?q={{ options.store_4_address | replace: '#', '' }}&t=&z=15&ie=UTF8&iwloc=&output=embed" style="border: 0px; overflow: hidden"> </iframe>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% if component.options.map %}
+  {% if store.address != empty and options.store_2_name == empty and options.store_3_name == empty and options.store_4_name == empty and options.display_address %}
+    <div class="mt-5" style="line-height: 0;">
+      <iframe title="{% t 'Main store address on Google Maps' %}" width="100%" height="390" src="https://maps.google.com/maps?q={{ store.address | replace: '#', '' }},{{ store.city }},{{ store.region }},{{ store.country }}&t=&z=15&ie=UTF8&iwloc=&output=embed" style="border: 0px; overflow: hidden">
+      </iframe>
+    </div>
+  {% endif %}
+{% endif %}

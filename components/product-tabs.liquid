@@ -1,0 +1,71 @@
+{% if product.description != blank or product.custom_fields != blank %}
+  <div class="product-page container product-description_custom_fields" {{ component.attributes }}>
+    <ul class="nav nav-pills justify-content-center" id="product-tabs" role="tablist">
+      {% if product.description != blank %}
+        <li class="nav-item">
+          <a
+            class="active"
+            id="pills-description-tab"
+            data-toggle="pill"
+            href="#pills-description"
+            role="tab"
+            aria-controls="pills-description"
+            aria-selected="true"
+            {{ component.attributes.textfield.description_title }}
+          >
+            {{ component.options.description_title }}
+          </a>
+        </li>
+      {% endif %}
+      {% if product.custom_fields != blank %}
+        <li class="nav-item product-custom_fields">
+          <a
+            class="{% if product.description == blank %}active{% endif %}"
+            id="pills-fields-tab"
+            data-toggle="pill"
+            href="#pills-fields"
+            role="tab"
+            aria-controls="pills-fields"
+            aria-selected="false"
+            {{ component.attributes.textfield.customfields_title }}
+          >
+            {{ component.options.customfields_title }}
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+    <div class="tab-content" id="product-tabs_content">
+      {% if product.description != blank %}
+        <div
+          class="tab-pane fade show active description"
+          id="pills-description"
+          role="tabpanel"
+          aria-labelledby="pills-description-tab"
+        >
+          {{ product.description }}
+        </div>
+      {% endif %}
+
+      {% if product.custom_fields != blank %}
+        <div
+          class="tab-pane fade product-custom_fields {% if product.description == blank %}show active{% endif %}"
+          id="pills-fields"
+          role="tabpanel"
+          aria-labelledby="pills-fields-tab"
+        >
+          {% for field in product.custom_fields %}
+          <span class="product-custom_field">
+            <label class="tab-label">{{ field[0] }}</label>
+            <p class="product-custom_field_values">
+              {% for custom_field_value in field[1] %}
+                <span id="product-custom_field_value_{{ custom_field_value.field_id }}" class="product-custom_field_value">{{ custom_field_value.value }}</span>
+                {% if forloop.index != field[1].size %}<span class="product-custom_field_separator">|</span>{% endif %}
+              {% endfor %}
+            </p>
+          </span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

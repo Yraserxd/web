@@ -1,0 +1,80 @@
+<style>
+  #component-{{ component.id }} {
+    --featured-category-background: {{ component.options.background }};
+    --featured-category-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --featured-category-highlight-color: {{ component.options.highlight_color }};
+    --featured-category-highlight-color-contrast: {{ component.options.highlight_color | color_contrast: '#f1f1f1', '#090909' }};
+  }
+</style>
+
+{% assign cat = store.category[component.options.permalink] %}
+
+{% capture content %}
+  {% for prod in cat.products limit: component.options.limit %}
+    <div class="swiper-slide">
+      {% render 'product_block', prod: prod %}
+    </div>
+  {% else %}
+    {% for placeholder in (1..6) %}
+      <div class="swiper-slide">
+        <div class="product-block">
+          <img src="//assets.jumpseller.com/public/placeholder/themes/mega/no-image.jpg" alt="{% t 'Add your products' %}" width="253" height="253" loading="lazy">
+          <div class="caption">
+            <h3>
+              <a href="{{ store.url }}/admin/products/new">{% t 'Add your products' %}</a>
+            </h3>
+            <div class="price">{{ 1.0 | price }}</div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+{% endcapture %}
+
+{% assign cat = store.category[component.options.permalink] %}
+<div class="featured-category py-4" {{ component.attributes }}>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="block-header">
+          {% if cat.name != blank %}{{ cat.name }}{% else %}{% t 'Select a Category' %}{% endif %}
+        </h2>
+      </div>
+      {% if component.options.permalink == blank %}
+        <div class="col-12 mb-3">
+          <h5>{% t "Please choose a category in the component settings." %}.</h5>
+        </div>
+      {% elsif cat.products == blank %}
+        <div class="col-12 mb-3">
+          <h5>{% t "There aren't any products available in this category" %}.</h5>
+        </div>
+      {% endif %}
+        <div class="col-lg-3 col-md-4 col-12">
+          <div class="featured-category-image" style="{% if component.options.image.url != blank %}background-image: url({{ component.options.image.url | thumb: '510x370' }});{% else %}background-color:#f6f6f6; border: 1px solid #eee;{% endif %}">
+            <div class="featured-category-image_inside">
+              {% capture button_default %}{%- t "Go to %{category}", category: cat.name %}{% endcapture %}
+              <span class="featured-category-image-title" {{ component.attributes.textfield.title }}>{{ component.options.title }}</span>
+              <a href="{{ cat.url }}" class="btn btn-sm primary" title="{{ component.options.button | default: button_default }}" {{ component.attributes.textfield.button }}>
+                  {{- component.options.button | default: button_default -}}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-8 mb-0">
+          <swiper-slider
+            class="col-12 swiper position-relative {% if component.options.enable_arrows or component.options.enable_dots %} pb-5{% endif %}"
+            sw-layout="categories"
+            sw-root=".store-section__content"
+            sw-autoplay="{{ component.options.autoplay }}"
+            sw-speed="{{ component.options.autoplay_speed }}"
+          >
+            <div class="swiper-wrapper">
+              {{ content }}
+            </div>
+            {% render 'common_swiper_pagination' %}
+          </swiper-slider>
+        </div>
+    </div>
+  </div>
+</div>
+

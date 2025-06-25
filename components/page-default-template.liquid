@@ -1,0 +1,47 @@
+<div class="container mt-4" {{ component.attributes }}>
+  <div class="page-body mb-4">
+    {{ page.body }}
+  </div>
+  {% if component.options.share %}
+    <div class="border-top py-3 text-center">
+      <label class="font-weight-bold" {{ component.attributes.textfield.share_title }}>{{ component.options.share_title }}</label>
+      <ul class="list-group list-group-horizontal d-flex justify-content-center">
+        {% if component.options.facebook_button %}
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/sharer.php?u={{ page.url }}" class="facebook-button social-link" title="{% t 'Share on Facebook' %}" target="_blank" data-tooltip>
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if component.options.twitter_button %}
+          <li class="list-inline-item">
+            <a href="https://twitter.com/share?url={{ store.base_url }}{{ page.url }}&text={% t 'Check this Post' %}{{ page.title }}" class="twitter-button social-link" title="{% t 'Share on 𝕏' %}" target="_blank" data-tooltip>
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if component.options.pinterest_button %}
+          <li class="list-inline-item">
+            <a
+              href="https://pinterest.com/pin/create/bookmarklet/?media={{ page.images.first }}&url={{ page.url }}&is_video=false&description={{ page.title }}:{{ page.body | strip_html | strip | truncate: 125 }}"
+              class="pinterest-button social-link"
+              title="{% t 'Share on Pinterest' %}"
+              target="_blank"
+              data-tooltip
+            >
+              <i class="fab fa-pinterest-p"></i>
+            </a>
+          </li>
+        {% endif %}
+        {% if component.options.tumblr_button %}
+          <li class="list-inline-item">
+            <a href="http://tumblr.com/widgets/share/tool?canonicalUrl={{ page.url }}" class="tubmlr-button social-link" title="{% t 'Share on Tumblr' %}" target="_blank" data-tooltip>
+              <i class="fab fa-tumblr"></i>
+            </a>
+          </li>
+          <script id="tumblr-js" async src="https://assets.tumblr.com/share-button.js"></script>
+        {% endif %}
+      </ul>
+    </div>
+  {% endif %}
+</div>

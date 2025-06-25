@@ -1,0 +1,74 @@
+{
+  "name": "Latest products",
+  "icon": "seal",
+  "help": "This component allows you to display the latest products that have been created and/or added to your store. The order in which products display is automatic and will be based on the order you created them on your administration panel.",
+  "max_usage": 1,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "New Arrivals"
+    },
+    "limit": {
+      "name": "Quantity of items to display",
+      "type": "slider",
+      "default": 8,
+      "min": 4,
+      "max": 16,
+      "step": 4,
+      "unit": ""
+    },
+    "autoplay": {
+      "name": "Enable autoplay",
+      "type": "checkbox",
+      "default": false
+    },
+    "autoplay_speed": {
+      "name": "Autoplay speed",
+      "type": "slider",
+      "help": "Time that takes to pass from one 'Block' to the next, in seconds.",
+      "default": 4000,
+      "min": 500,
+      "max": 6000,
+      "step": 500,
+      "unit": "ms"
+    },
+    "enable_arrows": {
+      "name": "Enable arrows",
+      "type": "checkbox",
+      "help": "Displays 'next' and 'previous' arrows for customers to navigate.",
+      "default": true
+    },
+    "enable_dots": {
+      "name": "Enable dots",
+      "type": "checkbox",
+      "help": "Displays navigational dots (points) for customers to navigate.",
+      "default": true
+    },
+    "background": {
+      "name": "Background color",
+      "type": "color",
+      "default": "#FFFFFF"
+    },
+    "highlight_color": {
+      "name": "Highlight color",
+      "type": "color",
+      "help": "This color is for the button, the highlighted line and the overlay color.",
+      "default": "#4770FC"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

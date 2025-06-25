@@ -1,0 +1,36 @@
+{
+  "name": "Contact template",
+  "icon": "envelope",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "contactpage"
+  ],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Leave us a message"
+    },
+    "description": {
+      "name": "Description",
+      "type": "text",
+      "default": "Send us a message and we will reply as soon as possible."
+    },
+    "contact_title": {
+      "name": "Contact title",
+      "type": "input",
+      "default": "Contact information"
+    },
+    "map": {
+      "name": "Display map",
+      "type": "checkbox",
+      "help": "This will show a map with your main location configured on your checkout settings.",
+      "default": true
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

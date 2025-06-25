@@ -1,0 +1,18 @@
+{
+  "name": "Description",
+  "icon": "align-left",
+  "max_usage": null,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [],
+  "options": {
+    "title": {
+      "name": "Title",
+      "type": "input",
+      "default": "Description"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

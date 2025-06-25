@@ -1,0 +1,44 @@
+{
+  "name": "Custom code",
+  "icon": "code",
+  "help": "Use this for external apps or your custom design, here you can include code, tools, plugins, app, etc. you need to display in the component.",
+  "max_usage": null,
+  "required": false,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "home",
+    "product",
+    "category",
+    "page",
+    "searchresults",
+    "contactpage",
+    "error"
+  ],
+  "options": {
+    "custom_code": {
+      "name": "Custom code",
+      "type": "text",
+      "help": "Use this for external apps or your custom design",
+      "default": ""
+    },
+    "width": {
+      "name": "Width",
+      "type": "select",
+      "help": "If you are using an external app who display something in the screen",
+      "default": "Container",
+      "options": [
+        {
+          "label": "Container",
+          "value": "Container"
+        },
+        {
+          "label": "Full size",
+          "value": "Full size"
+        }
+      ]
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

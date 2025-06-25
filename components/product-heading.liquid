@@ -1,0 +1,60 @@
+<!-- Product Price -->
+<div class="form-group price_elem" {{ product-heading.attributes }}>
+  {% if product.brand != blank and product-heading.options.brand_enable %}
+    <span class="product-form_brand">{{ product.brand }}</span>
+  {% endif %}
+  <h1 class="product-form_title page-title">{{ product.name }}</h1>
+  {% unless options.disable_prices %}
+    <span class="product-form_price">
+      {{- product.price | minus: product.discount | price -}}
+    </span>
+    {% if product.discount > 0 %}
+      <span class="product-form_discount">({{ product.price | price }})</span>
+    {% endif %}
+    {% if product.discount_begins and product.discount_expires %}
+      <div class="mt-3 text-center">
+        {% capture begins_date -%}<strong>{{ product.discount_begins | date: '%d-%m-%Y' }}</strong>{%- endcapture %}
+        {% capture expires_date -%}<strong>{{ product.discount_expires | date: "%d-%m-%Y" }}</strong>{%- endcapture %}
+        <p class="discount-date font-weight-lighter">
+          {%- t "Promotion valid from %{begins_date} to %{expires_date}", begins_date: begins_date, expires_date: expires_date -%}
+        </p>
+      </div>
+    {% endif %}
+  {% endunless %}
+
+  {% if product.reviews != empty %}
+    <div>
+      {% render 'product_rating', prod: product %}
+      <a onclick="scrollToReviews()" class="reviews-number clickable">
+        ({{ product.reviews.count }}
+        {% if product.reviews.count > 1 %} {% t "Reviews" %}{% else %} {% t "Review" %}{% endif %})
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+<!-- Product Sku -->
+{% if product.sku != blank and product-heading.options.sku_enable %}
+  <div id="product-sku" class="product-form_sku form-group sku trsn">
+    <label>{% t 'SKU' %}: </label>
+    <span class="sku_elem">{{ product.sku }}</span>
+  </div>
+{% else %}
+  <div
+    id="product-sku"
+    class="form-group product-form_sku sku trsn"
+    style="visibility:hidden; padding: 0; margin: 0; height: 0;"
+  >
+    <label>{% t 'SKU' %}: </label>
+    <span class="sku_elem">{{ product.sku }}</span>
+  </div>
+{% endif %}
+
+{% if product-heading.options.stock_enable and product.stock > 0 %}
+  <div id="stock" class="form-group product-form_stock" style="display:{% if product.options == empty and product.stock_unlimited %}none{% else %}block{% endif %}">
+    <label>{% t "Stock" %}: </label>
+    <span class="product-form-stock">{{ product.stock }}</span>
+  </div>
+{% endif %}
+
+{% render 'product_scripts', stock_enable: product-heading.options.stock_enable, sku_enable: product-heading.options.sku_enable %}

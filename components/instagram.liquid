@@ -1,0 +1,60 @@
+<style>
+  #component-{{ component.id }} {
+    --instagram-background: {{ component.options.background }};
+    --instagram-background-contrast: {{ component.options.background | color_contrast: '#f1f1f1', '#090909' }};
+    --instagram-highlight-color: {{ component.options.highlight_color }};
+    --instagram-highlight-color-contrast: {{ component.options.highlight_color | color_contrast: '#f1f1f1', '#090909' }};
+  }
+</style>
+
+<div class="instagram py-4" {{ component.attributes }}>
+  <div class="container">
+    <h2 class="block-header" {{ component.attributes.textfield.title }}>{{ component.options.title }}</h2>
+    <div id="instagram-{{ component.id }}" class="instagram-feed">
+      {% if social.instagram.url == blank %}
+        {% for placeholder in (1..6) %}
+          <a href="#" target="_blank">
+            <div class="insta_img" style="background-image: url('//assets.jumpseller.com/public/placeholder/themes/mega/insta_{{ placeholder }}.jpg')"></div>
+          </a>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="text-center mt-3">
+      {% if social.instagram.url != blank %}
+        <a href="{{ social.instagram.url }}" target="_blank" title="{% t 'Follow Us' %} @{{ social.instagram.handler }}" class="btn secondary trsn"><i class="fab fa-instagram" aria-hidden="true"></i> {% t "Follow Us" %}</a>
+      {% else %}
+        <h5>{% t "You need to login in your Instagram account" %}</h5>
+        <a href="{{ store.url }}/admin/settings/general/store_info" class="btn secondary trsn mt-2" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i> {% t "Login here" %}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% if social.instagram.url != blank %}
+  <script>
+    $.ajax({
+      url: "/instagram-app/media",
+      data: {
+        count: {{ component.options.limit }}
+      },
+      success: function(json) {
+        for (var i in json.posts) {
+          if (i >= {{ component.options.limit }}) continue;
+          url = json.posts[i].thumbnail_url || json.posts[i].media_url;
+          shortcode = json.posts[i].shortcode;
+
+          newElement = document.createElement('div');
+          newElement.className = 'insta_img';
+          newElement.style = 'background-image: url(' + url + ')';
+
+          newElementLink = document.createElement('a');
+          newElementLink.href = json.posts[i].permalink;
+          newElementLink.target = "_blank";
+          newElementLink.appendChild(newElement);
+
+          var clientHeight = document.getElementById('instagram-{{ component.id }}').clientHeight;
+          document.getElementById("instagram-{{ component.id }}").appendChild(newElementLink);
+        }
+      }
+    });
+  </script>
+{% endif %}

@@ -1,0 +1,25 @@
+{
+  "name": "Product tabs",
+  "icon": "table-columns",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "product"
+  ],
+  "options": {
+    "description_title": {
+      "name": "Description title",
+      "type": "input",
+      "default": "Description"
+    },
+    "customfields_title": {
+      "name": "Custom fields title",
+      "type": "input",
+      "default": "Details"
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}

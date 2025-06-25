@@ -1,0 +1,45 @@
+{
+  "name": "Page Default template",
+  "icon": "page",
+  "max_usage": 1,
+  "required": true,
+  "tag": "div",
+  "classes": "",
+  "templates_in": [
+    "page"
+  ],
+  "options": {
+    "share": {
+      "name": "Show share links",
+      "type": "checkbox",
+      "default": true
+    },
+    "share_title": {
+      "name": "Share links title",
+      "type": "input",
+      "default": "Share this article"
+    },
+    "facebook_button": {
+      "name": "Display Facebook share link",
+      "type": "checkbox",
+      "default": true
+    },
+    "twitter_button": {
+      "name": "Display 𝕏 share link",
+      "type": "checkbox",
+      "default": true
+    },
+    "pinterest_button": {
+      "name": "Display Pinterest share link",
+      "type": "checkbox",
+      "default": true
+    },
+    "tumblr_button": {
+      "name": "Display Tumblr share link",
+      "type": "checkbox",
+      "default": true
+    }
+  },
+  "mode": "subcomponents",
+  "properties": {}
+}
