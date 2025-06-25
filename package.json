@@ -1,0 +1,9 @@
+{
+  "name": "mega-theme",
+  "version": "1.0.0",
+  "description": "Mega theme tests",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
