@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="{{ languages.first.locale }}" xmlns="http://www.w3.org/1999/xhtml">
+<html data-theme="light" class="no-js" lang="{{ languages.first.locale }}" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>{{ page_title }}</title>
     <meta name="description" content="{{ meta_description }}">
@@ -84,6 +84,7 @@
 
     {% render 'store_whatsapp' %}
 
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema"><i class="fas fa-moon"></i></button>
     {{ options.body_code }}
   </body>
 </html>
